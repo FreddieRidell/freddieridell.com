@@ -1,4 +1,4 @@
-import Test from "./test.md";
+import Home from "./site/home";
 
-export default () => <div dangerouslySetInnerHTML = {{ __html: Test }} />
+export default () => <Home/>;
 
