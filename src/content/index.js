@@ -4,7 +4,6 @@ const fs = require("fs");
 const R = require("ramda");
 
 const walkSync = (dir, filelist) => {
-
 	const files = fs.readdirSync(dir);
 
 	filelist = filelist || [];
@@ -17,14 +16,14 @@ const walkSync = (dir, filelist) => {
 				const buffer = fs.readFileSync(dir + "/" + file);
 				if(buffer){
 
-				filelist.push( [
-               "/" + (dir + file.replace(".md", "")).replace("src/content/", "").replace( /\/index$/, ""), 
-					buffer.toString(),
-				]);
+					filelist.push( [
+						"/" + (dir + file.replace(".md", "")).replace("src/content/", "").replace( /\/?index$/, ""), 
+						buffer.toString(),
+					]);
 				}
 			}
 		}
-   });
+	});
 
 	return filelist;
 };
