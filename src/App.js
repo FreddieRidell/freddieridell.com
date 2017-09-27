@@ -1,1 +1,4 @@
-export default () => <div>codogo-react-app</div>;
+import Test from "./test.md";
+
+export default () => <div dangerouslySetInnerHTML = {{ __html: Test }} />
+
