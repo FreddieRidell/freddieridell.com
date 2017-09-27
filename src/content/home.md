@@ -3,3 +3,4 @@
 + I'm the CTO of [codogo.io](https://codogo.io).
 + I tweet at [@FreddieRidell](https://twitter.com/FreddieRidell).
 + I write codes on [GitHub](https://github.com/CodogoFreddie).
++ You can see my knitting [here](/crafty)

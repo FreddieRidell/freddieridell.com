@@ -1,6 +1,7 @@
 //@preval
 
 const fs = require("fs");
+const R = require("ramda");
 
 const walkSync = (dir, filelist) => {
 
@@ -12,11 +13,20 @@ const walkSync = (dir, filelist) => {
 			filelist = walkSync(dir + file + '/', filelist);
 		}
 		else {
-			filelist.push( [ dir, file, ]);
+			if(file.includes(".md")){
+				const buffer = fs.readFileSync(dir + "/" + file);
+				if(buffer){
+
+				filelist.push( [
+               "/" + (dir + file.replace(".md", "")).replace("src/content/", "").replace( /\/index$/, ""), 
+					buffer.toString(),
+				]);
+				}
+			}
 		}
-	});
+   });
+
 	return filelist;
 };
 
-
-module.exports = walkSync("src/content/");
+module.exports = R.fromPairs( walkSync("src/content/"));
