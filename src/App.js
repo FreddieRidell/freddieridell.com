@@ -1,8 +1,6 @@
-const Markdown = require('react-markdown')
-
 import allData from "src/content";
-import { withRouter, BrowserRouter as Router, Link, } from "react-router-dom";
-//import Markdown from "react-markdown";
+import { withRouter, BrowserRouter as Router, Route, Link, } from "react-router-dom";
+import Markdown from "react-markdown";
 import styled, { injectGlobal, } from "styled-components";
 
 injectGlobal`
@@ -68,6 +66,8 @@ const Content = withRouter( ({ location, }) => {
 	return (
 		<ContentPane>
 
+			<br/>
+
 			<Breadcrumb to = "/">freddie</Breadcrumb>{ " / " }
 
 			{
@@ -84,12 +84,10 @@ const Content = withRouter( ({ location, }) => {
 	);
 });
 
-export default () => {
-
-	return (
-		<Router>
-			<Content />
-		</Router>
-	);
-
-};
+export default () => (
+	<Router>
+		<Route path = "/" render = { props => (
+			<Content { ...props } />
+		)} />
+	</Router>
+);

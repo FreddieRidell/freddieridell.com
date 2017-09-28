@@ -19,9 +19,6 @@
 		"test": "react-scripts test --env=jsdom",
 		"eject": "react-scripts eject"
 	},
-	"reactSnapshot": {
-		"snapshotDelay": 1000
-	},
 	"devDependencies": {
 		"react-snapshot": "^1.2.0"
 	}
