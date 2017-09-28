@@ -1,6 +1,8 @@
+const Markdown = require('react-markdown')
+
 import allData from "src/content";
-import { Link,} from "react-router-dom";
-import Markdown from "react-remarkable";
+import { withRouter, BrowserRouter as Router, Link, } from "react-router-dom";
+//import Markdown from "react-markdown";
 import styled, { injectGlobal, } from "styled-components";
 
 injectGlobal`
@@ -38,10 +40,17 @@ const ContentPane = styled.div`
 	max-width: 30rem;
 `;
 
-const Breadcrumb = styled.a` `;
+const Breadcrumb = styled(Link)` `;
 
-export default () => {
-	const breadcrumb = window.location.pathname.split("/").filter(R.length).reduce(
+const RouterLink = ({href, children, }) => (
+	href.match(/^(https?:)?\/\//)
+	? <a href={href}>{children}</a>
+	: <Link to={href}>{children}</Link>
+);
+
+const Content = withRouter( ({ location, }) => {
+
+	const breadcrumb = location.pathname.split("/").filter(R.length).reduce(
 		(acc, val) => ([
 			...acc,
 			{
@@ -52,31 +61,35 @@ export default () => {
 		[],
 	);
 
-	const dataPath = window.location.pathname !== "/" && window.location.pathname.slice(-1) === "/"
-		? window.location.pathname.slice(0, -1)
-		: window.location.pathname
+	const dataPath = location.pathname !== "/" && location.pathname.slice(-1) === "/"
+		? location.pathname.slice(0, -1)
+		: location.pathname
 
 	return (
 		<ContentPane>
 
-			<Breadcrumb href = "/">freddie</Breadcrumb>{ " / " }
+			<Breadcrumb to = "/">freddie</Breadcrumb>{ " / " }
 
 			{
 				breadcrumb.map( ({ path, label, }) => ([
-					<Breadcrumb href = { path + "/" } >{ label }</Breadcrumb>, " / "
+					<Breadcrumb to = { path + "/" } >{ label }</Breadcrumb>, " / "
 				]))
 			}
 
 			<hr/>
 
-			<Markdown
-				options = {{
-					html: true,
-				}}
-				source = {allData[dataPath]}
-			/>
+			<Markdown source = {allData[dataPath]} renderers={{Link: RouterLink}} />
 
-	</ContentPane>
+		</ContentPane>
+	);
+});
+
+export default () => {
+
+	return (
+		<Router>
+			<Content />
+		</Router>
 	);
 
 };

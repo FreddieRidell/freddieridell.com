@@ -1,25 +1,28 @@
 {
-  "name": "freddieridell.com",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "codogo-react-scripts": "^1.0.14-delta.64",
-    "ramda": "^0.24.1",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-markdown": "^2.5.0",
-    "react-remarkable": "^1.1.2",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "styled-components": "^2.2.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build && react-snapshot",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "devDependencies": {
-    "react-snapshot": "^1.2.0"
-  }
+	"name": "freddieridell.com",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"codogo-react-scripts": "^1.0.14-delta.64",
+		"ramda": "^0.24.1",
+		"react": "^16.0.0",
+		"react-dom": "^16.0.0",
+		"react-markdown": "^2.5.0",
+		"react-remarkable": "^1.1.2",
+		"react-router": "^4.2.0",
+		"react-router-dom": "^4.2.2",
+		"styled-components": "^2.2.0"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build && react-snapshot",
+		"test": "react-scripts test --env=jsdom",
+		"eject": "react-scripts eject"
+	},
+	"reactSnapshot": {
+		"snapshotDelay": 1000
+	},
+	"devDependencies": {
+		"react-snapshot": "^1.2.0"
+	}
 }
