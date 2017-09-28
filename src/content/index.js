@@ -9,15 +9,16 @@ const walkSync = (dir, filelist) => {
 	filelist = filelist || [];
 	files.forEach(function(file) {
 		if (fs.statSync(dir + file).isDirectory()) {
-			filelist = walkSync(dir + file + '/', filelist);
-		}
-		else {
-			if(file.includes(".md")){
+			filelist = walkSync(dir + file + "/", filelist);
+		} else {
+			if (file.includes(".md")) {
 				const buffer = fs.readFileSync(dir + "/" + file);
-				if(buffer){
-
-					filelist.push( [
-						"/" + (dir + file.replace(".md", "")).replace("src/content/", "").replace( /\/?index$/, ""), 
+				if (buffer) {
+					filelist.push([
+						"/" +
+							(dir + file.replace(".md", ""))
+								.replace("src/content/", "")
+								.replace(/\/?index$/, ""),
 						buffer.toString(),
 					]);
 				}
@@ -28,6 +29,4 @@ const walkSync = (dir, filelist) => {
 	return filelist;
 };
 
-module.exports = R.fromPairs( walkSync("src/content/"));
-
-
+module.exports = R.fromPairs(walkSync("src/content/"));

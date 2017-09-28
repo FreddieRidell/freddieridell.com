@@ -1,5 +1,10 @@
 import allData from "src/content";
-import { withRouter, BrowserRouter as Router, Route, Link, } from "react-router-dom";
+import {
+	withRouter,
+	BrowserRouter as Router,
+	Route,
+	Link,
+} from "react-router-dom";
 import Markdown from "react-markdown";
 import styled, { injectGlobal, } from "styled-components";
 
@@ -38,56 +43,59 @@ const ContentPane = styled.div`
 	max-width: 30rem;
 `;
 
-const Breadcrumb = styled(Link)` `;
+const Breadcrumb = styled(Link)``;
 
-const RouterLink = ({href, children, }) => (
-	href.match(/^(https?:)?\/\//)
-	? <a href={href}>{children}</a>
-	: <Link to={href}>{children}</Link>
-);
-
-const Content = withRouter( ({ location, }) => {
-
-	const breadcrumb = location.pathname.split("/").filter(R.length).reduce(
-		(acc, val) => ([
-			...acc,
-			{
-				path: ((R.last(acc) || {}).path || "") + "/" + val,
-				label: val,
-			}
-		]),
-		[],
+const RouterLink = ({ href, children, }) =>
+	href.match(/^(https?:)?\/\//) ? (
+		<a href = { href }>{children}</a>
+	) : (
+		<Link to = { href }>{children}</Link>
 	);
 
-	const dataPath = location.pathname !== "/" && location.pathname.slice(-1) === "/"
-		? location.pathname.slice(0, -1)
-		: location.pathname
+const Content = withRouter(({ location, }) => {
+	const breadcrumb = location.pathname
+		.split("/")
+		.filter(R.length)
+		.reduce(
+			(acc, val) => [
+				...acc,
+				{
+					path: ((R.last(acc) || {}).path || "") + "/" + val,
+					label: val,
+				},
+			],
+			[],
+		);
+
+	const dataPath =
+		location.pathname !== "/" && location.pathname.slice(-1) === "/"
+			? location.pathname.slice(0, -1)
+			: location.pathname;
 
 	return (
 		<ContentPane>
+			<br />
 
-			<br/>
+			<Breadcrumb to = "/">freddie</Breadcrumb>
+			{" / "}
 
-			<Breadcrumb to = "/">freddie</Breadcrumb>{ " / " }
+			{breadcrumb.map(({ path, label, }) => [
+				<Breadcrumb to = { path + "/" }>{label}</Breadcrumb>,
+				" / ",
+			])}
 
-			{
-				breadcrumb.map( ({ path, label, }) => ([
-					<Breadcrumb to = { path + "/" } >{ label }</Breadcrumb>, " / "
-				]))
-			}
+			<hr />
 
-			<hr/>
-
-			<Markdown source = {allData[dataPath]} renderers={{Link: RouterLink}} />
-
+			<Markdown
+				source = { allData[dataPath] }
+				renderers = { { Link: RouterLink, } }
+			/>
 		</ContentPane>
 	);
 });
 
 export default () => (
 	<Router>
-		<Route path = "/" render = { props => (
-			<Content { ...props } />
-		)} />
+		<Route path = "/" component = { Content } />
 	</Router>
 );

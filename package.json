@@ -2,6 +2,9 @@
 	"name": "freddieridell.com",
 	"version": "0.1.0",
 	"private": true,
+	"eslintConfig": {
+		"extends": "codogo"
+	},
 	"dependencies": {
 		"codogo-react-scripts": "^1.0.14-delta.64",
 		"ramda": "^0.24.1",
@@ -15,6 +18,7 @@
 	},
 	"scripts": {
 		"start": "react-scripts start",
+		"format": "react-scripts format",
 		"build": "react-scripts build && react-snapshot",
 		"test": "react-scripts test --env=jsdom",
 		"eject": "react-scripts eject"
