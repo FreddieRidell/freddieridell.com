@@ -1,4 +1,3 @@
-import allData from "src/content";
 import {
 	withRouter,
 	BrowserRouter as Router,
@@ -7,6 +6,10 @@ import {
 } from "react-router-dom";
 import Markdown from "react-markdown";
 import styled, { injectGlobal, } from "styled-components";
+
+import allData from "src/content";
+
+console.log(allData);
 
 injectGlobal`
 	html {
@@ -87,7 +90,7 @@ const Content = withRouter(({ location, }) => {
 			<hr />
 
 			<Markdown
-				source = { allData[dataPath] }
+				source = { allData[dataPath].content }
 				renderers = { { Link: RouterLink, } }
 			/>
 		</ContentPane>

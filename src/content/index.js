@@ -2,6 +2,7 @@
 
 const fs = require("fs");
 const R = require("ramda");
+var crypto = require("crypto");
 
 const walkSync = (dir, filelist) => {
 	const files = fs.readdirSync(dir);
@@ -14,12 +15,22 @@ const walkSync = (dir, filelist) => {
 			if (file.includes(".md")) {
 				const buffer = fs.readFileSync(dir + "/" + file);
 				if (buffer) {
+					const content = buffer.toString();
 					filelist.push([
 						"/" +
 							(dir + file.replace(".md", ""))
 								.replace("src/content/", "")
 								.replace(/\/?index$/, ""),
-						buffer.toString(),
+						{
+							content: content,
+							currentHash: crypto
+								.createHash("md5")
+								.update(content)
+								.digest("hex"),
+
+							created: new Date().getTime(),
+							updated: new Date().getTime(),
+						},
 					]);
 				}
 			}
