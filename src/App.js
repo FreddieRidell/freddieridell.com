@@ -66,10 +66,14 @@ injectGlobal`
 const ContentPane = styled.div`
 	width: 100%;
 	max-width: 30rem;
+
 `;
 
 const BreadcrumbContainer = styled.div`
 	flex-direction: row;
+	a {
+		margin 0 0.25rem;
+	}
 `;
 
 const Breadcrumb = styled(Link)``;
