@@ -15,7 +15,7 @@ injectGlobal`
 	}
 
 	body {
-		margin: 0;
+		margin: 1rem;
 		align-items: stretch;
 		display: flex;
 		flex-direction: column;
@@ -66,7 +66,12 @@ const Content = withRouter(({ location, }) => {
 					label: val,
 				},
 			],
-			[],
+			[
+				{
+					path: "",
+					label: "freddie",
+				},
+			],
 		);
 
 	const dataPath =
@@ -76,11 +81,6 @@ const Content = withRouter(({ location, }) => {
 
 	return (
 		<ContentPane>
-			<br />
-
-			<Breadcrumb to = "/">freddie</Breadcrumb>
-			{" / "}
-
 			{breadcrumb.map(({ path, label, }) => [
 				<Breadcrumb to = { path + "/" }>{label}</Breadcrumb>,
 				" / ",
