@@ -9,14 +9,13 @@ import styled, { injectGlobal, } from "styled-components";
 
 import allData from "src/content";
 
-console.log(allData);
-
 injectGlobal`
 	html {
 		font-family: sans-serif
 	}
 
 	body {
+		margin: 0;
 		align-items: stretch;
 		display: flex;
 		flex-direction: column;
