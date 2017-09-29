@@ -41,3 +41,5 @@ const walkSync = (dir, filelist) => {
 };
 
 module.exports = R.fromPairs(walkSync("src/content/"));
+
+console.log(module.exports);
