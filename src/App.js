@@ -3,6 +3,7 @@ import {
 	BrowserRouter as Router,
 	Route,
 	Link,
+	Redirect,
 } from "react-router-dom";
 import Markdown from "react-markdown";
 import { Helmet, } from "react-helmet";
@@ -132,8 +133,14 @@ const Content = withRouter(({ location, }) => {
 		),
 	)(breadcrumb);
 
+	const shouldRedirect = dataPath !== "/404" && !allData[dataPath];
+
 	return (
 		<ContentPane>
+			{
+				shouldRedirect && <Redirect to = "/404" />
+			}
+
 			<Helmet>
 				<title> { title } </title>
 			</Helmet>
@@ -148,6 +155,10 @@ const Content = withRouter(({ location, }) => {
 			<hr />
 
 			<Markdown source = { source } renderers = { { Link: RouterLink, } } />
+
+			<Link to = "/404" style = {{
+				display: "none",
+			}} />
 		</ContentPane>
 	);
 });
