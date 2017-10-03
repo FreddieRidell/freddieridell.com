@@ -21,6 +21,7 @@ const walkSync = (dir, filelist) => {
 							(dir + file.replace(".md", ""))
 								.replace("src/content/", "")
 								.replace(/\/?index$/, ""),
+
 						{
 							content: content,
 							currentHash: crypto
@@ -36,7 +37,6 @@ const walkSync = (dir, filelist) => {
 			}
 		}
 	});
-
 	return filelist;
 };
 

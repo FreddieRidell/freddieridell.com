@@ -60,13 +60,16 @@ injectGlobal`
 		color: black;
 		font-weight: bold;
 		text-decoration: none;
-	}
+   }
+
+   img { 
+      max-width: 100%;
+   }
 `;
 
 const ContentPane = styled.div`
 	width: 100%;
 	max-width: 30rem;
-
 `;
 
 const BreadcrumbContainer = styled.div`
@@ -108,45 +111,33 @@ const Content = withRouter(({ location, }) => {
 	const dataPath =
 		location.pathname !== "/" && location.pathname.slice(-1) === "/"
 			? location.pathname.slice(0, -1)
-		: location.pathname;
+			: location.pathname;
 
 	const source = R.pathOr(
 		"# 404\n## Please go elsewhere",
 		[dataPath, "content",],
-		allData
+		allData,
 	);
 
 	const title = R.pipe(
 		R.tail,
 		R.reverse,
-		R.map( R.prop("label")),
+		R.map(R.prop("label")),
 		R.map(
-			R.pipe(
-				R.split(""),
-				R.over(
-					R.lensIndex(0),
-					R.toUpper,
-				),
-				R.join(""),
-			),
+			R.pipe(R.split(""), R.over(R.lensIndex(0), R.toUpper), R.join("")),
 		),
 		R.join(" | "),
-		R.unless(
-			R.length,
-			R.always("Freddie Ridell"),
-		),
+		R.unless(R.length, R.always("Freddie Ridell")),
 	)(breadcrumb);
 
 	const shouldRedirect = dataPath !== "/404" && !allData[dataPath];
 
 	return (
 		<ContentPane>
-			{
-				shouldRedirect && <Redirect to = "/404" />
-			}
+			{shouldRedirect && <Redirect to = "/404" />}
 
 			<Helmet>
-				<title> { title } </title>
+				<title> {title} </title>
 			</Helmet>
 
 			<BreadcrumbContainer>
@@ -160,9 +151,12 @@ const Content = withRouter(({ location, }) => {
 
 			<Markdown source = { source } renderers = { { Link: RouterLink, } } />
 
-			<Link to = "/404" style = {{
-				display: "none",
-			}} />
+			<Link
+				to = "/404"
+				style = { {
+					display: "none",
+				} }
+			/>
 		</ContentPane>
 	);
 });
