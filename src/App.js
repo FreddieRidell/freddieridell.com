@@ -53,7 +53,8 @@ injectGlobal`
 		background: black;
 		border: 0;
 		height: 1px;
-		width: 100%;
+      max-width: 100%;
+      width: 100%;
 	}
 
 	a {
@@ -64,6 +65,10 @@ injectGlobal`
 
    img { 
       max-width: 100%;
+   }
+
+   .content hr {
+      width: 90%;
    }
 `;
 
@@ -149,7 +154,9 @@ const Content = withRouter(({ location, }) => {
 
 			<hr />
 
-			<Markdown source = { source } renderers = { { Link: RouterLink, } } />
+         <div className = "content">
+            <Markdown source = { source } renderers = { { Link: RouterLink, } } />
+         </div>
 
 			<Link
 				to = "/404"
