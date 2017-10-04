@@ -7,84 +7,8 @@ import {
 } from "react-router-dom";
 import Markdown from "react-markdown";
 import { Helmet, } from "react-helmet";
-import styled, { injectGlobal, } from "styled-components";
 
 import allData from "src/content";
-
-injectGlobal`
-	html {
-		font-family: sans-serif
-	}
-
-	body {
-		margin: 1rem;
-		align-items: stretch;
-		display: flex;
-		flex-direction: column;
-	}
-
-	div { 
-		display: flex;
-		flex-direction: column;
-	}
-
-	#root {
-		align-items: center;
-	}
-
-	h1, h2, h3, h4, h5, h6, ul, ol {
-		margin: 0;
-		padding: 0;
-	}
-
-	h1 {
-		margin-top: 1rem;
-	}
-
-	h2 {
-		margin: 0.5rem 0;
-	}
-
-	ul, ol {
-		padding-left: 2rem;
-	}
-
-	hr {
-		background: black;
-		border: 0;
-		height: 1px;
-      max-width: 100%;
-      width: 100%;
-	}
-
-	a {
-		color: black;
-		font-weight: bold;
-		text-decoration: none;
-   }
-
-   img { 
-      max-width: 100%;
-   }
-
-   .content hr {
-      width: 90%;
-   }
-`;
-
-const ContentPane = styled.div`
-	width: 100%;
-	max-width: 30rem;
-`;
-
-const BreadcrumbContainer = styled.div`
-	flex-direction: row;
-	a {
-		margin 0 0.25rem;
-	}
-`;
-
-const Breadcrumb = styled(Link)``;
 
 const RouterLink = ({ href, children, }) =>
 	href.match(/^(https?:)?\/\//) ? (
@@ -138,25 +62,24 @@ const Content = withRouter(({ location, }) => {
 	const shouldRedirect = dataPath !== "/404" && !allData[dataPath];
 
 	return (
-		<ContentPane>
+		<div className = "content-pane">
 			{shouldRedirect && <Redirect to = "/404" />}
 
 			<Helmet>
 				<title> {title} </title>
 			</Helmet>
 
-			<BreadcrumbContainer>
+			<div className = "breadcrumb-container">
 				{breadcrumb.map(({ path, label, }) => [
-					<Breadcrumb to = { path + "/" }>{label}</Breadcrumb>,
-					" / ",
+					<Link to = { path + "/" }>{label}</Link>,
 				])}
-			</BreadcrumbContainer>
+			</div>
 
 			<hr />
 
-         <div className = "content">
-            <Markdown source = { source } renderers = { { Link: RouterLink, } } />
-         </div>
+			<div className = "content">
+				<Markdown source = { source } renderers = { { Link: RouterLink, } } />
+			</div>
 
 			<Link
 				to = "/404"
@@ -164,7 +87,7 @@ const Content = withRouter(({ location, }) => {
 					display: "none",
 				} }
 			/>
-		</ContentPane>
+		</div>
 	);
 });
 
