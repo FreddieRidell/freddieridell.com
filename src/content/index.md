@@ -4,7 +4,7 @@
 + I tweet at [@FreddieRidell](https://twitter.com/FreddieRidell).
 + I write codes on [GitHub](https://github.com/CodogoFreddie).
 + I write about my open source contributions [here](/open-source/)
-+ My pgp fingerprint is `6BE0AF404BB9D844281F3DA5ACD8B92700BF93A0`
++ My pgp fingerprint is [`6BE0AF404BB9D844281F3DA5ACD8B92700BF93A0`](https://pgp.mit.edu/pks/lookup?op=vindex&search=0xACD8B92700BF93A0)
 
 ---
 

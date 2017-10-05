@@ -41,4 +41,3 @@ Wren is a dinky little scripting language that I am somewhat involved in. It is 
 [wrenDeleggate]: https://github.com/CodogoFreddie/wren-deleggate
 [wrenTempo]: https://github.com/CodogoFreddie/wren-tempo
 [wrenSemver]: https://github.com/CodogoFreddie/wren-semver
-
