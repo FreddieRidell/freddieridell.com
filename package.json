@@ -7,6 +7,7 @@
 	},
 	"dependencies": {
 		"codogo-react-scripts": "^1.0.14-delta.64",
+		"dotenv": "^4.0.0",
 		"ramda": "^0.24.1",
 		"react": "^16.0.0",
 		"react-dom": "^16.0.0",
@@ -15,7 +16,8 @@
 		"react-remarkable": "^1.1.2",
 		"react-router": "^4.2.0",
 		"react-router-dom": "^4.2.2",
-		"styled-components": "^2.2.0"
+		"styled-components": "^2.2.0",
+		"twitter": "^1.7.1"
 	},
 	"scripts": {
 		"start": "react-scripts start",
