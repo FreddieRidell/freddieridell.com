@@ -26,12 +26,16 @@ const doATweet = (tweet) => new Promise( (done, fail) =>
 
 const mockATweet = (tweet) => new Promise( (done, fail) => done("would have tweeted \"" + tweet + "\""));
 
-const invalidPages = new Set([ "/", "/foo/", "/404/", "/blog/", ]);
+const invalidPages = new Set([
+	"/",
+	"/404/",
+	"/blog/",
+]);
 
 module.exports.hello = (event, context, callback) => {
 	const postablePages = pages.filter( x => !invalidPages.has(x));
+	const toPost = postablePages[Math.floor(Math.random() * postablePages.length)];
 
-	console.log(postablePages);
-	mockATweet("fooo and bar")
-	.then( console.log) ;
+	mockATweet("Something for the weekend?")
+		.then( console.log) ;
 };
