@@ -3,8 +3,6 @@ require('dotenv').config()
 var Twitter = require('twitter');
 var pages = require("./pages");
 
-
-
 var client = new Twitter({
   consumer_key: process.env.CONSUMER_KEY,
   consumer_secret: process.env.CONSUMER_SECRET,
@@ -28,8 +26,12 @@ const doATweet = (tweet) => new Promise( (done, fail) =>
 
 const mockATweet = (tweet) => new Promise( (done, fail) => done("would have tweeted \"" + tweet + "\""));
 
+const invalidPages = new Set([ "/", "/foo/", "/404/", "/blog/", ]);
+
 module.exports.hello = (event, context, callback) => {
-	console.log(pages);
+	const postablePages = pages.filter( x => !invalidPages.has(x));
+
+	console.log(postablePages);
 	mockATweet("fooo and bar")
 	.then( console.log) ;
 };
