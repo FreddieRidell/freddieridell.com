@@ -1,62 +1,63 @@
 html {
-   font-family: sans-serif
+	font-family: sans-serif
 }
 
 body {
-   margin: 1rem;
-   align-items: stretch;
-   display: flex;
-   flex-direction: column;
+	margin: 1rem;
+	align-items: stretch;
+	display: flex;
+	flex-direction: column;
 }
 
 div { 
-   display: flex;
-   flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 #root {
-   align-items: center;
+	align-items: center;
 }
 
 h1, h2, h3, h4, h5, h6, ul, ol {
-   margin: 0;
-   padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 h1 {
-   margin: 1rem 0;
+	margin: 1rem 0;
 }
 
 h2 {
-   margin: 0.5rem 0;
+	margin: 0.5rem 0;
 }
 
 ul, ol {
-   margin-bottom: 0.5rem;
-   padding-left: 1rem;
+	margin-bottom: 0.5rem;
+	padding-left: 1rem;
 }
 
 hr {
-   background: black;
-   border: 0;
-   height: 1px;
-   max-width: 100%;
-   width: 100%;
+	background: black;
+	border: 0;
+	height: 1px;
+	max-width: 100%;
+	width: 100%;
 }
 
 a {
-   color: black;
-   font-weight: bold;
-   text-decoration: none;
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
 }
 
 img { 
-   max-width: 100%;
+	max-width: 100%;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 p {
-   margin-top: 0;
-   text-align: justify;
+	margin-top: 0;
+	text-align: justify;
 }
 
 .content-pane {
@@ -65,18 +66,18 @@ p {
 }
 
 .content hr {
-   width: 95%;
+	width: 95%;
 }
 
 .breadcrumb-container {
-    flex-flow: row wrap;
+	flex-flow: row wrap;
 }
 
 .breadcrumb-container a {
 }
 
 .breadcrumb-container a::after {
-   content: "/";
-   padding: 0 0.33em;
-   font-weight: normal;
+	content: "/";
+	padding: 0 0.33em;
+	font-weight: normal;
 }
