@@ -5,7 +5,13 @@
 + I've started bloging [here](/blog/)
 
 ## Social Media:
-[twitter][twitter] [github][github] [refind][refind] [freddie@codogo.io][email]
+[twitter][twitter]
+|
+[github][github]
+|
+[refind][refind]
+|
+[freddie@codogo.io][email]
 
 ---
 
