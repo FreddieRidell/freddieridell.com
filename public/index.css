@@ -81,3 +81,10 @@ p {
 	padding: 0 0.33em;
 	font-weight: normal;
 }
+
+#addresses {
+	overflow: auto;
+	white-space: pre;
+	width: 100%;
+	font-family: monospace;
+}
