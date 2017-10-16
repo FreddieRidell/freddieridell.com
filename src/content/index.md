@@ -25,7 +25,9 @@ eth:    0x330E067E74FB15d4A71e58afFf459Db92eA85a78
 monero: 46CFjzzLYuWJtT1tuFaRSTRp3XnqH8rUB6j8CpHgXC9EG3WBbdzfQKXZxcKNSoz28AS4hPRus7acaG5XEiEAvkkX3izgNkg
 btc:    159CcWg7MvmKePfUoKxXYRf2TPEorGzqGD
 ltc:    LfZdJDtwNpsKrsJYEgqAuJnCBoyiMPYs1Y
-doge:   DEVPfEpNTeTzUMzttfdxZ9ULTUAqzY2vPw</div>
+doge:   DEVPfEpNTeTzUMzttfdxZ9ULTUAqzY2vPw
+Yu Gi Oh Duel Links: 549-882-525
+</div>
 
 [refind]: https://refind.com/FreddieRidell?invite=6ea3358605
 [twitter]: https://twitter.com/FreddieRidell
