@@ -8,6 +8,7 @@
 	"dependencies": {
 		"codogo-react-scripts": "^1.0.14-delta.64",
 		"dotenv": "^4.0.0",
+		"frontmatter": "^0.0.3",
 		"ramda": "^0.24.1",
 		"react": "^16.0.0",
 		"react-dom": "^16.0.0",

@@ -40,11 +40,19 @@ const Content = withRouter(({ location, }) => {
 	const dataPath =
 		location.pathname !== "/" && location.pathname.slice(-1) === "/"
 			? location.pathname.slice(0, -1)
-			: location.pathname;
+		: location.pathname;
+
+	console.log(allData);
 
 	const source = R.pathOr(
 		"# 404\n## Please go elsewhere",
 		[dataPath, "content",],
+		allData,
+	);
+
+	const data = R.pathOr(
+		"# 404\n## Please go elsewhere",
+		[dataPath, "data",],
 		allData,
 	);
 
@@ -61,6 +69,7 @@ const Content = withRouter(({ location, }) => {
 
 	const shouldRedirect = dataPath !== "/404" && !allData[dataPath];
 
+
 	return (
 		<div className = "content-pane">
 			{shouldRedirect && <Redirect to = "/404" />}
@@ -76,6 +85,8 @@ const Content = withRouter(({ location, }) => {
 			</div>
 
 			<hr />
+
+			{ data.published && new Date(data.published * 1000).toISOString() }
 
 			<div className = "content">
 				<Markdown source = { source } renderers = { { Link: RouterLink, } } />

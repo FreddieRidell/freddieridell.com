@@ -11,6 +11,8 @@
 |
 [refind][refind]
 |
+[mastadon][mastadon]
+|
 [freddie@codogo.io][email]
 
 ---
@@ -33,4 +35,5 @@ Yu Gi Oh Duel Links: 549-882-525
 [twitter]: https://twitter.com/FreddieRidell
 [github]: https://github.com/CodogoFreddie
 [email]: mailto:freddie@codogo.io
+[mastadon]: https://toot.cafe/@freddieRidell
 [pgp]: https://pgp.mit.edu/pks/lookup?op=vindex&search=0xACD8B92700BF93A0
