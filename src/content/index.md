@@ -3,6 +3,7 @@
 + I'm the CTO of [codogo.io](https://codogo.io).
 + I write about my open source work [here](/open-source/)
 + I've started bloging [here](/blog/)
++ I sometimes do arts-and-crafts [here](/crafty/)
 
 ## Social Media:
 [twitter][twitter]
@@ -11,14 +12,14 @@
 |
 [refind][refind]
 |
-[mastadon][mastadon]
+[mastodon][mastodon]
 |
 [freddie@codogo.io][email]
 
 ---
 
 This page is still very much a work in progress, but I'm adding new content to it every day.
-Please `do` check back in regularly
+Please do check back in regularly
 
 ## Addresses:
 <div id="addresses">
@@ -35,5 +36,5 @@ Yu Gi Oh Duel Links: 549-882-525
 [twitter]: https://twitter.com/FreddieRidell
 [github]: https://github.com/CodogoFreddie
 [email]: mailto:freddie@codogo.io
-[mastadon]: https://toot.cafe/@freddieRidell
+[mastodon]: https://toot.cafe/@freddieRidell
 [pgp]: https://pgp.mit.edu/pks/lookup?op=vindex&search=0xACD8B92700BF93A0
