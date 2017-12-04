@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 const IndexPage = ({ data, }) => (
-	console.log(data),
 	<div>
 		<h1>Hi people</h1>
 		<p>Welcome to your new Gatsby site.</p>
@@ -27,6 +26,9 @@ export const query = graphql`
 					html
 					excerpt
 					timeToRead
+					fields {
+						slug 
+					}
 					frontmatter {
 						title
 						published
