@@ -18,22 +18,27 @@ div {
 	align-items: center;
 }
 
+#addresses {
+	overflow: auto;
+	white-space: pre;
+	width: 100%;
+	font-family: monospace;
+}
+
 h1, h2, h3, h4, h5, h6, ul, ol {
 	margin: 0;
+	margin-top: 0.2em;
+	margin-bottom: 0.1em;
 	padding: 0;
-}
-
-h1 {
-	margin: 1rem 0;
-}
-
-h2 {
-	margin: 0.5rem 0;
 }
 
 ul, ol {
 	margin-bottom: 0.5rem;
 	padding-left: 1rem;
+}
+
+li {
+	margin-left: -1em;
 }
 
 hr {
@@ -42,9 +47,11 @@ hr {
 	height: 1px;
 	max-width: 100%;
 	width: 100%;
+	margin: 0.5em 0;
 }
 
 a {
+	display: content;
 	color: black;
 	font-weight: bold;
 	text-decoration: none;

@@ -1,3 +1,5 @@
+import { injectGlobal, } from "styled-components";
+import { modularScale, } from "polished";
 import React from 'react'
 import R from "ramda";
 import PropTypes from 'prop-types'
@@ -6,6 +8,20 @@ import Helmet from 'react-helmet'
 import styled from "styled-components";
 
 import './index.css'
+
+injectGlobal`
+	h1 {
+		font-size: ${ modularScale(3) };
+	}
+
+	h2 {
+		font-size: ${ modularScale(2) };
+	}
+
+	h3 {
+		font-size: ${ modularScale(1) };
+	}
+`;
 
 const ContentPane = styled.div`
 	width: 100%;
@@ -23,7 +39,7 @@ const BreadcrumbContainer = styled.div`
 	}
 `;
 
-const Header = () => {
+const Header = ({ location }) => {
 	const breadcrumb = location.pathname
 		.split("/")
 		.filter(R.length)
@@ -56,7 +72,7 @@ const Header = () => {
 	);
 };
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children, ...props, }) => (
 	<ContentPane>
 		<Helmet
 			title="Gatsby Default Starter"
@@ -65,7 +81,7 @@ const TemplateWrapper = ({ children }) => (
 				{ name: 'keywords', content: 'sample, something' },
 			]}
 		/>
-		<Header />
+		<Header {...props } />
 		{children()}
 	</ContentPane>
 )

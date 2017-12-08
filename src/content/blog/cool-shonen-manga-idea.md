@@ -1,10 +1,10 @@
 ---
 
+title: Cool Shonen Manga Idea
 published: 1508244090
+date: 1508244090
 
 ---
-
-# Cool Shonen Manga Idea
 
 Our hero finds a magical item: `5 Gold Rings`, that gives them the power of a _Super Strength Punch_. They use this power for fighting in school, getting into brawls and such. Then they encounter another, with a magical item similar to their own: `A Partridge In A Pear Tree`; which... I don't know... they use as a bat or something.
 
