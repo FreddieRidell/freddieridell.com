@@ -28,7 +28,7 @@ const BlogLinkExcerpt = styled.div`
 	font-weight: normal;
 `;
 
-const BlogLink = ({ title, published, slug, excerpt, }) => (
+const BlogLink = ({ abstract, title, published, slug, excerpt, }) => (
 	<Link to = { slug }>
 		<li>
 			<StyledBlogLink>
@@ -41,7 +41,7 @@ const BlogLink = ({ title, published, slug, excerpt, }) => (
 				</BlogLinkDate>
 			</StyledBlogTitleDateContainer>
 				<BlogLinkExcerpt>
-					{excerpt}
+					{ abstract || excerpt}
 				</BlogLinkExcerpt>
 			</StyledBlogLink>
 		</li>
@@ -51,11 +51,12 @@ const BlogLink = ({ title, published, slug, excerpt, }) => (
 export default ({ data, ...props, }) => {
 	const links = R.pipe(
 		R.path([ "allMarkdownRemark", "edges", ]),
-		R.map( ({ node: { excerpt, frontmatter: { title, published, }, fields: { slug, } } }) => ({
+		R.map( ({ node: { excerpt, frontmatter: { abstract, title, published, }, fields: { slug, } } }) => ({
 			title,
 			published,
 			slug,
 			excerpt,
+			abstract,
 		})),
 
 		R.filter(R.prop("published")),
@@ -84,28 +85,29 @@ export default ({ data, ...props, }) => {
 };
 
 export const query = graphql`
-						query AboutQuery {
-							site {
-								siteMetadata {
-									title
-								}
-							}
-							allMarkdownRemark(filter: {fields: {slug: {regex: "/^\/blog/"}}}) {
-								edges {
-									node {
-										fileAbsolutePath
-										html
-										excerpt
-										timeToRead
-										fields {
-											slug 
-										}
-										frontmatter {
-											title
-											published
-										}
-									}
-									}
-									}
-									}
-									`
+	query AboutQuery {
+		site {
+			siteMetadata {
+				title
+			}
+		}
+		allMarkdownRemark(filter: {fields: {slug: {regex: "/^\/blog/"}}}) {
+			edges {
+				node {
+					fileAbsolutePath
+					html
+					excerpt
+					timeToRead
+					fields {
+						slug 
+					}
+					frontmatter {
+						title
+						published
+						abstract
+					}
+				}
+			}
+		}
+	}
+`

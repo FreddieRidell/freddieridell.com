@@ -6,7 +6,7 @@ pipelines:
       - step:
           script:
           - yarn install --pure-lockfile
-          - ./generateFavicons.sh
+          #- ./generateFavicons.sh
           - yarn run format
           - yarn run build
           - aws s3 sync build s3://freddieridell.com

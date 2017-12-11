@@ -1,7 +1,6 @@
 ---
 
 title: Never Needed Cities Less
-published: 1511797840
 
 ---
 
