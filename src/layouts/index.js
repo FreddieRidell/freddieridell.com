@@ -26,7 +26,7 @@ injectGlobal`
 
 const ContentPane = styled.div`
 	width: 100%;
-	max-width: 30rem;
+	max-width: 28rem;
 `;
 
 const BreadcrumbContainer = styled.div`
