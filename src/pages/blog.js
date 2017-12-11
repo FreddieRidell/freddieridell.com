@@ -6,7 +6,7 @@ import R from "ramda";
 import styled from "styled-components";
 
 const StyledBlogLink = styled.div`
-	margin: 1em 0;
+	margin-top: 1rem;
 `;
 
 const StyledBlogTitleDateContainer = styled.div`
@@ -28,35 +28,34 @@ const BlogLinkExcerpt = styled.div`
 	font-weight: normal;
 `;
 
-const BlogLink = ({ abstract, title, published, slug, excerpt, }) => (
-	<Link to = { slug }>
-		<li>
-			<StyledBlogLink>
-				<StyledBlogTitleDateContainer>
-				<BlogLinkTitle>
-					{title}
-				</BlogLinkTitle>
-				<BlogLinkDate>
-					{published}
-				</BlogLinkDate>
-			</StyledBlogTitleDateContainer>
-				<BlogLinkExcerpt>
-					{ abstract || excerpt}
-				</BlogLinkExcerpt>
-			</StyledBlogLink>
-		</li>
+const BlogLink = ({ emoji, abstract, title, published, slug, excerpt, }) => (
+	<StyledBlogLink >
+		<Link to = { slug }> 
+			<StyledBlogTitleDateContainer>
+				<BlogLinkTitle >
+				 {title} { emoji }
+			</BlogLinkTitle>
+			<BlogLinkDate>
+				{published}
+			</BlogLinkDate>
+		</StyledBlogTitleDateContainer>
+		<BlogLinkExcerpt>
+			{ abstract || excerpt}
+		</BlogLinkExcerpt>
 	</Link>
+	</StyledBlogLink>
 );
 
 export default ({ data, ...props, }) => {
 	const links = R.pipe(
 		R.path([ "allMarkdownRemark", "edges", ]),
-		R.map( ({ node: { excerpt, frontmatter: { abstract, title, published, }, fields: { slug, } } }) => ({
+		R.map( ({ node: { excerpt, frontmatter: { emoji, abstract, title, published, }, fields: { slug, } } }) => ({
 			title,
 			published,
 			slug,
 			excerpt,
 			abstract,
+			emoji,
 		})),
 
 		R.filter(R.prop("published")),
@@ -73,19 +72,17 @@ export default ({ data, ...props, }) => {
 	return (
 		<div>
 			{ links.length } Posts
-			<ul>
-				{
-					links.map( (props) => (
-						<BlogLink key = { props.slug } { ...props } />
-					))
-				}
-			</ul>
+			{
+				links.map( (props) => (
+					<BlogLink key = { props.slug } { ...props } />
+				))
+			}
 		</div>
 	);
 };
 
 export const query = graphql`
-	query AboutQuery {
+query AboutQuery {
 		site {
 			siteMetadata {
 				title
@@ -105,6 +102,7 @@ export const query = graphql`
 						title
 						published
 						abstract
+						emoji
 					}
 				}
 			}

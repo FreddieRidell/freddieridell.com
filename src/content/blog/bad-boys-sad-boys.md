@@ -2,7 +2,8 @@
 
 published: 1512992615
 title: Bad Boys & Sad Boys
-abstract: Compasion is hard
+abstract: Compassion is hard
+emoji: 🤷
 
 ---
 

@@ -3,6 +3,7 @@
 title: Cool Shonen Manga Idea
 published: 1508244090
 date: 1508244090
+emoji: 🎄
 
 ---
 

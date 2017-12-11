@@ -1,4 +1,8 @@
-# Wren Semver
+---
+
+title: Wren Semver
+
+---
 
 It's nice
 

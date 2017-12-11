@@ -11,6 +11,7 @@
     "gatsby-plugin-styled-components": "^2.0.3",
     "gatsby-source-filesystem": "^1.5.8",
     "gatsby-transformer-remark": "^1.7.21",
+    "normalize.css": "^7.0.0",
     "polished": "^1.9.0",
     "ramda": "^0.25.0",
     "styled-components": "^2.2.4"

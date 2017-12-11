@@ -1,4 +1,8 @@
-# Open Source
+---
+
+title: Open Source
+
+---
 
 ## [ContentEditableComponent][ce]
 While working on [Codogo Write][codogoWrite], we found a need for a react component that would allow us to work simply with `content-editable` elements in the DOM. Click [here](/open-source/content-editable-component/) for more information.
