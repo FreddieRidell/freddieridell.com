@@ -9,4 +9,4 @@ pipelines:
           #- ./generateFavicons.sh
           - yarn run format
           - yarn run build
-          - aws s3 sync build s3://freddieridell.com
+          - aws s3 sync public s3://freddieridell.com
