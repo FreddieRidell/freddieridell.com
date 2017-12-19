@@ -4,9 +4,6 @@ title: Open Source
 
 ---
 
-## [ContentEditableComponent][ce]
-While working on [Codogo Write][codogoWrite], we found a need for a react component that would allow us to work simply with `content-editable` elements in the DOM. Click [here](/open-source/content-editable-component/) for more information.
-
 ## [Dotfiles][dotfiles]
 Since dropbox ruined all my dotfiles for the third time, I've since started storing them on [github][dotfiles]. This repo contains my config for:
 
@@ -28,6 +25,9 @@ Wren is a dinky little scripting language that I am somewhat involved in. It is 
 + [tree][wrenTree]: For pretty printing tree structures.
 + [tempo][wrenTempo]: A date Library.
 + [stream proposal][wrenStreamProposal]: A proposal for introducing streams to the language.
+
+## [ContentEditableComponent][ce]
+While working on [Codogo Write][codogoWrite], we found a need for a react component that would allow us to work simply with `content-editable` elements in the DOM. Click [here](/open-source/content-editable-component/) for more information.
 
 [ce]: https://www.npmjs.com/package/content-editable-component
 [codogoWrite]: https://write.codogo.io

@@ -42,8 +42,10 @@ export default ({ data, }) => (
 
 		<hr />
 
-		This page is still very much a work in progress, but I'm adding new content to it every day.
-		Please do check back in regularly
+		<p>
+			This page is still very much a work in progress, but I'm adding new content to it every day.
+			Please do check back in regularly
+		</p>
 
 		<h2>Addresses</h2>
 		<div id="addresses">

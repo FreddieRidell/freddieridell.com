@@ -3,17 +3,24 @@ import { modularScale, } from "polished";
 import styled from "styled-components";
 
 const Abstract = styled.div`
-	font-size: ${modularScale(1)};
+	font-size: 3rem;
 	font-style: italic;
-	margin-left: 1em;
-	margin-bottom: 0.2em;
+	padding-left: 3rem;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
 	color: gray;
+	position: relative;
 
-	&::before {
+	::after {
+	  content: " ";
 		background-color: gray;
-		width: 0.5em;
-		height: 100%;
+		bottom: 0;
 		display: block;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 1rem;
 	}
 `;
 
@@ -22,8 +29,8 @@ export default ({ data }) => {
 	return (
 		<div>
 			<h1>{post.frontmatter.title}</h1>
-			{post.frontmatter.abstract
-					&&
+			{
+				( post.frontmatter.abstract) &&
 					<Abstract>
 						{post.frontmatter.abstract}
 					</Abstract>
@@ -40,6 +47,7 @@ export const query = graphql`
 	  frontmatter {
 		title
 		abstract
+		emoji
 	  }
 	}
   }

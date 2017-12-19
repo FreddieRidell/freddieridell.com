@@ -10,23 +10,10 @@ import "normalize.css";
 
 import './index.css'
 
-injectGlobal`
-	h1 {
-		font-size: ${ modularScale(3) };
-	}
-
-	h2 {
-		font-size: ${ modularScale(2) };
-	}
-
-	h3 {
-		font-size: ${ modularScale(1) };
-	}
-`;
-
 const ContentPane = styled.div`
 	width: 100%;
-	max-width: 28rem;
+	max-width: 60rem;
+	min-width: 40rem;
 `;
 
 const BreadcrumbContainer = styled.div`
@@ -34,7 +21,7 @@ const BreadcrumbContainer = styled.div`
 
 	& a::after {
 		content: "/";
-		padding: 0 0.33em;
+		padding: 0 1rem;
 		font-weight: normal;
 		text-decoration: none;
 	}
@@ -75,13 +62,11 @@ const Header = ({ location }) => {
 
 const TemplateWrapper = ({ children, ...props, }) => (
 	<ContentPane>
-		<Helmet
-			title="Gatsby Default Starter"
-			meta={[
-				{ name: 'description', content: 'Sample' },
-				{ name: 'keywords', content: 'sample, something' },
-			]}
-		/>
+		<Helmet>
+			<title>
+				Freddie Ridell
+			</title>
+		</Helmet>
 		<Header {...props } />
 		{children()}
 	</ContentPane>
