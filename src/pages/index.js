@@ -33,6 +33,9 @@ export default ({ data, }) => (
 				<a href = "https://refind.com/FreddieRidell?invite=6ea3358605">refind</a>
 			</li>
 			<li>
+				<a href = "dat://1947620f81b5757f08e7c2e119967076f99a0474cad879a86531fd57b1f3e4bd/">rotonde</a>
+			</li>
+			<li>
 				<a href = "https://toot.cafe/@freddieRidell" >mastodon</a>
 			</li>
 			<li>
