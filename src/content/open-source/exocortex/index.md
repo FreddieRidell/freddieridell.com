@@ -22,3 +22,41 @@ This make the [`jask`][jask] engine a perfect match for storing a wide variety o
 + /(Break out|generalise)/ /(query|mutator)/ engine 
 + Create cli/web interface for making arbitrary changes to any data item
 + Generalise [`jask`][jask] as a viewer on all data (only displays data tagged with the `task` property.
+
+## Action Specification 
+```js
+//example execution:
+
+(
+	state = {} //empty state
+	action = {
+		timestamp: Int, //must include a timestamp
+		object: UUID, //which object will we opperate on
+		mutations: [ //a list of mutations to apply
+			{
+				type: assoc | dissoc, //are we setting or clearing a property?
+				path: [ foo, bar, ], //eg: [ "dueDate", ], or [ "tags", "finance", ],
+				value: Any,
+			},
+			...
+		]
+	}
+) => ({
+	state: { //all the objects
+		uuid: {
+			foo: {
+				bar: {
+					value,
+				},
+			},
+		},
+	},
+	lookup: { //a structure to help with queries and lookups
+		foo: {
+			bar: Set([
+				uuid, //allows for both 1-2-many and many-2-many connections
+			]),
+		},
+	},
+})
+```
