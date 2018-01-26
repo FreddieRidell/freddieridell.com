@@ -24,6 +24,7 @@
 	"license": "MIT",
 	"main": "n/a",
 	"scripts": {
+		"serverless-deploy": "serverless deploy",
 		"build": "./installAutoPosters.sh && gatsby build",
 		"develop": "gatsby develop",
 		"format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",

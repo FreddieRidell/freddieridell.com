@@ -1,9 +1,7 @@
 #!/bin/bash
 
-cd autoPosters
-for x in * ; do
+for x in autoPosters/* ; do
 	pushd $x
-		yarn 
-		yarn deploy
+		../../node_modules/.bin/serverless deploy 
 	popd;
 done
