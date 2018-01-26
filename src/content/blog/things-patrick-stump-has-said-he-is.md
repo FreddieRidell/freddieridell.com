@@ -1,10 +1,10 @@
 ---
 
-title: List of things Patrick Stump has said he
+title: "Breaking: Patrick Stump reveals he..."
+emoji: 👨‍🎤
+published: 1516980662
 
 ---
-
-# Breaking: Patrick Stump reveals he:
 
 * is only a liar
 * is the best

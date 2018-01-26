@@ -1,0 +1,16 @@
+service: patrick-stumper
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: eu-west-1
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - schedule: "cron(0 0/2 * * ? *)"
+    environment:
+      TWITTER_CONSUMER_KEY: ${env:PATRICK_TWITTER_CONSUMER_KEY}
+      TWITTER_CONSUMER_SECRET: ${env:PATRICK_TWITTER_CONSUMER_SECRET}
+      TWITTER_ACCESS_TOKEN: ${env:PATRICK_TWITTER_ACCESS_TOKEN}
+      TWITTER_ACCESS_TOKEN_SECRET: ${env:PATRICK_TWITTER_ACCESS_TOKEN_SECRET}
