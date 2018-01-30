@@ -1,6 +1,6 @@
 "use strict";
 
-require('dotenv').config()
+//require('dotenv').config()
 var Twit = require('twit')
 
 var T = new Twit({
@@ -76,7 +76,7 @@ const sufixes = [
 "is a coal mine, you're a canary",
 "speaks fast and is not gonna repeat himself",
 "is in love with his own sins",
-"is not a crybaby, he's _the_ crybaby ",
+"is not a crybaby, he's the crybaby ",
 "can feel the weather in his bones",
 "is a nervous wreck is the last of his kind is a nervous wreck, is a nervous wreck, is a nervous wreck huh, is a n-n-nervous wreck, is a nervous wreck",
 "is a young lover's rage",
