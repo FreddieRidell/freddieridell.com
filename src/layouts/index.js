@@ -12,7 +12,7 @@ import './index.css'
 
 const ContentPane = styled.div`
   width: 100%;
-  max-width: 60rem;
+  max-width: 70rem;
   min-width: 40rem;
 `
 

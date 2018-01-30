@@ -1,6 +1,6 @@
 ---
 
-title: "Breaking: Patrick Stump reveals he..."
+title: "Patrick Stump FAQs"
 emoji: 👨‍🎤
 published: 1516980662
 
