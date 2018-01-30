@@ -18,6 +18,7 @@ const prefixies = [
 	"This just in, Fall Out Boy front man Patrick Stump exclusively reveals he",
 	"#DidYouKnow Patrick Stump (singer of Fall Out Boy)",
 	"Patrick Stump doesn't want you to discover the horrible truth: that he",
+	"Pete Wentz finally comes clean in new autobiography: Patrick Stump",
 	"I... worked on this story for a year... and... he just... he tweeted it out: Patrick Stump",
 ];
 
@@ -78,7 +79,7 @@ const sufixes = [
 	"is in love with his own sins",
 	"is not a crybaby, he's the crybaby ",
 	"can feel the weather in his bones",
-	"is a nervous wreck is the last of his kind is a nervous wreck, is a nervous wreck, is a nervous wreck huh, is a n-n-nervous wreck, is a nervous wreck",
+	"is a nervous wreck, is a nervous wreck, is a nervous wreck huh, is a n-n-nervous wreck, is a nervous wreck",
 	"is a young lover's rage",
 	"is on fire",
 	"is here to collect your hearts; it's the only reason that he sings",
