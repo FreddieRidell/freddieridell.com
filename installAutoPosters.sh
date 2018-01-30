@@ -2,6 +2,7 @@
 
 for x in autoPosters/* ; do
 	pushd $x
-		../../node_modules/.bin/serverless deploy 
+		yarn install ;
+		yarn deploy ;
 	popd;
 done

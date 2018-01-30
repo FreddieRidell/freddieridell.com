@@ -1,6 +1,6 @@
 "use strict";
 
-//require('dotenv').config()
+require('dotenv').config()
 var Twit = require('twit')
 
 var T = new Twit({
