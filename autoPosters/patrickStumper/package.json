@@ -9,5 +9,8 @@
 	"dependencies": {
 		"dotenv": "^5.0.0",
 		"twit": "^2.2.9"
+	},
+	"devDependencies": {
+		"serverless": "^1.26.0"
 	}
 }
