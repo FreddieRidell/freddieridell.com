@@ -64,7 +64,7 @@ h4, h5, h6 {
 ul, ol {
 	margin-top: 0;
 	margin-bottom: 1rem;
-	padding-left: 1rem;
+	padding-left: 2rem;
 }
 
 li {
@@ -98,3 +98,6 @@ img {
 	box-shadow: 0 4px 8px rgba(0,0,0,0.16), 0 4px 8px rgba(0,0,0,0.23);
 }
 
+br {
+	margin: 1rem;
+}
