@@ -8,7 +8,7 @@ functions:
   hello:
     handler: handler.hello
     events:
-      - schedule: cron(0 0/2 * * ? *)
+      - schedule: cron(0 0/7 * * ? *)
     environment:
       TWITTER_CONSUMER_KEY: ${env:PATRICK_TWITTER_CONSUMER_KEY}
       TWITTER_CONSUMER_SECRET: ${env:PATRICK_TWITTER_CONSUMER_SECRET}

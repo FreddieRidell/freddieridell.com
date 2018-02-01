@@ -10,8 +10,6 @@ var T = new Twit({
 	access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
 })
 
-console.log(process.env);
-
 const prefixies = [
 	"Breaking news: Patrick Stump reveals he",
 	"Hot Damn: Patrick Stump announces he",
