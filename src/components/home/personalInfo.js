@@ -11,19 +11,18 @@ const Bio = styled.p`
 `;
 
 const ContactsContainer = system({
-	justify: "space-around",
 	mb: 1,
 	flex: 1,
 	align: "flex-end",
-	justify: [ "flex-start", "flex-end", ],
+	justify: ["flex-start", "flex-end",],
 }).extend`
 	display: flex;
 `;
 
 const Contact = system({
 	is: "a",
-	pl: [ 0, 2, ],
-	pr: [ 2, 0, ],
+	pl: [0, 2,],
+	pr: [2, 0,],
 	color: "grey",
 	hover: {
 		color: "black",
@@ -67,14 +66,13 @@ const ContactDetails = () => (
 );
 
 const NameAndDeets = system({
-	flexDirection: [ "column", "row", ],
+	flexDirection: ["column", "row",],
 }).extend`
 	display: flex;
 `;
 
 export default () => (
 	<Section>
-
 		<NameAndDeets>
 			<H1>Freddie Ridell</H1>
 			<ContactDetails />
@@ -85,6 +83,5 @@ export default () => (
 			in React.js and React Native. I'm currently looking for new
 			oportunities as a contractor in London.
 		</Bio>
-
 	</Section>
 );

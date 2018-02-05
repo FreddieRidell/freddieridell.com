@@ -10,4 +10,3 @@ export default styled.hr`
 	width: 100%;
 	margin: 1rem 0;
 `;
-

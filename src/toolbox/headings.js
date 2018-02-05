@@ -22,4 +22,3 @@ export const H3 = system({
 	mt: 2,
 	mb: 1,
 });
-
