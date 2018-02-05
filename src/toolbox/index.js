@@ -9,10 +9,8 @@ export { default as Section, } from "./section";
 
 const IconStlyed = system({
 	is: "svg",
-	w: 32,
-}).extend`
-	display: block;
-`;
+	w: 24,
+});
 
 export const Icon = ({ name, attrs, ...props }) => (
 	<IconStlyed

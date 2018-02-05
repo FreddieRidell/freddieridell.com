@@ -13,11 +13,13 @@ const SectionContainer = system({
 
 const HeadingContainer = styled(H2)`
 	display: flex;
+	align-items: center;
 	${ ({ toggleable, }) => toggleable ? "cursor: pointer;" : "" }
 `;
 
 const Triangle = system({
-	mr: 1,
+	ml: 1,
+	fontSize: 2,
 }).extend`
 	transform: rotate(${ ({ open, }) => open ? 0 : -90 }deg);
 	transition: transform ${ ({ theme: { transition, }, }) => transition };
@@ -42,8 +44,6 @@ export default class Section extends React.Component {
 	}
 
 	render(){
-		console.log(this.state);
-
 		return (
 			<SectionContainer>
 				{this.props.title && (
@@ -52,18 +52,18 @@ export default class Section extends React.Component {
 							toggleable = { this.props.toggleable }
 							onClick = { this.toggleOpen }
 						>
+							{this.props.title}
 							{
 								this.props.toggleable &&
 									<Triangle open = { this.state.open } >
 										▼
 									</Triangle>
 							}
-							{this.props.title}
 						</HeadingContainer>
 					</heading>
 				)}
 
-				{ this.state.open && this.props.children}
+				{ this.state.open && this.props.children }
 
 				<Hr />
 			</SectionContainer>

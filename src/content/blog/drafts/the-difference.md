@@ -1,7 +1,11 @@
 ---
 
-title: the difference
+title: The Difference
+emoji: 💸 
+tags: [ social, money ]
 
 ---
 
-Is the core difference between rich and poor the level/number of oportunities, or is
+It's no secret that children from poorer families are more likely to grow up to be poor themselves. Some of the reasons for this are obvious, and easy to understand:
+
++ 
