@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-import system from 'system-components'
+import system from "system-components";
 
 import { Section, } from "../../toolbox";
 
@@ -16,24 +16,22 @@ const AddressesCodeBlock = system({
 `;
 
 export default () => (
-	<Section title = "Addresses"> 
+	<Section title = "Addresses">
 		<AddressesCodeBlock>
 			pgp: 6BE0AF404BB9D844281F3DA5ACD8B92700BF93A0
-			{'\n'}
+			{"\n"}
 			eth: 0x330E067E74FB15d4A71e58afFf459Db92eA85a78
-			{'\n'}
+			{"\n"}
 			monero:
 			46CFjzzLYuWJtT1tuFaRSTRp3XnqH8rUB6j8CpHgXC9EG3WBbdzfQKXZxcKNSoz28AS4hPRus7acaG5XEiEAvkkX3izgNkg
-			{'\n'}
+			{"\n"}
 			btc: 159CcWg7MvmKePfUoKxXYRf2TPEorGzqGD
-			{'\n'}
+			{"\n"}
 			ltc: LfZdJDtwNpsKrsJYEgqAuJnCBoyiMPYs1Y
-			{'\n'}
+			{"\n"}
 			doge: DEVPfEpNTeTzUMzttfdxZ9ULTUAqzY2vPw
-			{'\n'}
+			{"\n"}
 			Yu Gi Oh Duel Links: 549-882-525
 		</AddressesCodeBlock>
 	</Section>
 );
-
-

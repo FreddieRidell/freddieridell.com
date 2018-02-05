@@ -1,7 +1,29 @@
-import React from 'react';
+import React from "react";
 
-import styled from 'styled-components';
-import system from 'system-components';
+import styled from "styled-components";
+import system from "system-components";
+import feather from "feather-icons";
+
+const IconStlyed = system({
+	is: "svg",
+	w: 32,
+}).extend`
+	display: block;
+`;
+
+export const Icon = ({ name, attrs, ...props }) => (
+	<IconStlyed
+		{ ...props }
+		xmlns = "http://www.w3.org/2000/svg"
+		viewBox = "0 0 24 24"
+		fill = "none"
+		stroke = "currentColor"
+		strokeWidth = { 2 }
+		strokeLinecap = "round"
+		strokeLinejoin = "round"
+		dangerouslySetInnerHTML = { { __html: feather.icons[name].toString(), } }
+	/>
+);
 
 export const H1 = system({
 	is: "h1",
@@ -46,7 +68,6 @@ export const Note = system({
 	my: 1,
 	color: "gray",
 });
-	
 
 export const Hr = styled.hr`
 	background: black;
@@ -64,10 +85,14 @@ const SectionContainer = system({
 
 export const Section = ({ title, children, }) => (
 	<SectionContainer>
-		{ title && <heading><H2> {title } </H2></heading>}
+		{title && (
+			<heading>
+				<H2> {title} </H2>
+			</heading>
+		)}
 
-		{ children } 
+		{children}
 
-		<Hr/>
+		<Hr />
 	</SectionContainer>
 );

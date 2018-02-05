@@ -9,6 +9,7 @@
 	"dependencies": {
 		"date-fns": "^2.0.0-alpha.7",
 		"dotenv": "^5.0.0",
+		"feather-icons": "^4.5.0",
 		"gatsby": "1.9.167",
 		"gatsby-link": "^1.6.35",
 		"gatsby-plugin-react-helmet": "^2.0.4",
@@ -33,7 +34,7 @@
 		"build-all": "./installAutoPosters.sh && gatsby build",
 		"build": "gatsby build",
 		"develop": "gatsby develop",
-		"format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+		"format": "prettier --use-tags --tab-width 4 --trailing-comma all --write \"src/**/*.js\" && eslint --fix src",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"devDependencies": {
