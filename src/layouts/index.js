@@ -82,6 +82,7 @@ const theme = {
 	breakpoints: [32, 48, 64,],
 	space: [0, 8, 16, 24, 32,],
 	fontSizes: [12, 16, 18, 24, 36, 72,],
+	transition: "0.2s",
 	colors: {
 		black: "#111",
 		white: "#fff",

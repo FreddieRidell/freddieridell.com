@@ -1,8 +1,11 @@
 import React from "react";
 
-import styled from "styled-components";
 import system from "system-components";
 import feather from "feather-icons";
+
+export * from "./headings";
+export { default as Hr, } from "./horizontalRule";
+export { default as Section, } from "./section";
 
 const IconStlyed = system({
 	is: "svg",
@@ -24,27 +27,6 @@ export const Icon = ({ name, attrs, ...props }) => (
 		dangerouslySetInnerHTML = { { __html: feather.icons[name].toString(), } }
 	/>
 );
-
-export const H1 = system({
-	is: "h1",
-	fontSize: 4,
-	mt: 2,
-	mb: 1,
-});
-
-export const H2 = system({
-	is: "h2",
-	fontSize: 3,
-	mt: 2,
-	mb: 1,
-});
-
-export const H3 = system({
-	is: "h3",
-	fontSize: 2,
-	mt: 2,
-	mb: 1,
-});
 
 export const RegularPadding = system({
 	fontSize: 1,
@@ -68,31 +50,3 @@ export const Note = system({
 	my: 1,
 	color: "gray",
 });
-
-export const Hr = styled.hr`
-	background: black;
-	border: 0;
-	height: 1px;
-	max-width: 100%;
-	width: 100%;
-	margin: 1rem 0;
-`;
-
-const SectionContainer = system({
-	is: "section",
-	my: 4,
-});
-
-export const Section = ({ title, children, }) => (
-	<SectionContainer>
-		{title && (
-			<heading>
-				<H2> {title} </H2>
-			</heading>
-		)}
-
-		{children}
-
-		<Hr />
-	</SectionContainer>
-);

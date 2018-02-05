@@ -1,6 +1,5 @@
 import React from "react";
 
-import Link from "gatsby-link";
 import styled from "styled-components";
 import system from "system-components";
 
@@ -19,31 +18,43 @@ const ContactsContainer = system({
 `;
 
 const Contact = system({
-	is: Link,
+	is: "a",
 	color: "grey",
-});
+	hover: {
+		color: "black",
+	},
+	active: {
+		color: "black",
+	},
+}).extend`
+	transition: all, 0.5s;
+`;
 
 const ContactDetails = () => (
 	<ContactsContainer>
 		{[
 			{
-				to: "mailto:freddie.ridell@gmail.com",
+				title: "email",
+				href: "mailhref:freddie.ridell@gmail.com",
 				name: "mail",
 			},
 			{
-				to: "https://twitter.com/FreddieRidell",
+				title: "twitter",
+				href: "https://twitter.com/FreddieRidell",
 				name: "twitter",
 			},
 			{
-				to: "tel:+447521160572",
+				title: "phone",
+				href: "tel:+447521160572",
 				name: "phone",
 			},
 			{
-				to: "https://github.com/CodogoFreddie",
+				title: "github",
+				href: "https://github.com/CodogoFreddie",
 				name: "github",
 			},
-		].map(({ to, name, }) => (
-			<Contact to = { to } key = { to }>
+		].map(({ href, name, title, }) => (
+			<Contact title = { title } href = { href } key = { href }>
 				<Icon name = { name } />
 			</Contact>
 		))}
