@@ -4,6 +4,7 @@ import styled from "styled-components";
 import system from "system-components";
 
 import { H2, } from "./headings";
+import { SilentLink, } from "./link";
 import Hr from "./horizontalRule";
 
 const SectionContainer = system({
@@ -44,7 +45,7 @@ export default class Section extends React.Component {
 	};
 
 	render() {
-		return (
+		const inner = (
 			<SectionContainer>
 				{this.props.title && (
 					<heading>
@@ -65,5 +66,11 @@ export default class Section extends React.Component {
 				<Hr />
 			</SectionContainer>
 		);
+
+		return (
+			this.props.to
+			? <SilentLink to = { this.props.to } > { inner } </SilentLink>
+					: inner
+			);
 	}
 }

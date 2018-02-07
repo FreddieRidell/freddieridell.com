@@ -4,6 +4,7 @@ import system from "system-components";
 import feather from "feather-icons";
 
 export * from "./headings";
+export * from "./link";
 export { default as Hr, } from "./horizontalRule";
 export { default as Section, } from "./section";
 
@@ -48,3 +49,4 @@ export const Note = system({
 	my: 1,
 	color: "gray",
 });
+
