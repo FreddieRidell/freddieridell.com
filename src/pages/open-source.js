@@ -1,21 +1,16 @@
 import React from "react";
-import { modularScale, } from "polished";
-import format from "date-fns/format";
 import R from "ramda";
-import styled from "styled-components";
 
-import { SilentLink, Section, H1, } from "../toolbox";
+import { Section, H1, } from "../toolbox";
 
-const OpenSourceSection = ({ title, slug, excerpt, }) => (
-			<Section
-				title = { title } 
-				to = { slug }
-			>
-				{ excerpt }
-			</Section>
+const OpenSourceSection = ({ title, slug, abstract, excerpt, }) => (
+	<Section title = { title } to = { slug } >
+		{ abstract || excerpt }
+	</Section>
 );
 
 export default ({ data, }) => {
+	console.log(data);
 	const openSourcePages = R.pipe(
 		R.path([ "allMarkdownRemark", "edges", ]),
 		R.pluck("node"),
@@ -25,10 +20,11 @@ export default ({ data, }) => {
 			...frontmatter,
 		})),
 
-		R.filter( R.both(
+		R.filter( R.allPass([
 			R.prop("title"),
 			R.prop("published"),
-		)),
+			R.prop("listed"),
+		])),
 
 		R.sortBy(R.prop("published")),
 
@@ -43,12 +39,12 @@ export default ({ data, }) => {
 
 			{
 				openSourcePages.map( ({ slug, ...rest, }) => (
-						<OpenSourceSection
-							key = { slug }
-							slug = { slug } 
-							{ ...rest }
-						/>
-					)
+					<OpenSourceSection
+						key = { slug }
+						slug = { slug } 
+						{ ...rest }
+					/>
+				)
 				)
 			}
 		</div>
@@ -72,7 +68,8 @@ export const query = graphql`
 					frontmatter {
 						title
 						published
-						excerpt
+						abstract
+						listed
 					}
 				}
 			}

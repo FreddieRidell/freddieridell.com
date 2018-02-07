@@ -25,7 +25,7 @@ const SitemapContainer = system({
 	flexDirection: ["column", "row",],
 	align: "flex-end",
 }).extend`
-	display: flex;
+	display: none;
 `;
 
 const Link = system({
