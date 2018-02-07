@@ -1,5 +1,4 @@
 import React from "react";
-import { modularScale, } from "polished";
 import styled from "styled-components";
 
 const Abstract = styled.div`
@@ -12,7 +11,7 @@ const Abstract = styled.div`
 	position: relative;
 
 	::after {
-	  content: " ";
+		content: " ";
 		background-color: gray;
 		bottom: 0;
 		display: block;
@@ -24,32 +23,28 @@ const Abstract = styled.div`
 	}
 `;
 
-export default ({ data }) => {
+export default ({ data, }) => {
 	const post = data.markdownRemark;
 	return (
 		<div>
 			<h1>{post.frontmatter.title}</h1>
-			{
-				( post.frontmatter.abstract) &&
-					<Abstract>
-						{post.frontmatter.abstract}
-					</Abstract>
-			}
-			<div dangerouslySetInnerHTML={{ __html: post.html }} />
+			{post.frontmatter.abstract && (
+				<Abstract>{post.frontmatter.abstract}</Abstract>
+			)}
+			<div dangerouslySetInnerHTML = { { __html: post.html, } } />
 		</div>
 	);
 };
 
 export const query = graphql`
-  query BlogPostQuery($slug: String!) {
-	markdownRemark(fields: { slug: { eq: $slug } }) {
-	  html
-	  frontmatter {
-		title
-		abstract
-		emoji
-	  }
+	query BlogPostQuery($slug: String!) {
+		markdownRemark(fields: { slug: { eq: $slug } }) {
+			html
+			frontmatter {
+				title
+				abstract
+				emoji
+			}
+		}
 	}
-  }
 `;
-

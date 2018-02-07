@@ -1,0 +1,16 @@
+{
+	"name": "patrickStumper",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"deploy": "serverless deploy"
+	},
+	"dependencies": {
+		"dotenv": "^5.0.0",
+		"twit": "^2.2.9"
+	},
+	"devDependencies": {
+		"serverless": "^1.26.0"
+	}
+}

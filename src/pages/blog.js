@@ -1,7 +1,7 @@
 import React from "react";
 import { modularScale, } from "polished";
 import format from "date-fns/format";
-import Link from 'gatsby-link'
+import Link from "gatsby-link";
 import R from "ramda";
 import styled from "styled-components";
 
@@ -16,11 +16,11 @@ const StyledBlogTitleDateContainer = styled.div`
 `;
 
 const BlogLinkTitle = styled.div`
-	font-size: ${ modularScale(1) };
+	font-size: ${modularScale(1)};
 `;
 
 const BlogLinkDate = styled.div`
-	font-size: ${ modularScale(-1) };
+	font-size: ${modularScale(-1)};
 	font-weight: normal;
 `;
 
@@ -29,34 +29,38 @@ const BlogLinkExcerpt = styled.div`
 `;
 
 const BlogLink = ({ emoji, abstract, title, published, slug, excerpt, }) => (
-	<StyledBlogLink >
-		<Link to = { slug }> 
+	<StyledBlogLink>
+		<Link to = { slug }>
 			<StyledBlogTitleDateContainer>
-				<BlogLinkTitle >
-				 {title} { emoji }
-			</BlogLinkTitle>
-			<BlogLinkDate>
-				{published}
-			</BlogLinkDate>
-		</StyledBlogTitleDateContainer>
-		<BlogLinkExcerpt>
-			{ abstract || excerpt}
-		</BlogLinkExcerpt>
-	</Link>
+				<BlogLinkTitle>
+					{title} {emoji}
+				</BlogLinkTitle>
+				<BlogLinkDate>{published}</BlogLinkDate>
+			</StyledBlogTitleDateContainer>
+			<BlogLinkExcerpt>{abstract || excerpt}</BlogLinkExcerpt>
+		</Link>
 	</StyledBlogLink>
 );
 
-export default ({ data, ...props, }) => {
+export default ({ data, }) => {
 	const links = R.pipe(
-		R.path([ "allMarkdownRemark", "edges", ]),
-		R.map( ({ node: { excerpt, frontmatter: { emoji, abstract, title, published, }, fields: { slug, } } }) => ({
-			title,
-			published,
-			slug,
-			excerpt,
-			abstract,
-			emoji,
-		})),
+		R.path(["allMarkdownRemark", "edges",]),
+		R.map(
+			({
+				node: {
+					excerpt,
+					frontmatter: { emoji, abstract, title, published, },
+					fields: { slug, },
+				},
+			}) => ({
+				title,
+				published,
+				slug,
+				excerpt,
+				abstract,
+				emoji,
+			}),
+		),
 
 		R.filter(R.prop("published")),
 
@@ -64,31 +68,30 @@ export default ({ data, ...props, }) => {
 
 		R.reverse,
 
-		R.map(R.evolve({
-			published: published => format( new Date( 1000 * published), "DD/MM/YY"),
-		})),
+		R.map(
+			R.evolve({
+				published: published =>
+					format(new Date(1000 * published), "DD/MM/YY"),
+			}),
+		),
 	)(data);
 
 	return (
 		<div>
-			{ links.length } Posts
-			{
-				links.map( (props) => (
-					<BlogLink key = { props.slug } { ...props } />
-				))
-			}
+			{links.length} Posts
+			{links.map(props => <BlogLink key = { props.slug } { ...props } />)}
 		</div>
 	);
 };
 
 export const query = graphql`
-query AboutQuery {
+	query AboutQuery {
 		site {
 			siteMetadata {
 				title
 			}
 		}
-		allMarkdownRemark(filter: {fields: {slug: {regex: "/^\/blog/"}}}) {
+		allMarkdownRemark(filter: { fields: { slug: { regex: "/^/blog/" } } }) {
 			edges {
 				node {
 					fileAbsolutePath
@@ -96,7 +99,7 @@ query AboutQuery {
 					excerpt
 					timeToRead
 					fields {
-						slug 
+						slug
 					}
 					frontmatter {
 						title
@@ -108,4 +111,4 @@ query AboutQuery {
 			}
 		}
 	}
-`
+`;
