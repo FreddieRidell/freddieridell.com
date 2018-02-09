@@ -49,4 +49,3 @@ export const Note = system({
 	my: 1,
 	color: "gray",
 });
-

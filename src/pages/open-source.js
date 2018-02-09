@@ -1,53 +1,14 @@
 import React from "react";
-import R from "ramda";
 
-import { Section, H1, } from "../toolbox";
-
-const OpenSourceSection = ({ title, slug, abstract, excerpt, }) => (
-	<Section title = { title } to = { slug } >
-		{ abstract || excerpt }
-	</Section>
-);
+import PostListings from "../components/postListings";
 
 export default ({ data, }) => {
-	console.log(data);
-	const openSourcePages = R.pipe(
-		R.path([ "allMarkdownRemark", "edges", ]),
-		R.pluck("node"),
-		R.map( ({ fields, frontmatter, ...rest, }) => ({
-			...rest,
-			...fields,
-			...frontmatter,
-		})),
-
-		R.filter( R.allPass([
-			R.prop("title"),
-			R.prop("published"),
-			R.prop("listed"),
-		])),
-
-		R.sortBy(R.prop("published")),
-
-	)(data);
-
 	return (
-		<div>
-			<Section>
-				<H1>Open Source
-				</H1>
-			</Section>
-
-			{
-				openSourcePages.map( ({ slug, ...rest, }) => (
-					<OpenSourceSection
-						key = { slug }
-						slug = { slug } 
-						{ ...rest }
-					/>
-				)
-				)
-			}
-		</div>
+		<PostListings
+			title = "Open Source"
+			data = { data }
+			requiredFrontmatter = { ["listed", "published", "title",] }
+		/>
 	);
 };
 
@@ -58,7 +19,9 @@ export const query = graphql`
 				title
 			}
 		}
-		allMarkdownRemark(filter: { fields: { slug: { regex: "/^/open-source/" } } }) {
+		allMarkdownRemark(
+			filter: { fields: { slug: { regex: "/^/open-source/" } } }
+		) {
 			edges {
 				node {
 					fields {
@@ -67,13 +30,12 @@ export const query = graphql`
 					excerpt
 					frontmatter {
 						title
-						published
 						abstract
 						listed
+						published
 					}
 				}
 			}
 		}
 	}
 `;
-

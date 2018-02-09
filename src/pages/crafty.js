@@ -1,10 +1,11 @@
 import React from "react";
 
 import PostListings from "../components/postListings";
+
 export default ({ data, }) => {
 	return (
 		<PostListings
-			title = "Blog"
+			title = "Crafts"
 			data = { data }
 			requiredFrontmatter = { ["title", "published",] }
 		/>
@@ -12,13 +13,15 @@ export default ({ data, }) => {
 };
 
 export const query = graphql`
-	query BlogPostsQuery {
+	query CraftyPostsQuery {
 		site {
 			siteMetadata {
 				title
 			}
 		}
-		allMarkdownRemark(filter: { fields: { slug: { regex: "/^/blog/" } } }) {
+		allMarkdownRemark(
+			filter: { fields: { slug: { regex: "/^/crafty/" } } }
+		) {
 			edges {
 				node {
 					fileAbsolutePath
@@ -32,6 +35,7 @@ export const query = graphql`
 						title
 						abstract
 						emoji
+						image
 						published
 					}
 				}

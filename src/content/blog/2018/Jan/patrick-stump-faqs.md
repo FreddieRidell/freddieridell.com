@@ -2,7 +2,8 @@
 
 title: "Patrick Stump FAQs"
 emoji: 👨‍🎤
-published: 1516980662
+published: "2018-01-26"
+abstract: "Patrick Stump has been in the news lately, what's that naughty boy been up to?"
 
 ---
 

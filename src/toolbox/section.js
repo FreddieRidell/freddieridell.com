@@ -10,7 +10,14 @@ import Hr from "./horizontalRule";
 const SectionContainer = system({
 	is: "section",
 	my: 4,
-});
+}).extend`
+	${({ image, }) =>
+		image
+			? `
+			background-image: url("${image}");
+			`
+			: ""}
+`;
 
 const HeadingContainer = styled(H2)`
 	display: flex;
@@ -46,7 +53,7 @@ export default class Section extends React.Component {
 
 	render() {
 		const inner = (
-			<SectionContainer>
+			<SectionContainer image = { this.props.image }>
 				{this.props.title && (
 					<heading>
 						<HeadingContainer
@@ -67,10 +74,10 @@ export default class Section extends React.Component {
 			</SectionContainer>
 		);
 
-		return (
-			this.props.to
-			? <SilentLink to = { this.props.to } > { inner } </SilentLink>
-					: inner
-			);
+		return this.props.to ? (
+			<SilentLink to = { this.props.to }> {inner} </SilentLink>
+		) : (
+			inner
+		);
 	}
 }

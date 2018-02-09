@@ -1,13 +1,13 @@
 ---
 
 title: Wren
-published: 2,
+published: "2018-02-07"
 listed: true
 tags: [ wren, code, git, openSource, ]
 
 ---
 
-Wren is a dinky little scripting language that I am somewhat involved in. It is class based, byte-code interpreted, very fast, and has cooperative multi-tasking at its core. It was created by the venerable [Bob Nystrom][bob]. I've authored various open source wren packages, including:
+Wren is a dinky little scripting language that I've taken a strong interest in. It is class based, byte-code interpreted, very fast, and has cooperative multi-tasking at its core. It was created by the venerable [Bob Nystrom][bob]. I've authored various open source wren packages, including:
 
 + [semver][wrenSemver]: For SemVer parsing and comparing.
 + [mesh][wrenMesh]: For working with the `.obj` mesh format.

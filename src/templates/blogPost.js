@@ -1,13 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import system from "system-components";
 
-const Abstract = styled.div`
-	font-size: 3rem;
+import { Section, } from "../toolbox";
+
+const Abstract = system({
+	fontSize: 2,
+	pl: 2,
+	my: 2,
+	color: "gray",
+}).extend`
 	font-style: italic;
-	padding-left: 3rem;
-	margin-bottom: 2rem;
-	margin-top: 2rem;
-	color: gray;
 	position: relative;
 
 	::after {
@@ -19,20 +22,35 @@ const Abstract = styled.div`
 		left: 0;
 		position: absolute;
 		top: 0;
-		width: 1rem;
+		width: 0.5em;
+	}
+`;
+
+const MarkdownContainer = styled.div`
+	p {
+		margin-bottom: 8px;
+	}
+
+	img {
+		width: 100%;
 	}
 `;
 
 export default ({ data, }) => {
 	const post = data.markdownRemark;
 	return (
-		<div>
-			<h1>{post.frontmatter.title}</h1>
+		<Section>
+			<h1>
+				{" "}
+				{post.frontmatter.title} {post.frontmatter.emoji}{" "}
+			</h1>
 			{post.frontmatter.abstract && (
 				<Abstract>{post.frontmatter.abstract}</Abstract>
 			)}
-			<div dangerouslySetInnerHTML = { { __html: post.html, } } />
-		</div>
+			<MarkdownContainer
+				dangerouslySetInnerHTML = { { __html: post.html, } }
+			/>
+		</Section>
 	);
 };
 

@@ -28,7 +28,6 @@ const ContentPane = system({
 	min-width: 40rem;
 `;
 
-
 const theme = {
 	breakpoints: [32, 48, 64,],
 	space: [0, 8, 16, 24, 32,],

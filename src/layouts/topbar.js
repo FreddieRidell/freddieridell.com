@@ -2,8 +2,6 @@ import React from "react";
 
 import R from "ramda";
 import GatsbyLink from "gatsby-link";
-import styled, { ThemeProvider, } from "styled-components";
-import { space, } from "styled-system";
 import system from "system-components";
 
 const Topbar = system({
@@ -25,14 +23,14 @@ const SitemapContainer = system({
 	flexDirection: ["column", "row",],
 	align: "flex-end",
 }).extend`
-	display: none;
+	display: flex;
 `;
 
 const Link = system({
 	is: GatsbyLink,
 	color: "white",
 	fontWeight: "bold",
-	mr: 1
+	mr: 1,
 });
 
 const Seperator = system({
@@ -71,11 +69,10 @@ export default ({ location, }) => {
 			</BreadcrumbContainer>
 
 			<SitemapContainer>
-				<Link to = "/blog" >Blog</Link>
-				<Link to = "/crafty" >Crafts</Link>
-				<Link to = "/open-source" >Open Source</Link>
+				<Link to = "/blog">Blog</Link>
+				<Link to = "/crafty">Crafts</Link>
+				<Link to = "/open-source">Open Source</Link>
 			</SitemapContainer>
 		</Topbar>
 	);
 };
-

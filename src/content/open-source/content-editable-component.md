@@ -1,8 +1,7 @@
 ---
 
 title: ContentEditableComponent
-published: 1508244090
-listed: true
+listed: false 
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 
 title: Dotfiles
-published: 1
+published: "2017-09-02"
 listed: true
 abstract: The dotfiles and configs for all the programs I use
 tags: [ zsh, shell, config, openSource, git, i3, task, nvim, lemonbar, vim ]

@@ -1,8 +1,7 @@
 ---
 
 title: Cool Shonen Manga Idea
-published: 1508244090
-date: 1508244090
+published: "2017-10-17"
 emoji: 🎄
 
 ---
