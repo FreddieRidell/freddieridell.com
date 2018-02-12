@@ -1,5 +1,3 @@
-import React from "react";
-
 import system from "system-components";
 
 export const H1 = system({

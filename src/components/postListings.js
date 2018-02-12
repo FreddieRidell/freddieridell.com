@@ -41,7 +41,7 @@ const generateShaper = (requiredFrontmatter = []) =>
 		R.reverse,
 	);
 
-export default ({ children, title, posts, data, requiredFrontmatter, }) => {
+export default ({ title, posts, data, requiredFrontmatter, }) => {
 	const postsToRender = data
 		? generateShaper(requiredFrontmatter)(data)
 		: posts || [];

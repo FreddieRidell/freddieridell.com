@@ -14,7 +14,9 @@ const formatDate = date => {
 const Experience = ({ position, biz, start, end, children, }) => (
 	<section>
 		<H3 mb = { 0 }>{position}</H3>
-		<H3 mt = { 0 }>{biz}</H3>
+		<H3 fontSize = { 1 } mt = { 0 }>
+			{biz}
+		</H3>
 		<Note>
 			{formatDate(start)} - {end ? formatDate(end) : "Ongoing"}{" "}
 		</Note>
@@ -60,6 +62,27 @@ export default () => (
 				provide tooling for other developers allowed me to gain valuable
 				experience in communicating with other developers across many
 				other teams across Amazon.
+			</P>
+		</Experience>
+
+		<Experience
+			position = "Computer Science Degree (2:1)"
+			biz = "Durham University"
+			start = { new Date("2013-09-01") }
+			end = { new Date(1451606400000) }
+		>
+			<Note>
+				Dissertation: Designing, evaluating, and optimising a system for
+				population simulation.
+			</Note>
+			<P>
+				During my degree I studied a wide range of subjects: from
+				runtime/space analysis and higher order logic to database
+				systems and software development best practices. My exposure to
+				the full range of modern software at a world renowned university
+				provided me with the rock solid foundation I needed to hit the
+				ground running providing elegant and powerful solutions to every
+				problem I've encountered since.
 			</P>
 		</Experience>
 	</Section>

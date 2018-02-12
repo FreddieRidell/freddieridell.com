@@ -6,6 +6,7 @@ export default () => (
 	<Section title = "Skills">
 		<Ul>
 			{[
+				/*eslint-disable no-script-url*/
 				"Javascript: Node, React, ReactNative, Redux, Webpack, Babel, ES6+",
 				"CSS / SCSS",
 				"GraphQL",

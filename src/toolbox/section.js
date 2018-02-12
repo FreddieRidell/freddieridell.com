@@ -22,7 +22,7 @@ const SectionContainer = system({
 const HeadingContainer = styled(H2)`
 	display: flex;
 	align-items: center;
-	${({ toggleable, }) => (toggleable ? "cursor: pointer;" : "")};
+	cursor: pointer;
 `;
 
 const Triangle = system({
@@ -53,13 +53,10 @@ export default class Section extends React.Component {
 
 	render() {
 		const inner = (
-			<SectionContainer image = { this.props.image }>
+			<SectionContainer>
 				{this.props.title && (
 					<heading>
-						<HeadingContainer
-							toggleable = { this.props.toggleable }
-							onClick = { this.toggleOpen }
-						>
+						<HeadingContainer onClick = { this.toggleOpen }>
 							{this.props.title}
 							{this.props.toggleable && (
 								<Triangle open = { this.state.open }>▼</Triangle>

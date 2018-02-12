@@ -3,8 +3,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import "normalize.css";
 import PropTypes from "prop-types";
-import styled, { ThemeProvider, } from "styled-components";
-import { space, } from "styled-system";
+import { ThemeProvider, } from "styled-components";
 import system from "system-components";
 
 import "./index.css";
