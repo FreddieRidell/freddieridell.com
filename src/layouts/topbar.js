@@ -39,7 +39,6 @@ const Seperator = system({
 });
 
 export default ({ location, }) => {
-	console.log(location);
 	const breadcrumb = location.pathname
 		.split("/")
 		.filter(R.length)
