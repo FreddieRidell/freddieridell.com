@@ -81,7 +81,7 @@ export default () => (
 		<Bio>
 			Hi, I'm Freddie Ridell, a Fullstack JavaScript expert specialising
 			in React.js and React Native. I'm currently looking for new
-			oportunities as a contractor in London.
+			opportunities as a contractor in London.
 		</Bio>
 	</Section>
 );
