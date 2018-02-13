@@ -1,4 +1,5 @@
 import React from "react";
+import R from "ramda";
 import styled from "styled-components";
 import system from "system-components";
 
@@ -33,6 +34,14 @@ const MarkdownContainer = styled.div`
 
 	img {
 		width: 100%;
+	}
+
+	a {
+		color: ${ R.path([ "theme", "colors", "black", ]) };
+	}
+
+	a:visited {
+		color: ${ R.path([ "theme", "colors", "gray", ]) };
 	}
 `;
 

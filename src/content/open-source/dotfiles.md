@@ -20,7 +20,7 @@ Since dropbox ruined all my dotfiles for the third time, I've since started stor
 As well as various other programs and tools that I use day-to-day.
 
 [dotfiles]: https://github.com/CodogoFreddie/dotfiles
-[git]: https://git-scm.com/A
+[git]: https://git-scm.com/
 [zsh]: http://www.zsh.org/
 [omz]: http://ohmyz.sh/
 [i3]: https://i3wm.org/
