@@ -1,5 +1,3 @@
-import React from "react";
-
 import GatsbyLink from "gatsby-link";
 import system from "system-components";
 

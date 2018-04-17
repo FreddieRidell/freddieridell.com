@@ -3,7 +3,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import "normalize.css";
 import PropTypes from "prop-types";
-import { ThemeProvider, } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import system from "system-components";
 
 import "./index.css";
@@ -25,12 +25,18 @@ const ContentPane = system({
 }).extend`
 	max-width: 70rem;
 	min-width: 40rem;
+	@media print {
+		max-width: 100vw;
+		min-width: 100vw;
+		margin-top: -5rem;
+		padding: 2rem 4rem;
+	}
 `;
 
 const theme = {
-	breakpoints: [32, 48, 64,],
-	space: [0, 8, 16, 24, 32,],
-	fontSizes: [12, 16, 18, 24, 36, 72,],
+	breakpoints: [32, 48, 64],
+	space: [0, 8, 16, 24, 32],
+	fontSizes: [12, 16, 18, 24, 36, 72],
 	transition: "0.2s",
 	colors: {
 		black: "#111",
@@ -41,13 +47,13 @@ const theme = {
 };
 
 const TemplateWrapper = ({ children, ...props }) => (
-	<ThemeProvider theme = { theme }>
+	<ThemeProvider theme={theme}>
 		<AppWrapper>
 			<Helmet>
 				<title>Freddie Ridell</title>
 			</Helmet>
 
-			<Topbar { ...props } />
+			<Topbar {...props} />
 
 			<ContentPane>{children()}</ContentPane>
 		</AppWrapper>

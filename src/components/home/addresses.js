@@ -2,7 +2,7 @@ import React from "react";
 
 import system from "system-components";
 
-import { Section, } from "../../toolbox";
+import { Section } from "../../toolbox";
 
 const AddressesCodeBlock = system({
 	is: "code",
@@ -16,7 +16,7 @@ const AddressesCodeBlock = system({
 `;
 
 export default () => (
-	<Section title = "Addresses">
+	<Section title="Addresses">
 		<AddressesCodeBlock>
 			pgp: 6BE0AF404BB9D844281F3DA5ACD8B92700BF93A0
 			{"\n"}

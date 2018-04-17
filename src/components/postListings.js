@@ -2,7 +2,7 @@ import R from "ramda";
 import React from "react";
 import format from "date-fns/fp/format";
 
-import { Section, H1, Note, } from "../toolbox";
+import { Section, H1, Note } from "../toolbox";
 
 const formatDate = R.pipe(x => new Date(x), format("YYYY, MMM"));
 
@@ -15,7 +15,7 @@ const Listing = ({
 	abstract,
 	excerpt,
 }) => (
-	<Section image = { image } title = { title + (emoji || "") } to = { slug }>
+	<Section image={image} title={title + (emoji || "")} to={slug}>
 		{published && <Note> {formatDate(published)} </Note>}
 
 		{abstract || excerpt}
@@ -24,7 +24,7 @@ const Listing = ({
 
 const generateShaper = (requiredFrontmatter = []) =>
 	R.pipe(
-		R.pathOr([], ["allMarkdownRemark", "edges",]),
+		R.pathOr([], ["allMarkdownRemark", "edges"]),
 		R.pluck("node"),
 		R.map(({ fields, frontmatter, ...rest }) => ({
 			...rest,
@@ -33,7 +33,7 @@ const generateShaper = (requiredFrontmatter = []) =>
 		})),
 
 		R.filter(
-			R.allPass([...requiredFrontmatter.map(prop => R.prop(prop)), R.T,]),
+			R.allPass([...requiredFrontmatter.map(prop => R.prop(prop)), R.T]),
 		),
 
 		R.sortBy(R.prop("published")),
@@ -41,7 +41,7 @@ const generateShaper = (requiredFrontmatter = []) =>
 		R.reverse,
 	);
 
-export default ({ title, posts, data, requiredFrontmatter, }) => {
+export default ({ title, posts, data, requiredFrontmatter }) => {
 	const postsToRender = data
 		? generateShaper(requiredFrontmatter)(data)
 		: posts || [];
@@ -53,7 +53,7 @@ export default ({ title, posts, data, requiredFrontmatter, }) => {
 			</Section>
 
 			{postsToRender.map(({ slug, ...rest }) => (
-				<Listing key = { slug } slug = { slug } { ...rest } />
+				<Listing key={slug} slug={slug} {...rest} />
 			))}
 		</div>
 	);

@@ -9,7 +9,12 @@ const Topbar = system({
 	width: 1,
 	p: 2,
 }).extend`
-	display: flex;
+display: flex;
+
+@media print {
+	display: none;
+}
+
 `;
 
 const BreadcrumbContainer = system({
@@ -20,7 +25,7 @@ const BreadcrumbContainer = system({
 `;
 
 const SitemapContainer = system({
-	flexDirection: ["column", "row",],
+	flexDirection: ["column", "row"],
 	align: "flex-end",
 }).extend`
 	display: flex;
@@ -38,7 +43,7 @@ const Seperator = system({
 	pr: 1,
 });
 
-export default ({ location, }) => {
+export default ({ location }) => {
 	const breadcrumb = location.pathname
 		.split("/")
 		.filter(R.length)
@@ -61,16 +66,16 @@ export default ({ location, }) => {
 	return (
 		<Topbar>
 			<BreadcrumbContainer>
-				{breadcrumb.map(({ path, label, }) => [
-					<Link to = { path + "/" }>{label}</Link>,
+				{breadcrumb.map(({ path, label }) => [
+					<Link to={path + "/"}>{label}</Link>,
 					<Seperator>/</Seperator>,
 				])}
 			</BreadcrumbContainer>
 
 			<SitemapContainer>
-				<Link to = "/blog">Blog</Link>
-				<Link to = "/crafty">Crafts</Link>
-				<Link to = "/open-source">Open Source</Link>
+				<Link to="/blog">Blog</Link>
+				<Link to="/crafty">Crafts</Link>
+				<Link to="/open-source">Open Source</Link>
 			</SitemapContainer>
 		</Topbar>
 	);

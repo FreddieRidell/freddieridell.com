@@ -3,7 +3,7 @@ import R from "ramda";
 import styled from "styled-components";
 import system from "system-components";
 
-import { Section, } from "../toolbox";
+import { Section } from "../toolbox";
 
 const Abstract = system({
 	fontSize: 2,
@@ -37,15 +37,15 @@ const MarkdownContainer = styled.div`
 	}
 
 	a {
-		color: ${ R.path([ "theme", "colors", "black", ]) };
+		color: ${R.path(["theme", "colors", "black"])};
 	}
 
 	a:visited {
-		color: ${ R.path([ "theme", "colors", "gray", ]) };
+		color: ${R.path(["theme", "colors", "gray"])};
 	}
 `;
 
-export default ({ data, }) => {
+export default ({ data }) => {
 	const post = data.markdownRemark;
 	return (
 		<Section>
@@ -57,7 +57,7 @@ export default ({ data, }) => {
 				<Abstract>{post.frontmatter.abstract}</Abstract>
 			)}
 			<MarkdownContainer
-				dangerouslySetInnerHTML = { { __html: post.html, } }
+				dangerouslySetInnerHTML={{ __html: post.html }}
 			/>
 		</Section>
 	);

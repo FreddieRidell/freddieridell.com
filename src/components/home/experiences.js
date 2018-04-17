@@ -1,8 +1,8 @@
 import React from "react";
 
-import { format, } from "date-fns/fp";
+import { format } from "date-fns/fp";
 
-import { P, Note, Section, H3, } from "../../toolbox";
+import { P, Note, Section, H3 } from "../../toolbox";
 
 const formatDate = date => {
 	if (typeof date === "string") {
@@ -11,10 +11,10 @@ const formatDate = date => {
 		return format("MMM, YYYY", date);
 	}
 };
-const Experience = ({ position, biz, start, end, children, }) => (
+const Experience = ({ position, biz, start, end, children }) => (
 	<section>
-		<H3 mb = { 0 }>{position}</H3>
-		<H3 fontSize = { 1 } mt = { 0 }>
+		<H3 mb={0}>{position}</H3>
+		<H3 fontSize={1} mt={0}>
 			{biz}
 		</H3>
 		<Note>
@@ -26,11 +26,32 @@ const Experience = ({ position, biz, start, end, children, }) => (
 );
 
 export default () => (
-	<Section title = "Experience">
+	<Section title="Experience">
 		<Experience
-			position = "Co-founder/Senior Developer"
-			biz = "Codogo"
-			start = { new Date(1451606400000) }
+			position="Senior React Contractor"
+			biz="Workshare"
+			start={new Date("2018-02-18")}
+			end={new Date("2018-05-19")}
+		>
+			<P>
+				I worked as a senior memeber of a team working to modernise one
+				of Workshare's core products: producing a greenfield react app
+				build on an existing API.
+			</P>
+			<P>
+				I was instrumental in making major decisions during the
+				development: technical choices and policy decisions that were
+				foundational to the app as a whole. I was also trusted to
+				provide traning to tutoring to other members to the team to
+				bring them up to speed with react best pracices.
+			</P>
+		</Experience>
+
+		<Experience
+			position="Co-founder/Senior Developer"
+			biz="Codogo"
+			end={new Date("2018-02-18")}
+			start={new Date(1451606400000)}
 		>
 			<P>
 				The core focus of my work has been producing Codogo Write, a
@@ -49,10 +70,10 @@ export default () => (
 		</Experience>
 
 		<Experience
-			position = "Development Intern"
-			biz = "Amazon Instant Video"
-			start = { new Date(1433116800000) }
-			end = { new Date(1441065600000) }
+			position="Development Intern"
+			biz="Amazon Instant Video"
+			start={new Date(1433116800000)}
+			end={new Date(1441065600000)}
 		>
 			<P>
 				I worked on Amazon’s native instant video player: a large scale
@@ -66,10 +87,10 @@ export default () => (
 		</Experience>
 
 		<Experience
-			position = "Computer Science Degree (2:1)"
-			biz = "Durham University"
-			start = { new Date("2013-09-01") }
-			end = { new Date(1451606400000) }
+			position="Computer Science Degree (2:1)"
+			biz="Durham University"
+			start={new Date("2013-09-01")}
+			end={new Date(1451606400000)}
 		>
 			<Note>
 				Dissertation: Designing, evaluating, and optimising a system for

@@ -2,12 +2,12 @@ import React from "react";
 
 import PostListings from "../components/postListings";
 
-export default ({ data, }) => {
+export default ({ data }) => {
 	return (
 		<PostListings
-			title = "Open Source"
-			data = { data }
-			requiredFrontmatter = { ["listed", "published", "title",] }
+			title="Open Source"
+			data={data}
+			requiredFrontmatter={["listed", "published", "title"]}
 		/>
 	);
 };

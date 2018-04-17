@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import system from "system-components";
 
-import { Icon, Section, H1, } from "../../toolbox";
+import { Icon, Section, H1 } from "../../toolbox";
 
 const Bio = styled.p`
 	font-style: italic;
@@ -14,15 +14,15 @@ const ContactsContainer = system({
 	mb: 1,
 	flex: 1,
 	align: "flex-end",
-	justify: ["flex-start", "flex-end",],
+	justify: ["flex-start", "flex-end"],
 }).extend`
 	display: flex;
 `;
 
 const Contact = system({
 	is: "a",
-	pl: [0, 2,],
-	pr: [2, 0,],
+	pl: [0, 2],
+	pr: [2, 0],
 	color: "grey",
 	hover: {
 		color: "black",
@@ -57,16 +57,16 @@ const ContactDetails = () => (
 				href: "https://github.com/CodogoFreddie",
 				name: "github",
 			},
-		].map(({ href, name, title, }) => (
-			<Contact title = { title } href = { href } key = { href }>
-				<Icon name = { name } />
+		].map(({ href, name, title }) => (
+			<Contact title={title} href={href} key={href}>
+				<Icon name={name} />
 			</Contact>
 		))}
 	</ContactsContainer>
 );
 
 const NameAndDeets = system({
-	flexDirection: ["column", "row",],
+	flexDirection: ["column", "row"],
 }).extend`
 	display: flex;
 `;
