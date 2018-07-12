@@ -14,4 +14,8 @@
 
 If the aim of a task is to create a feature, prioritise that feature over changing the codebase to better accomidate the feature. Once you've validated that the feature was a good feature you can (and should) then improve it's implementation, even by changing its API.
 
+## Never store derrived data
+
+Except in an explicit caching layer, which should have the API of a memoized function
+
 [dontalwaysdry]: https://www.youtube.com/watch?v=8bZh5LMaSmE&feature=youtu.be
