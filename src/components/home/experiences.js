@@ -18,7 +18,7 @@ const Experience = ({ position, biz, start, end, children }) => (
 			{biz}
 		</H3>
 		<Note>
-			{formatDate(start)} - {end ? formatDate(end) : "Ongoing"}{" "}
+			{formatDate(start)} - {end ? formatDate(end) : "Ongoing"}
 		</Note>
 
 		{children}
@@ -31,19 +31,19 @@ export default () => (
 			position="Senior React Contractor"
 			biz="Workshare"
 			start={new Date("2018-02-18")}
-			end={new Date("2018-05-19")}
+			end={new Date("2018-08-19")}
 		>
 			<P>
-				I worked as a senior memeber of a team working to modernise one
+				I worked as a senior team-member working to modernize one
 				of Workshare's core products: producing a greenfield react app
-				build on an existing API.
+				built on an existing API.
 			</P>
 			<P>
 				I was instrumental in making major decisions during the
 				development: technical choices and policy decisions that were
 				foundational to the app as a whole. I was also trusted to
-				provide traning to tutoring to other members to the team to
-				bring them up to speed with react best pracices.
+				provide training to tutoring to other members to the team to
+				bring them up to speed with react best practices.
 			</P>
 		</Experience>
 
@@ -93,7 +93,7 @@ export default () => (
 			end={new Date(1451606400000)}
 		>
 			<Note>
-				Dissertation: Designing, evaluating, and optimising a system for
+				Dissertation: Designing, evaluating, and optimizing a system for
 				population simulation.
 			</Note>
 			<P>

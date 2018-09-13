@@ -39,7 +39,7 @@ const ContactDetails = () => (
 		{[
 			{
 				title: "email",
-				href: "mailhref:freddie.ridell@gmail.com",
+				href: "mailhref:contact@freddieridel.com",
 				name: "mail",
 			},
 			{
