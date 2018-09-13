@@ -35,7 +35,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build-all": "./installAutoPosters.sh && gatsby build",
+    "build-all": "gatsby build",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --use-tabs --tab-width 4 --trailing-comma all --write \"src/**/*.js\" && eslint --fix src",
