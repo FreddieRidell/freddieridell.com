@@ -21,7 +21,8 @@ body {
 
 @media print {
   @page {
-    margin: 0;
+    padding: 0;
+    margin: 1rem;
   }
   body {
     box-shadow: none;

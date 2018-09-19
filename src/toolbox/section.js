@@ -1,80 +1,80 @@
-import React from "react";
+import React from 'react';
 
-import styled from "styled-components";
-import system from "system-components";
+import styled from 'styled-components';
+import system from 'system-components';
 
-import { H2 } from "./headings";
-import { SilentLink } from "./link";
-import Hr from "./horizontalRule";
+import {H2} from './headings';
+import {SilentLink} from './link';
+import Hr from './horizontalRule';
 
 const SectionContainer = system({
-	is: "section",
-	my: 4,
+  is: 'section',
+  my: 4,
 }).extend`
-	${({ image }) =>
-		image
-			? `
-			background-image: url("${image}");
-			`
-			: ""}
+  @media print {
+	margin: 1rem 0;
+	${({printHidden}) => printHidden && 'display: none;'}
+  }
+	page-break-after: auto;
+	${({image}) => (image ? ` background-image: url("${image}"); ` : '')}
 `;
 
 const HeadingContainer = styled(H2)`
-	display: flex;
-	align-items: center;
-	cursor: pointer;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 `;
 
 const Triangle = system({
-	ml: 1,
-	fontSize: 2,
+  ml: 1,
+  fontSize: 2,
 }).extend`
-	transform: rotate(${({ open }) => (open ? 0 : -90)}deg);
-	transition: transform ${({ theme: { transition } }) => transition};
+	transform: rotate(${({open}) => (open ? 0 : -90)}deg);
+	transition: transform ${({theme: {transition}}) => transition};
 	user-select: none;
 `;
 
 export default class Section extends React.Component {
-	constructor(props) {
-		super(props);
+  constructor(props) {
+    super(props);
 
-		this.state = {
-			open: true,
-		};
-	}
+    this.state = {
+      open: true,
+    };
+  }
 
-	toggleOpen = () => {
-		this.props.toggleable &&
-			this.setState(({ open, ...rest }) => ({
-				open: !open,
-				...rest,
-			}));
-	};
+  toggleOpen = () => {
+    this.props.toggleable &&
+      this.setState(({open, ...rest}) => ({
+        open: !open,
+        ...rest,
+      }));
+  };
 
-	render() {
-		const inner = (
-			<SectionContainer>
-				{this.props.title && (
-					<heading>
-						<HeadingContainer onClick={this.toggleOpen}>
-							{this.props.title}
-							{this.props.toggleable && (
-								<Triangle open={this.state.open}>▼</Triangle>
-							)}
-						</HeadingContainer>
-					</heading>
-				)}
+  render() {
+    const inner = (
+      <SectionContainer printHidden={this.props.printHidden}>
+        {this.props.title && (
+          <heading>
+            <HeadingContainer onClick={this.toggleOpen}>
+              {this.props.title}
+              {this.props.toggleable && (
+                <Triangle open={this.state.open}>▼</Triangle>
+              )}
+            </HeadingContainer>
+          </heading>
+        )}
 
-				{this.state.open && this.props.children}
+        {this.state.open && this.props.children}
 
-				<Hr />
-			</SectionContainer>
-		);
+        <Hr />
+      </SectionContainer>
+    );
 
-		return this.props.to ? (
-			<SilentLink to={this.props.to}> {inner} </SilentLink>
-		) : (
-			inner
-		);
-	}
+    return this.props.to ? (
+      <SilentLink to={this.props.to}> {inner} </SilentLink>
+    ) : (
+      inner
+    );
+  }
 }
