@@ -1,18 +1,15 @@
-import React from "react";
+import React from 'react'
+import { Link } from 'gatsby'
 
-import PersonalInfo from "../components/home/personalInfo";
-import Skills from "../components/home/skills";
-import Experiences from "../components/home/experiences";
-import Addresses from "../components/home/addresses";
+import Layout from '../components/layout'
 
-export default () => (
-	<div>
-		<PersonalInfo />
+const IndexPage = () => (
+  <Layout>
+    <h1>Hi people</h1>
+    <p>Welcome to your new Gatsby site.</p>
+    <p>Now go build something great.</p>
+    <Link to="/page-2/">Go to page 2</Link>
+  </Layout>
+)
 
-		<Skills />
-
-		<Experiences />
-
-		<Addresses />
-	</div>
-);
+export default IndexPage

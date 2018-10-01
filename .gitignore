@@ -23,3 +23,5 @@ favicon@*
 /public
 !/public/.dat
 /.cache
+/lib
+node_modules
