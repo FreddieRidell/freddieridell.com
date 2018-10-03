@@ -1,51 +1,61 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import React from "react";
+import * as R from "ramda";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { StaticQuery, graphql } from "gatsby";
+import { Location } from "@reach/router";
+import styled, { ThemeProvider } from "styled-components";
 
-import Header from './header'
-import './layout.css'
+import "./layout.css";
+import theme from "./theme";
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: 960,
-            padding: '0px 1.0875rem 1.45rem',
-            paddingTop: 0,
-          }}
-        >
-          {children}
-        </div>
-      </>
-    )}
-  />
-)
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 2rem 4rem 1fr 2rem;
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+  grid-template-areas: "header header header" "hero hero hero" "gutter-left content gutter-right" "footer footer footer";
+`;
 
-export default Layout
+const Topbar = styled.div`
+  background-color: ${R.path(["theme", "color", "black"])};
+  grid-area: header;
+`;
+
+const Footer = styled.div`
+  background-color: ${R.path(["theme", "color", "black"])};
+  color: ${R.path(["theme", "color", "white"])};
+  grid-area: footer;
+`;
+
+const Layout = ({ children, location, withHero, ...props }) => (
+  <Location>
+    {({ location }) => {
+      const pathList = location.pathname.split("/");
+
+      return (
+        <ThemeProvider theme={theme}>
+          <>
+            <Helmet
+              title="FreddieRidell.com"
+              meta={[
+                { name: "description", content: "Sample" },
+                { name: "keywords", content: "sample, something" }
+              ]}
+            >
+              <html lang="en" />
+            </Helmet>
+
+            <Grid withHero={withHero}>
+              <Topbar>Freddie Ridell</Topbar>
+              <div>{children}</div>
+              <Footer>©Ya' boi Freddie {new Date().toISOString()}</Footer>
+            </Grid>
+          </>
+        </ThemeProvider>
+      );
+    }}
+  </Location>
+);
+
+export default Layout;
