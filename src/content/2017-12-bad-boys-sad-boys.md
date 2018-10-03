@@ -1,10 +1,9 @@
 ---
-
-published: "2017-12-11"
+published: '2017-12-11'
 title: Bad Boys & Sad Boys
 abstract: Compassion is hard
 emoji: 🤷
-
+type: blog
 ---
 
 I don't believe there are any truly bad people in the world. When you get down to it, everyone who acts mean, or evil, or cruel probably has a very sad reason for doing so.
@@ -17,5 +16,5 @@ Bad boys often don't realise they're even being Bad Boys, through a lack of empa
 
 None of these are groundbreaking or revolutionary statements, but I do think it's an important thing to remember for two reasons:
 
-+ The best foundation to extricate people from their own cruelty, is to always keep in mind that their behaviour is quite possibly rooted in sorrow.
-+ I think it would be a truly horrible world to live in, if every Bad Boy really was a Bad Boy, rather than a Sad Boy in need of help.
+- The best foundation to extricate people from their own cruelty, is to always keep in mind that their behaviour is quite possibly rooted in sorrow.
+- I think it would be a truly horrible world to live in, if every Bad Boy really was a Bad Boy, rather than a Sad Boy in need of help.

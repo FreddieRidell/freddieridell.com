@@ -1,9 +1,7 @@
 ---
-
 title: Crochet Waistcoat
-
+type: crafty
 ---
-
 
 ## Instructions:
 
