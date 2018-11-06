@@ -7,46 +7,59 @@ import { Location, Link as RouterLink } from "@reach/router";
 import styled, { ThemeProvider } from "styled-components";
 
 const LinkListItem = styled.li`
-
+	list-style-type: none;
+	margin: ${R.path(["theme", "size", "space", 1])};
 `;
 
 const LinkLink = styled(RouterLink)`
 	color: ${R.path(["theme","color", "black" ])};
 	text-decoration: none;
-	display: grid;
+	display: flex;
+	flex-direction: column;
+`;
 
-	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: repeat(2, 1fr);
-
-	grid-template-areas: "tile date" "excerpt excerpt";
+const LinkTopBit = styled.div`
+	display: flex;
+	align-items: flex-end;
+	margin-bottom: ${R.path(["theme", "size", "space", 1])};
 `;
 
 const LinkTitle = styled.h2`
-	font-size: ${R.path(["theme", "size", "fontSize" ])};
+	font-size: ${R.path(["theme", "size", "fontSize", 3, ])};
+	flex: 1;
+	margin: 0;
 `;
 
 const LinkDate = styled.p`
-
+	margin: 0;
+	color: ${R.path(["theme","color", "gray" ])};
 `;
 
 const LinkAbstract = styled.p`
-
+	margin: 0;
 `;
 
 const Link = ({ fields: {slug}, excerpt, frontmatter: {title, published, abstract,}}) => (
 	<LinkListItem>
 		<LinkLink to = { slug } >
-			<LinkTitle>{title}</LinkTitle>
-			<LinkDate>{published}</LinkDate>
+			<LinkTopBit>
+				<LinkTitle>{title}</LinkTitle>
+				<LinkDate>{published}</LinkDate>
+			</LinkTopBit>
 			<LinkAbstract>{ abstract || excerpt } </LinkAbstract>
 		</LinkLink>
 	</LinkListItem>
 );
 
+const List = styled.ol`
+	padding: 0;
+	margin: ${R.path(["theme", "size", "space", 1])};
+`;
+
 const LinkList = ({ data }) => (
-	<ol>
+	<List>
 		{data.map( post => <Link key = { post.fields.slug } {...post }/>)}
-	</ol>
+	</List>
 )
 
 export default LinkList;
