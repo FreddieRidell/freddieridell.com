@@ -8,7 +8,14 @@ import styled, { ThemeProvider } from "styled-components";
 
 const LinkListItem = styled.li`
 	list-style-type: none;
-	margin: ${R.path(["theme", "size", "space", 1])};
+	margin: ${R.path(["theme", "size", "space", 2])} ${R.path(["theme", "size", "space", 1])};
+
+	&::after {
+		content: "",
+		width: 100%;
+		height: 1px;
+		background-color: ${R.path(["theme","color", "black" ])};
+	}
 `;
 
 const LinkLink = styled(RouterLink)`
@@ -21,11 +28,11 @@ const LinkLink = styled(RouterLink)`
 const LinkTopBit = styled.div`
 	display: flex;
 	align-items: flex-end;
-	margin-bottom: ${R.path(["theme", "size", "space", 1])};
+	margin-bottom: ${R.path(["theme", "size", "space", 0])};
 `;
 
 const LinkTitle = styled.h2`
-	font-size: ${R.path(["theme", "size", "fontSize", 3, ])};
+	font-size: ${R.path(["theme", "size", "fontSize", 2, ])};
 	flex: 1;
 	margin: 0;
 `;
@@ -33,6 +40,11 @@ const LinkTitle = styled.h2`
 const LinkDate = styled.p`
 	margin: 0;
 	color: ${R.path(["theme","color", "gray" ])};
+	margin-left: ${R.path(["theme", "size", "space", 0])};
+
+	@media (max-width: 25rem) {
+		display: none;
+	}
 `;
 
 const LinkAbstract = styled.p`

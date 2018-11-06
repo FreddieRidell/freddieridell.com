@@ -5,6 +5,7 @@ html {
 body {
   margin: 0;
   font-size: 2rem;
+  font-family: sans-serif;
 }
 
 html, body, #___gatsby, #___gatsby > div {
@@ -24,4 +25,8 @@ a {
 
 a:hover, a:active {
 	text-decoration: underline;
+}
+
+img { 
+	width: 100%;
 }

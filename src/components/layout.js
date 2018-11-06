@@ -31,22 +31,29 @@ const Breadcrumb = styled(Link)`
 const NavLink = styled(Link)`
 	color: ${R.path(["theme", "color", "white"])};
 	margin-left :${R.path(["theme", "size", "space", 1])};
+	text-transform: capitalize;
 `;
 
 const Title = styled.div`
-  text-transform: capitalize;
+	text-transform: capitalize;
+	font-size: ${R.path(["theme", "size", "fontSize", 3, ])};
+	margin: ${R.path(["theme", "size", "space", 0])} ${R.path(["theme", "size", "space", 2])};
 `;
 
 const ChildrenContainer = styled.div`
 	flex: 1;
+	align-self: center;
+	max-width: 70rem;
+	width: 70rem;
 `;
 
 const Footer = styled.div`
-  background-color: ${R.path(["theme", "color", "black"])};
-  color: ${R.path(["theme", "color", "white"])};
+	background-color: ${R.path(["theme", "color", "black"])};
+	color: ${R.path(["theme", "color", "white"])};
+	padding: ${R.path(["theme", "size", "space", 0])};
 `;
 
-const Layout = ({ children, title, ...props }) => (
+const Layout = ({ children, title, navLinks = [], ...props }) => (
   <Location>
     {({ location }) => {
 		const breadcrumb = location.pathname
@@ -83,37 +90,25 @@ const Layout = ({ children, title, ...props }) => (
 					<Topbar>
 						<Breadcrumbs>
 							{breadcrumb.map( ({ path, label }) => (
-						<Fragment key = { path } >
-							<Breadcrumb to = { path } >{label}</Breadcrumb>
-						</Fragment>
+								<Fragment key = { path } >
+									<Breadcrumb to = { path } >{label}</Breadcrumb>
+								</Fragment>
 							))}
 						</Breadcrumbs>
-						<NavLink to = "/blog">Blog</NavLink>
-						<NavLink to = "/crafts">Crafts</NavLink>
-						<NavLink to = "/open-source">Open Source</NavLink>
-			</Topbar>
-				<Title>{title}</Title>
-				<ChildrenContainer>
-					{children}
-				</ChildrenContainer>
-				<Footer>©Ya' boi Freddie {new Date().toISOString()}</Footer>
-			</Fragment>
-		</ThemeProvider>
+						{ navLinks.map( ({slug, label}) => (
+							<NavLink to = {slug}>{label}</NavLink>
+						))}
+					</Topbar>
+					<Title>{title}</Title>
+					<ChildrenContainer>
+						{children}
+					</ChildrenContainer>
+					<Footer>©Ya' boi Freddie Ridell {new Date().toISOString()}</Footer>
+				</Fragment>
+			</ThemeProvider>
 		);
 	}}
 </Location>
 );
 
 export default Layout;
-
-export const query = graphql`
-query{
-  allSitePage{
-    edges{
-      node{
-        path
-      }
-    }
-  }
-}
-`
