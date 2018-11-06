@@ -1,30 +1,37 @@
 import React from 'react';
 import {graphql} from 'gatsby';
+import * as R from "ramda";
 
-export default ({data}) => {
-  console.log({data});
-  return <div />;
+import Layout from "../components/layout";
+import LinkList from "../components/LinkList";
+
+export default ({data: { allMarkdownRemark: { edges } }, pageContext: { type } }) => {
+	return (
+		<Layout title = { type } >
+			<LinkList data = {edges.map(R.prop("node"))} />
+		</Layout>
+	)
 };
 
 export const query = graphql`
   query($type: String!) {
-    allMarkdownRemark(
-      filter: {frontmatter: {type: {eq: $type}}}
-      sort: {fields: frontmatter___published, order: DESC}
-    ) {
-      edges {
-        node {
-          html
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            type
-            published
-          }
-        }
-      }
-    }
+	  allMarkdownRemark(
+		  filter: {frontmatter: {type: {eq: $type}}}
+		  sort: {fields: frontmatter___published, order: DESC}
+	  ) {
+		  edges {
+			  node {
+				  excerpt
+				  fields {
+					  slug
+				  }
+				  frontmatter {
+					  title
+					  published
+					  abstract
+				  }
+			  }
+		  }
+	  }
   }
 `;

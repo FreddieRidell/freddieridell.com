@@ -2,7 +2,7 @@
 title: Tube Gloves
 published: '2017-10-17'
 image: 'http://res.cloudinary.com/codogo/image/upload/ar_2:1,c_fill,dpr_auto,f_auto,g_auto,q_auto,w_1000/v1511428218/23376873_10159553946490301_730935787_o_qiyp0b.jpg'
-type: crafty
+type: crafts
 ---
 
 ![Full Gloves](http://res.cloudinary.com/codogo/image/upload/c_limit,w_1000/a_270/v1511428218/23376873_10159553946490301_730935787_o_qiyp0b.jpg)
