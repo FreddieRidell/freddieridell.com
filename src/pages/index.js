@@ -19,7 +19,7 @@ const getNavLinks = R.pipe(
 
 const IndexPage = (props) => (
    console.log( getNavLinks(props) ),
-   <Layout title = "Freddie Ridell.com" navLinks = { getNavLinks(props)} >
+   <Layout title = "Freddie Ridell" navLinks = { getNavLinks(props)} >
       <h1>Hi people</h1>
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>

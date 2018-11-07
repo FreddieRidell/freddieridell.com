@@ -2,7 +2,6 @@
 published: '2017-12-11'
 title: Bad Boys & Sad Boys
 abstract: Compassion is hard
-emoji: 🤷
 type: blog
 ---
 

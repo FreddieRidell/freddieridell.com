@@ -1,14 +1,29 @@
 ---
 title: How to build apps
-type: presentation
+type: presentations
 ---
 
 # How to build apps
 
 ---
 
-## How should you store your data?
+# Ideas in this Presentation
 
--
+- Strictly seperating data and routing
+- Why you shouldn't use redux
 
 ---
+
+# Redux is a great system
+But it's not a data store
+
+```notes
+and when you use it as one, you're always going to be forcing it to be something it's not, and you'll struggle with it
+```
+
+---
+
+# Redux === Actions
+
+- The fundemental construct of Redux is the action
+- 

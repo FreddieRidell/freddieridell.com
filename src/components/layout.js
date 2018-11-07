@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
 import { Location, Link } from "@reach/router";
-import styled, { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 
-import "./layout.css";
 import theme from "./theme";
+import GlobalStyle from "./GlobalStyle"
 
 const Topbar = styled.div`
 	background-color: ${R.path(["theme", "color", "black"])};
@@ -87,6 +87,7 @@ const Layout = ({ children, title, navLinks = [], ...props }) => (
 					>
 						<html lang="en" />
 					</Helmet>
+					<GlobalStyle />
 					<Topbar>
 						<Breadcrumbs>
 							{breadcrumb.map( ({ path, label }) => (
@@ -103,7 +104,7 @@ const Layout = ({ children, title, navLinks = [], ...props }) => (
 					<ChildrenContainer>
 						{children}
 					</ChildrenContainer>
-					<Footer>©Ya' boi Freddie Ridell {new Date().toISOString()}</Footer>
+					<Footer>©Ya' boi Freddie Ridell {new Date().toISOString().replace("T", " ").replace( /\..*/, "" )}</Footer>
 				</Fragment>
 			</ThemeProvider>
 		);
