@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import { StaticQuery, graphql } from "gatsby";
 
 import Layout from "../components/layout";
+import { Experiences, PersonalInfo, Skills } from "../components/home";
 
 const getNavLinks = R.pipe(
   R.path(["data", "allSitePage", "edges"]),
@@ -18,7 +19,11 @@ const getNavLinks = R.pipe(
 );
 
 const IndexPage = props => (
-  <Layout title="Freddie Ridell" navLinks={getNavLinks(props)} />
+  <Layout title="Freddie Ridell" navLinks={getNavLinks(props)}>
+    <PersonalInfo />
+    <Skills />
+    <Experiences />
+  </Layout>
 );
 
 export default IndexPage;
