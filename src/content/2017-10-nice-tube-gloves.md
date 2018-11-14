@@ -1,13 +1,13 @@
 ---
 title: Tube Gloves
-published: '2017-10-17'
-image: 'http://res.cloudinary.com/codogo/image/upload/ar_2:1,c_fill,dpr_auto,f_auto,g_auto,q_auto,w_1000/v1511428218/23376873_10159553946490301_730935787_o_qiyp0b.jpg'
+published: "2017-10-17"
+hero: "http://res.cloudinary.com/codogo/image/upload/ar_2:1,c_fill,dpr_auto,f_auto,g_auto,q_auto,w_1000/v1511428218/23376873_10159553946490301_730935787_o_qiyp0b.jpg"
 type: crafts
 ---
 
 ![Full Gloves](http://res.cloudinary.com/codogo/image/upload/c_limit,w_1000/a_270/v1511428218/23376873_10159553946490301_730935787_o_qiyp0b.jpg)
 
-I made these for an ex-girlfriend as a present. They're made from Merino wool.
+I made these ages ago, as a present. They're made from Merino wool.
 
 I didn't follow a pattern for them, and instead just made them up as I went along; because of that, one of them is slightly bigger than the other.
 
