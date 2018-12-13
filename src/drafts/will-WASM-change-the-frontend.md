@@ -1,4 +1,7 @@
-# Will WASM Change The Frontend
+---
+title: Will WASM change the frontend
+tags: wasm, js, frontend, thinkpiece
+---
 
 A lot of fuss has been made over the past few months about WASM, and how it is going to level the webapp development world by allowing you to write web apps in any language.
 
