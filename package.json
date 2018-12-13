@@ -7,6 +7,7 @@
     "singleQuote": false
   },
   "dependencies": {
+    "date-fns": "^2.0.0-alpha.26",
     "gatsby": "^2.0.40",
     "gatsby-plugin-manifest": "^2.0.7",
     "gatsby-plugin-offline": "^2.0.12",
@@ -25,6 +26,7 @@
   ],
   "license": "MIT",
   "scripts": {
+    "now-build": "npm run build",
     "build": "gatsby build",
     "develop": "gatsby develop -H 0.0.0.0",
     "format": "prettier --write '**/*.js'",

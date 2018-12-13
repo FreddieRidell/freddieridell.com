@@ -6,7 +6,7 @@ const formatDate = date => {
   if (typeof date === "string") {
     return date;
   } else {
-    return format("MMM, YYYY", date);
+    return format("MMM, yyyy", date);
   }
 };
 
