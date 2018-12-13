@@ -30,6 +30,8 @@ However javascript has, from its inception, been a front-end language.
 Doing small, performance/mission critical code snippets in WASM is clearly good, however this is what we need before we can have a fully WASM front-end framework.
 hurdle What still makes JS so inviting as a front end language is also what makes it so irksome: It is wildly variable and can be forced into almost any shape
 
+The jerry-rigged nature of JS is what created its ecosystem of sharing small modules, and re-writing the platform to sute your needs: JQuery essentially embedded a whole new language inside JS.
+
 React isn't used because it's written in JS, React is used because it's brilliant, and React is possible because of JS.
 
 No other mainstream language offers the extensibility of javascript, or allows you to work in so many different ways. Both through compilation with babel (allows for powerful code transforms), and runtime extension (allows for drop in environment alteration).
