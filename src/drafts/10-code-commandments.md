@@ -14,8 +14,20 @@
 
 If the aim of a task is to create a feature, prioritise that feature over changing the codebase to better accomidate the feature. Once you've validated that the feature was a good feature you can (and should) then improve it's implementation, even by changing its API.
 
-## Never store derrived data
+## 7 Don't store derrived data
 
 Except in an explicit caching layer, which should have the API of a memoized function
+
+## 8 A network request should exist mostly in a single function in a single file
+
+Use as many helper functions as you want to, for:
+
+- augmenting the request
+- parsing/shaping the response
+- passing the response into a store
+
+But avoid the temptation to create many `Service` wrappers. They are usually a level of abstraction that is not needed, and split the logic for a request over many files in a way that doesn't increase useability.
+
+## A good module system replaces the need for dependency injection
 
 [dontalwaysdry]: https://www.youtube.com/watch?v=8bZh5LMaSmE&feature=youtu.be
