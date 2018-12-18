@@ -5,6 +5,8 @@ type: presentations
 
 # How to build apps
 
+> Note to freddie: you should look through your 10 code commandments and pull some ideas out from that
+
 ---
 
 # Ideas in this Presentation
@@ -15,6 +17,7 @@ type: presentations
 ---
 
 # Redux is a great system
+
 But it's not a data store
 
 ```notes
@@ -26,4 +29,4 @@ and when you use it as one, you're always going to be forcing it to be something
 # Redux === Actions
 
 - The fundemental construct of Redux is the action
-- 
+-
