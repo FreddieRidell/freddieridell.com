@@ -28,6 +28,11 @@ Use as many helper functions as you want to, for:
 
 But avoid the temptation to create many `Service` wrappers. They are usually a level of abstraction that is not needed, and split the logic for a request over many files in a way that doesn't increase useability.
 
-## A good module system replaces the need for dependency injection
+## 9 A good module system replaces the need for dependency injection
+
+Just pass the argument
+!(https://twitter.com/garybernhardt/status/1006983057138741248)
+!(https://twitter.com/tpolecat/status/704694589605588992)
+!(https://twitter.com/chris__martin/status/917530063796613120)
 
 [dontalwaysdry]: https://www.youtube.com/watch?v=8bZh5LMaSmE&feature=youtu.be
