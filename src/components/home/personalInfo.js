@@ -1,7 +1,12 @@
 import React from "react";
 import * as R from "ramda";
+import styled, { keyframes } from "styled-components";
+import { transparentize } from "polished";
 
-import styled from "styled-components";
+import githubIcon from "feather-icons/dist/icons/github.svg";
+import mailIcon from "feather-icons/dist/icons/mail.svg";
+import phoneIcon from "feather-icons/dist/icons/phone.svg";
+import twitterIcon from "feather-icons/dist/icons/twitter.svg";
 
 const Bio = styled.p`
 	font-style: italic;
@@ -16,7 +21,7 @@ const ContactsContainer = styled.div`
 	display: flex;
 	flex: 1;
 	align-items: flex-end;
-	justify-content: flex-start;
+	justify-content: space-evenly;
 	flex-direction: row;
 	@media print {
 		flex-direction: column;
@@ -24,10 +29,35 @@ const ContactsContainer = styled.div`
 	}
 `;
 
+const contactSlideIn = props => keyframes`
+	from { 
+		background-color: ${R.pipe(
+			R.path(["theme", "color", "black"]),
+			transparentize(1.0)
+		)(props)};
+	}
+	to { 
+		background-color: ${R.pipe(
+			R.path(["theme", "color", "black"]),
+			transparentize(0.0)
+		)(props)};
+	}
+`;
+
 const Contact = styled.a`
 	display: flex;
+	flex: 1;
 	align-items: center;
 	transition: all, 0.5s;
+	min-width: ${R.path(["theme", "size", "fontSize", 3])};
+	min-height: ${R.path(["theme", "size", "fontSize", 3])};
+	mask: url(${R.prop("icon")});
+	mask-size: contain;
+	mask-repeat: no-repeat;
+	mask-position: center center;
+	background-color: ${R.path(["theme", "color", "black"])};
+	animation: ${contactSlideIn} 1s ${({ i }) => i / 6}s ease both;
+
 	@media print {
 		text-decoration: none;
 		${({ print }) => (print ? "" : "display: none;")}
@@ -49,29 +79,40 @@ const ContactDetails = () => (
 				href: "mailhref:contact@freddieridel.com",
 				name: "mail",
 				text: "contact@freddieridell.com",
-				print: true
+				print: true,
+				icon: mailIcon
 			},
 			{
 				title: "twitter",
 				href: "https://twitter.com/FreddieRidell",
 				name: "twitter",
-				text: "@FreddieRidell"
+				text: "@FreddieRidell",
+				icon: twitterIcon
 			},
 			{
 				title: "phone",
 				href: "tel:+447521160572",
 				name: "phone",
 				text: "+44 7521 160572",
-				print: true
+				print: true,
+				icon: phoneIcon
 			},
 			{
 				title: "github",
 				href: "https://github.com/CodogoFreddie",
 				name: "github",
-				text: "CodogoFreddie"
+				text: "CodogoFreddie",
+				icon: githubIcon
 			}
-		].map(({ href, name, title, text, print }) => (
-			<Contact title={title} href={href} key={href} print={print}>
+		].map(({ href, name, title, text, print, icon }, i) => (
+			<Contact
+				i={i}
+				title={title}
+				href={href}
+				key={href}
+				print={print}
+				icon={icon}
+			>
 				<ContactText>{text}</ContactText>
 			</Contact>
 		))}

@@ -1,4 +1,6 @@
 import React from "react";
+import * as R from "ramda";
+import styled from "styled-components";
 
 import { format } from "date-fns/fp";
 
@@ -10,18 +12,34 @@ const formatDate = date => {
 	}
 };
 
+const ExperienceStyled = styled.section`
+	margin: ${R.path(["theme", "size", "space", 3])} 0;
+`;
+
+const PositionStyled = styled.h3`
+	margin: 0;
+`;
+
+const BizStyled = styled.h4`
+	margin: 0;
+`;
+
+const PeriodWorked = styled.div`
+	font-weight: bold;
+	color: ${R.path(["theme", "color", "gray"])};
+	margin: ${R.path(["theme", "size", "space", 0])} 0;
+`;
+
 const Experience = ({ position, biz, start, end, children }) => (
-	<div>
-		<h3 mb={0}>{position}</h3>
-		<h3 fontSize={1} mt={0}>
-			{biz}
-		</h3>
-		<div>
+	<ExperienceStyled>
+		<PositionStyled>{position}</PositionStyled>
+		<BizStyled>{biz}</BizStyled>
+		<PeriodWorked>
 			{formatDate(start)} - {end ? formatDate(end) : "Ongoing"}
-		</div>
+		</PeriodWorked>
 
 		{children}
-	</div>
+	</ExperienceStyled>
 );
 
 export default () => (
@@ -91,10 +109,10 @@ export default () => (
 			start={new Date("2013-09-01")}
 			end={new Date(1451606400000)}
 		>
-			<div>
+			<p>
 				Dissertation: Designing, evaluating, and optimizing a system for
 				population simulation.
-			</div>
+			</p>
 			<p>
 				During my degree I studied a wide range of subjects: from
 				runtime/space analysis and higher order logic to database

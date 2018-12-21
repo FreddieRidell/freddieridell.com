@@ -43,15 +43,20 @@ exports.createPages = ({ graphql, actions }) => {
 				}
 			}
 		`).then(result => {
-			const types = new Set(["blog", "crafts", "open-source"]);
+			const types = new Set(
+				result.data.allMarkdownRemark.edges.reduce(
+					(types, { node }) => [...types, node.frontmatter.type],
+					[]
+				)
+			);
 
 			for (const type of types) {
-				console.log(`/${type}/`);
 				createPage({
 					path: `/${type}/`,
 					component: path.resolve(`./src/templates/listing.js`),
 					context: {
-						type
+						type,
+						listing: true
 					}
 				});
 			}

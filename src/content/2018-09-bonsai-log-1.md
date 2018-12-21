@@ -1,5 +1,7 @@
 ---
 title: Bonsai Log 1
+published: "2018-09-15"
+type: blog
 ---
 
 My fiance bought me a bonsai last week, and I thought it might be nice to record my progress growing it.

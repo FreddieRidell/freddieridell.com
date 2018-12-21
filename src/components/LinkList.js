@@ -19,26 +19,13 @@ const withBackgroundImage = ({
 		: "";
 };
 
-const withMargin = ({
-	theme: {
-		size: {
-			space: [_, y, x]
-		}
-	}
-}) => `margin: ${x} ${y}`;
-
 const LinkListItem = styled.li`
 	list-style-type: none;
 	min-height: 8rem;
 	${withBackgroundImage}
-	${withMargin}
-
-	&::after {
-		content: "",
-		width: 100%;
-		height: 1px;
-		background-color: ${R.path(["theme", "color", "black"])};
-	}
+	margin: 0;
+	margin-bottom: ${R.path(["theme", "size", "space", 3])};
+	position: relative;
 `;
 
 const LinkLink = styled(RouterLink)`
@@ -56,6 +43,7 @@ const LinkTopBit = styled.div`
 
 const LinkTitle = styled.h2`
 	font-size: ${R.path(["theme", "size", "fontSize", 2])};
+	line-height: ${R.path(["theme", "size", "fontSize", 2])};
 	flex: 1;
 	margin: 0;
 `;
@@ -72,6 +60,7 @@ const LinkDate = styled.p`
 
 const LinkAbstract = styled.p`
 	margin: 0;
+	font-weight: normal;
 `;
 
 const Link = ({
@@ -79,18 +68,15 @@ const Link = ({
 	excerpt,
 	frontmatter: { title, published, abstract, hero }
 }) => (
-	console.log(hero),
-	(
-		<LinkListItem hero={hero}>
-			<LinkLink to={slug} hero={hero}>
-				<LinkTopBit>
-					<LinkTitle>{title}</LinkTitle>
-					<LinkDate>{published}</LinkDate>
-				</LinkTopBit>
-				<LinkAbstract>{abstract || excerpt} </LinkAbstract>
-			</LinkLink>
-		</LinkListItem>
-	)
+	<LinkListItem hero={hero}>
+		<LinkLink to={slug} hero={hero}>
+			<LinkTopBit>
+				<LinkTitle>{title}</LinkTitle>
+				<LinkDate>{published}</LinkDate>
+			</LinkTopBit>
+			<LinkAbstract>{abstract || excerpt} </LinkAbstract>
+		</LinkLink>
+	</LinkListItem>
 );
 
 const List = styled.ol`

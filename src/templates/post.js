@@ -1,24 +1,68 @@
 import React from "react";
 import { graphql } from "gatsby";
+import styled, { keyframes } from "styled-components";
+import * as R from "ramda";
 
 import Layout from "../components/layout";
+import { getNavLinks } from "../util";
 
-export default ({ data }) => {
-	const post = data.markdownRemark;
+const wipein = keyframes`
+	from { right: 100%; }
+	to { right: 0; }
+`;
+
+const Abstract = styled.div`
+	position: relative;
+	background-color: ${R.path(["theme", "color", "lightgray"])};
+	padding: 1rem;
+	padding-top: 2rem;
+	font-size: 3rem;
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		min-height: 1rem;
+		background-color: ${R.path(["theme", "color", "gray"])};
+
+		animation: ${wipein} 1.5s ease-out both;
+	}
+`;
+
+export default props => {
+	const {
+		data: {
+			markdownRemark: {
+				html,
+				frontmatter: { title, abstract }
+			}
+		}
+	} = props;
+
 	return (
-		<Layout>
-			<h1>{post.frontmatter.title}</h1>
-			<div dangerouslySetInnerHTML={{ __html: post.html }} />
+		<Layout title={title} navLinks={getNavLinks(props)}>
+			{abstract && <Abstract> {abstract} </Abstract>}
+			<div dangerouslySetInnerHTML={{ __html: html }} />
 		</Layout>
 	);
 };
 
 export const query = graphql`
 	query($slug: String!) {
+		allSitePage(filter: { context: { listing: { eq: true } } }) {
+			edges {
+				node {
+					path
+				}
+			}
+		}
+
 		markdownRemark(fields: { slug: { eq: $slug } }) {
 			html
 			frontmatter {
 				title
+				abstract
 			}
 		}
 	}

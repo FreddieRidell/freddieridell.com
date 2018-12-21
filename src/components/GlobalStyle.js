@@ -12,6 +12,7 @@ body {
   font-size: 2rem;
   font-family: "Trebuchet MS", arial, sans-serif;
   hanging-punctuation: first last;
+   color: ${R.path(["theme", "color", "black"])};
 }
 
 html, body, #___gatsby, #___gatsby > div {
@@ -28,6 +29,11 @@ a {
    font-weight: bold;
    text-decoration: none;
    color: ${R.path(["theme", "color", "black"])};
+}
+
+a::hover, a::active {
+	text-decoration-color: ${R.path(["theme", "color", "gray"])};
+	text-decoration: none;
 }
 
 a:hover, a:active { text-decoration: underline; }
@@ -60,36 +66,36 @@ code {
 
 blockquote {
   position: relative;
-  background-color: lightgray;
+		background-color: ${R.path(["theme", "color", "lightgray"])};
   padding: 1rem;
   padding-left: 2rem;
   font-size: 3rem;
 
   &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    min-width: 1rem;
-    background-color: gray;
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	min-width: 1rem;
+		background-color: ${R.path(["theme", "color", "gray"])};
   }
 
   & > blockquote {
-    padding: 0;
-    margin: 0;
-    margin-top: 1rem;
-    margin-left: 2rem;
-    font-size: 2rem;
+	padding: 0;
+	margin: 0;
+	margin-top: 1rem;
+	margin-left: 2rem;
+	font-size: 2rem;
 
-    &::before {
-      content: "-";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: -1rem;
-      background-color: initial;
-    }
+	&::before {
+	  content: "-";
+	  position: absolute;
+	  top: 0;
+	  bottom: 0;
+	  left: -1rem;
+	  background-color: initial;
+	}
   }
 }
 `;

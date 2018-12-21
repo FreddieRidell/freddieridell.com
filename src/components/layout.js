@@ -9,7 +9,7 @@ import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import theme from "./theme";
 import GlobalStyle from "./GlobalStyle";
 
-const Topbar = styled.div`
+const Topbar = styled.header`
 	background-color: ${R.path(["theme", "color", "black"])};
 	color: ${R.path(["theme", "color", "white"])};
 	padding: ${R.path(["theme", "size", "space", 0])};
@@ -18,6 +18,7 @@ const Topbar = styled.div`
 
 const Breadcrumbs = styled.div`
 	flex: 1;
+	background-color: ${R.path(["theme", "color", "black"])};
 `;
 
 const Breadcrumb = styled(Link)`
@@ -25,6 +26,10 @@ const Breadcrumb = styled(Link)`
 	::after {
 		margin: ${R.path(["theme", "size", "space", 0])};
 		content: "/";
+		text-decoration: none;
+		&::hover {
+			text-decoration: none;
+		}
 	}
 `;
 
@@ -34,27 +39,32 @@ const NavLink = styled(Link)`
 	text-transform: capitalize;
 `;
 
-const Title = styled.div`
+const Title = styled.h1`
 	text-transform: capitalize;
-	font-size: ${R.path(["theme", "size", "fontSize", 3])};
-	margin: ${R.path(["theme", "size", "space", 0])}
-		${R.path(["theme", "size", "space", 2])};
+	margin: ${R.path(["theme", "size", "space", 2])};
 `;
 
 const ChildrenContainer = styled.div`
 	flex: 1;
 	align-self: center;
-	max-width: 70rem;
-	width: 70rem;
+	max-width: 65rem;
+	width: 65rem;
 `;
 
-const Footer = styled.div`
+const Footer = styled.footer`
 	background-color: ${R.path(["theme", "color", "black"])};
 	color: ${R.path(["theme", "color", "white"])};
 	padding: ${R.path(["theme", "size", "space", 0])};
 `;
 
-const Layout = ({ children, title, navLinks = [], ...props }) => (
+const Layout = ({
+	children,
+	title,
+	description,
+	keywords,
+	navLinks = [],
+	...props
+}) => (
 	<Location>
 		{({ location }) => {
 			const breadcrumb = location.pathname
@@ -80,13 +90,14 @@ const Layout = ({ children, title, navLinks = [], ...props }) => (
 				<ThemeProvider theme={theme}>
 					<Fragment>
 						<Helmet
-							title="FreddieRidell.com"
+							title={
+								title
+									? `${title} - FreddieRidell.com`
+									: "FreddieRidell.com"
+							}
 							meta={[
-								{ name: "description", content: "Sample" },
-								{
-									name: "keywords",
-									content: "sample, something"
-								}
+								{ name: "description", content: description },
+								{ name: "keywords", content: keywords }
 							]}
 						>
 							<html lang="en" />

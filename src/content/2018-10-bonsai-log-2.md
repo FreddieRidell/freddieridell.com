@@ -1,8 +1,8 @@
 ---
 title: Bonsai Log 2
+published: "2018-10-15"
+type: blog
 ---
-
-Pruning
 
 Today I did a bit of light pruning, apparently they can be pruned at the start and end of the growing season. It had a lot of growth at the top of the tree, disproportionate to the sides, so I needed to take a few of the leaves off the top to make it look more even.
 
