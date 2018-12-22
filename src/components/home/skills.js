@@ -13,7 +13,7 @@ export default () => (
 				"Performance analysis and optimisation",
 				"Agile Project Management",
 				"Test driven development, Continuous Integration / Deployment",
-				"Stand up & sketch comedy, Juggling, Podcasting"
+				"Stand up & sketch comedy, Juggling, Podcasting",
 			].map(skill => (
 				<li key={skill}> {skill}</li>
 			))}

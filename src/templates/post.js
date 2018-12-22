@@ -35,9 +35,9 @@ export default props => {
 		data: {
 			markdownRemark: {
 				html,
-				frontmatter: { title, abstract }
-			}
-		}
+				frontmatter: { title, abstract },
+			},
+		},
 	} = props;
 
 	return (

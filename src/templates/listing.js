@@ -9,9 +9,9 @@ import { getNavLinks } from "../util";
 export default props => {
 	const {
 		data: {
-			allMarkdownRemark: { edges }
+			allMarkdownRemark: { edges },
 		},
-		pageContext: { type }
+		pageContext: { type },
 	} = props;
 	return (
 		<Layout title={type} navLinks={getNavLinks(props)}>

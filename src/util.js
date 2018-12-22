@@ -7,6 +7,6 @@ export const getNavLinks = R.pipe(
 	R.sortBy(R.identity),
 	R.map(slug => ({
 		slug,
-		label: slug.replace(/\//g, "").replace("-", " ")
-	}))
+		label: slug.replace(/\//g, "").replace("-", " "),
+	})),
 );

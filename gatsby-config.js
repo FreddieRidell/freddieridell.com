@@ -1,14 +1,15 @@
 module.exports = {
 	siteMetadata: {
-		title: "Gatsby Default Starter"
+		title: "Gatsby Default Starter",
 	},
 	plugins: [
+		"gatsby-plugin-styled-components",
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `content`,
-				path: `${__dirname}/src/content`
-			}
+				path: `${__dirname}/src/content`,
+			},
 		},
 		"gatsby-plugin-react-helmet",
 		`gatsby-transformer-remark`,
@@ -20,9 +21,9 @@ module.exports = {
 				start_url: "/",
 				background_color: "#663399",
 				theme_color: "#663399",
-				display: "minimal-ui"
-			}
+				display: "minimal-ui",
+			},
 		},
-		"gatsby-plugin-offline"
-	]
+		"gatsby-plugin-offline",
+	],
 };

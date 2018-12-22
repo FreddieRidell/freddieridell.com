@@ -48,7 +48,7 @@ const ChildrenContainer = styled.div`
 	flex: 1;
 	align-self: center;
 	max-width: 65rem;
-	width: 65rem;
+	padding: ${R.path(["theme", "size", "space", 1])};
 `;
 
 const Footer = styled.footer`
@@ -75,15 +75,15 @@ const Layout = ({
 						...acc,
 						{
 							path: ((R.last(acc) || {}).path || "") + "/" + val,
-							label: val
-						}
+							label: val,
+						},
 					],
 					[
 						{
 							path: "",
-							label: "freddie"
-						}
-					]
+							label: "freddie",
+						},
+					],
 				);
 
 			return (
@@ -97,7 +97,7 @@ const Layout = ({
 							}
 							meta={[
 								{ name: "description", content: description },
-								{ name: "keywords", content: keywords }
+								{ name: "keywords", content: keywords },
 							]}
 						>
 							<html lang="en" />

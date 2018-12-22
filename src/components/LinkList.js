@@ -10,8 +10,8 @@ import { transparentize } from "polished";
 const withBackgroundImage = ({
 	hero,
 	theme: {
-		color: { white }
-	}
+		color: { white },
+	},
 }) => {
 	const transparentWhite = transparentize(0.5, white);
 	return hero
@@ -66,7 +66,7 @@ const LinkAbstract = styled.p`
 const Link = ({
 	fields: { slug },
 	excerpt,
-	frontmatter: { title, published, abstract, hero }
+	frontmatter: { title, published, abstract, hero },
 }) => (
 	<LinkListItem hero={hero}>
 		<LinkLink to={slug} hero={hero}>
@@ -81,7 +81,6 @@ const Link = ({
 
 const List = styled.ol`
 	padding: 0;
-	margin: ${R.path(["theme", "size", "space", 1])};
 `;
 
 const LinkList = ({ data }) => (

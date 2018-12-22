@@ -33,13 +33,13 @@ const contactSlideIn = props => keyframes`
 	from { 
 		background-color: ${R.pipe(
 			R.path(["theme", "color", "black"]),
-			transparentize(1.0)
+			transparentize(1.0),
 		)(props)};
 	}
 	to { 
 		background-color: ${R.pipe(
 			R.path(["theme", "color", "black"]),
-			transparentize(0.0)
+			transparentize(0.0),
 		)(props)};
 	}
 `;
@@ -80,14 +80,14 @@ const ContactDetails = () => (
 				name: "mail",
 				text: "contact@freddieridell.com",
 				print: true,
-				icon: mailIcon
+				icon: mailIcon,
 			},
 			{
 				title: "twitter",
 				href: "https://twitter.com/FreddieRidell",
 				name: "twitter",
 				text: "@FreddieRidell",
-				icon: twitterIcon
+				icon: twitterIcon,
 			},
 			{
 				title: "phone",
@@ -95,15 +95,15 @@ const ContactDetails = () => (
 				name: "phone",
 				text: "+44 7521 160572",
 				print: true,
-				icon: phoneIcon
+				icon: phoneIcon,
 			},
 			{
 				title: "github",
 				href: "https://github.com/CodogoFreddie",
 				name: "github",
 				text: "CodogoFreddie",
-				icon: githubIcon
-			}
+				icon: githubIcon,
+			},
 		].map(({ href, name, title, text, print, icon }, i) => (
 			<Contact
 				i={i}

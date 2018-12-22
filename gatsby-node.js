@@ -15,7 +15,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 		createNodeField({
 			node,
 			name: `slug`,
-			value: slug
+			value: slug,
 		});
 	}
 };
@@ -46,8 +46,8 @@ exports.createPages = ({ graphql, actions }) => {
 			const types = new Set(
 				result.data.allMarkdownRemark.edges.reduce(
 					(types, { node }) => [...types, node.frontmatter.type],
-					[]
-				)
+					[],
+				),
 			);
 
 			for (const type of types) {
@@ -56,8 +56,8 @@ exports.createPages = ({ graphql, actions }) => {
 					component: path.resolve(`./src/templates/listing.js`),
 					context: {
 						type,
-						listing: true
-					}
+						listing: true,
+					},
 				});
 			}
 
@@ -67,8 +67,8 @@ exports.createPages = ({ graphql, actions }) => {
 					path: node.fields.slug,
 					component: path.resolve(`./src/templates/post.js`),
 					context: {
-						slug: node.fields.slug
-					}
+						slug: node.fields.slug,
+					},
 				});
 			});
 
