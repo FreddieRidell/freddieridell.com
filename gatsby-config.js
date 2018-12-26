@@ -11,6 +11,13 @@ module.exports = {
 				path: `${__dirname}/src/content`,
 			},
 		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `media`,
+				path: `${__dirname}/src/media`,
+			},
+		},
 		"gatsby-plugin-react-helmet",
 		{
 			resolve: `gatsby-transformer-remark`,
