@@ -1,6 +1,8 @@
 ---
 title: Pull all repos belonging to user
+type: blog
 tags: snippet, git, curl, jq
+published: "2018-12-10"
 ---
 
 ```bash

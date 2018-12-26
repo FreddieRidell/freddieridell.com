@@ -55,13 +55,14 @@ p {
   text-justify: auto;
 }
 
-code {
+pre > code {
   white-space: pre;
   display: block;
   font-size: 2rem;
-  font-family: Monaco, Consolas, monospaced;
+  font-family: Monaco, Consolas, monospace;
   padding: 1rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  overflow-x: scroll;
 }
 
 blockquote {

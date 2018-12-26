@@ -1,6 +1,8 @@
 ---
-title: Useful Git Snippet 01
+title: Show every commit where I altered file $X
 tags: snippet
+type: blog
+published: "2018-11-15"
 ---
 
 Show the commit message, from every commit made by me, that altered a typescript file in `src/client`
