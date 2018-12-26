@@ -76,7 +76,7 @@ const ContactDetails = () => (
 		{[
 			{
 				title: "email",
-				href: "mailhref:contact@freddieridel.com",
+				href: "mailhref:contact@freddieridell.com",
 				name: "mail",
 				text: "contact@freddieridell.com",
 				print: true,
@@ -99,7 +99,7 @@ const ContactDetails = () => (
 			},
 			{
 				title: "github",
-				href: "https://github.com/CodogoFreddie",
+				href: "https://github.com/FreddieRidell",
 				name: "github",
 				text: "CodogoFreddie",
 				icon: githubIcon,
