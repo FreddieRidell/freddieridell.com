@@ -4,7 +4,11 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
 import { Location, Link } from "@reach/router";
-import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
+import styled, {
+	withTheme,
+	ThemeProvider,
+	createGlobalStyle,
+} from "styled-components";
 
 import theme from "./theme";
 import GlobalStyle from "./GlobalStyle";
@@ -89,17 +93,24 @@ const Layout = ({
 			return (
 				<ThemeProvider theme={theme}>
 					<Fragment>
-						<Helmet
-							title={
-								title
+						<Helmet>
+							<title>
+								{title
 									? `${title} - FreddieRidell.com`
-									: "FreddieRidell.com"
-							}
-							meta={[
-								{ name: "description", content: description },
-								{ name: "keywords", content: keywords },
-							]}
-						>
+									: "FreddieRidell.com"}
+							</title>
+							<meta
+								name="description"
+								content={`${description} on freddieridell.com`}
+							/>
+							<meta
+								name="keywords"
+								content={keywords.join(", ")}
+							/>
+							<meta
+								name="viewport"
+								content="width=device-width, initial-scale=1, shrink-to-fit=no"
+							/>
 							<html lang="en" />
 						</Helmet>
 						<GlobalStyle />
@@ -120,7 +131,7 @@ const Layout = ({
 						<Title>{title}</Title>
 						<ChildrenContainer>{children}</ChildrenContainer>
 						<Footer>
-							©Ya' boi Freddie Ridell{" "}
+							©Ya' boi Freddie Ridell
 							{new Date()
 								.toISOString()
 								.replace("T", " ")
@@ -133,4 +144,4 @@ const Layout = ({
 	</Location>
 );
 
-export default Layout;
+export default withTheme(Layout);

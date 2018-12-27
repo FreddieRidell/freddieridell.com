@@ -14,7 +14,11 @@ export default props => {
 		pageContext: { type },
 	} = props;
 	return (
-		<Layout title={type} navLinks={getNavLinks(props)}>
+		<Layout
+			title={type}
+			navLinks={getNavLinks(props)}
+			description={`${type} listing`}
+		>
 			<LinkList data={edges.map(R.prop("node"))} />
 		</Layout>
 	);

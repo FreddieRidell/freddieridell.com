@@ -1,6 +1,6 @@
 ---
 title: Show every commit where I altered file $X
-tags: snippet
+keywords: snippet
 type: blog
 published: "2018-11-15"
 ---
