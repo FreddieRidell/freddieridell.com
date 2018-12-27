@@ -1,15 +1,16 @@
 {
-  "name": "freddieridell.com",
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@now/static-build",
-      "config": { "distDir": "public" }
-    }
-  ],
-  "regions": ["bru"],
-  "github": {
-    "autoAlias": false
-  }
+	"name": "freddieridell.com",
+	"alias": "freddieridell-com.now.sh",
+	"version": 2,
+	"builds": [
+		{
+			"src": "package.json",
+			"use": "@now/static-build",
+			"config": { "distDir": "public" }
+		}
+	],
+	"regions": ["bru"],
+	"github": {
+		"autoAlias": false
+	}
 }
