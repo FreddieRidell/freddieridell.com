@@ -12,7 +12,8 @@ body {
   font-size: 2rem;
   font-family: "Trebuchet MS", arial, sans-serif;
   hanging-punctuation: first last;
-   color: ${R.path(["theme", "color", "black"])};
+   color: ${R.path(["theme", "color", "text"])};
+   background-color: ${R.path(["theme", "color", "bg"])};
 }
 
 html, body, #___gatsby, #___gatsby > div {
@@ -98,6 +99,7 @@ blockquote {
 	}
   }
 }
+
 `;
 
 export default GlobalStyle;

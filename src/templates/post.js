@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { graphql } from "gatsby";
 import styled, { keyframes } from "styled-components";
 import * as R from "ramda";
@@ -46,6 +46,64 @@ const Badge = styled.img`
 	margin-right: ${R.path(["theme", "size", "space", 0])};
 `;
 
+const Badges = ({ npm, repo }) => (
+	<Fragment>
+		{npm && (
+			<BadgeContainer>
+				{[
+					{
+						badge: `https://badgen.net/badge/npm/${npm}?icon=npm&color=cb3837`,
+						href: `https://npmjs.com/package/${npm}`,
+					},
+					{
+						badge: `https://badgen.net/npm/v/${npm}`,
+						href: `https://npmjs.com/package/${npm}`,
+					},
+					{
+						badge: `https://badgen.net/npm/dependents/${npm}`,
+						href: `https://www.npmjs.com/browse/depended/${npm}`,
+					},
+					{
+						badge: `https://badgen.net/bundlephobia/min/${npm}`,
+						href: `https://bundlephobia.com/result?p=${npm}`,
+					},
+					{
+						badge: `https://badgen.net/bundlephobia/minzip/${npm}`,
+						href: `https://bundlephobia.com/result?p=${npm}`,
+					},
+				].map(({ badge, href }) => (
+					<a href={href}>
+						<Badge src={badge} />
+					</a>
+				))}
+			</BadgeContainer>
+		)}
+
+		{repo && (
+			<BadgeContainer>
+				{[
+					{
+						badge: `https://badgen.net/badge/github/${repo}?icon=github&color=333333`,
+						href: `https://github.com/${repo}`,
+					},
+					{
+						badge: `https://badgen.net/github/license/${repo}`,
+						href: `https://github.com/${repo}`,
+					},
+					{
+						badge: `https://badgen.net/github/stars/${repo}`,
+						href: `https://github.com/${repo}/stargazers`,
+					},
+				].map(({ badge, href }) => (
+					<a href={href}>
+						<Badge src={badge} />
+					</a>
+				))}
+			</BadgeContainer>
+		)}
+	</Fragment>
+);
+
 export default props => {
 	const {
 		data: {
@@ -59,33 +117,7 @@ export default props => {
 	return (
 		<Layout title={title} navLinks={getNavLinks(props)} keywords={tags}>
 			{abstract && <Abstract> {abstract} </Abstract>}
-
-			{npm && (
-				<BadgeContainer>
-					{[
-						`https://badgen.net/badge/npm/${npm}?icon=npm&color=cb3837`,
-						`https://badgen.net/npm/v/${npm}`,
-						`https://badgen.net/npm/dependents/${npm}`,
-						`https://badgen.net/bundlephobia/min/${npm}`,
-						`https://badgen.net/bundlephobia/minzip/${npm}`,
-					].map(url => (
-						<Badge src={url} />
-					))}
-				</BadgeContainer>
-			)}
-
-			{repo && (
-				<BadgeContainer>
-					{[
-						`https://badgen.net/badge/github/${repo}?icon=github&color=333333`,
-						`https://badgen.net/github/license/${repo}`,
-						`https://badgen.net/github/stars/${repo}`,
-					].map(url => (
-						<Badge src={url} />
-					))}
-				</BadgeContainer>
-			)}
-
+			<Badges npm={npm} repo={repo} />
 			<div dangerouslySetInnerHTML={{ __html: html }} />
 		</Layout>
 	);

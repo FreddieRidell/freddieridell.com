@@ -12,9 +12,8 @@ import styled, {
 
 import theme from "./theme";
 import GlobalStyle from "./GlobalStyle";
+import PrisimStyle from "./PrisimStyle";
 import { smol } from "../util";
-
-require("prismjs/themes/prism-solarizedlight.css");
 
 const Topbar = styled.header`
 	background-color: ${R.path(["theme", "color", "black"])};
@@ -122,6 +121,7 @@ const Layout = ({
 							<html lang="en" />
 						</Helmet>
 						<GlobalStyle />
+						<PrisimStyle />
 						<Topbar>
 							<Breadcrumbs>
 								{breadcrumb.map(({ path, label }) => (
