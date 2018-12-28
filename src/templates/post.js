@@ -35,13 +35,13 @@ export default props => {
 		data: {
 			markdownRemark: {
 				html,
-				frontmatter: { title, abstract, keywords },
+				frontmatter: { title, abstract, tags },
 			},
 		},
 	} = props;
 
 	return (
-		<Layout title={title} navLinks={getNavLinks(props)} keywords={keywords}>
+		<Layout title={title} navLinks={getNavLinks(props)} keywords={tags}>
 			{abstract && <Abstract> {abstract} </Abstract>}
 			<div dangerouslySetInnerHTML={{ __html: html }} />
 		</Layout>
@@ -63,7 +63,7 @@ export const query = graphql`
 			frontmatter {
 				title
 				abstract
-				keywords
+				tags
 			}
 		}
 	}

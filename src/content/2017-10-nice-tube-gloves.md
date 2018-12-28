@@ -1,7 +1,7 @@
 ---
 title: Tube Gloves
-published: "2017-10-17"
-hero: "/media/img/tubeGloves1.jpg"
+published: 2017-10-17
+hero: ../media/img/tubeGloves1.jpg
 type: crafts
 ---
 

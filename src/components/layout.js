@@ -52,7 +52,12 @@ const ChildrenContainer = styled.div`
 	flex: 1;
 	align-self: center;
 	max-width: 65rem;
+	width: calc(100% - ${R.path(["theme", "size", "space", 1])});
 	padding: ${R.path(["theme", "size", "space", 1])};
+
+	@media (max-width: 65rem) {
+		padding: 0;
+	}
 `;
 
 const Footer = styled.footer`
@@ -105,7 +110,7 @@ const Layout = ({
 							/>
 							<meta
 								name="keywords"
-								content={keywords.join(", ")}
+								content={(keywords || []).join(", ")}
 							/>
 							<meta
 								name="viewport"

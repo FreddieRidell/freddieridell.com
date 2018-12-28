@@ -7,6 +7,8 @@ import { Location, Link as RouterLink } from "@reach/router";
 import styled, { ThemeProvider } from "styled-components";
 import { transparentize } from "polished";
 
+import { formatDate } from "../util";
+
 const withBackgroundImage = ({
 	hero,
 	theme: {
@@ -39,6 +41,10 @@ const LinkTopBit = styled.div`
 	display: flex;
 	align-items: flex-end;
 	margin-bottom: ${R.path(["theme", "size", "space", 0])};
+	@media (max-width: 25rem) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 `;
 
 const LinkTitle = styled.h2`
@@ -52,9 +58,8 @@ const LinkDate = styled.p`
 	margin: 0;
 	color: ${R.path(["theme", "color", "gray"])};
 	margin-left: ${R.path(["theme", "size", "space", 0])};
-
 	@media (max-width: 25rem) {
-		display: none;
+		margin: 0;
 	}
 `;
 
@@ -68,11 +73,11 @@ const Link = ({
 	excerpt,
 	frontmatter: { title, published, abstract, hero },
 }) => (
-	<LinkListItem hero={hero}>
-		<LinkLink to={slug} hero={hero}>
+	<LinkListItem hero={(hero || {}).heroURL}>
+		<LinkLink to={slug} hero={(hero || {}).heroURL}>
 			<LinkTopBit>
 				<LinkTitle>{title}</LinkTitle>
-				<LinkDate>{published}</LinkDate>
+				<LinkDate>{formatDate(published)}</LinkDate>
 			</LinkTopBit>
 			<LinkAbstract>{abstract || excerpt} </LinkAbstract>
 		</LinkLink>

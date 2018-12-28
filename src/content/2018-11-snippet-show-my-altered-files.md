@@ -1,8 +1,8 @@
 ---
 title: Show every commit where I altered file $X
-keywords: snippet
+tags: [snippet, git, xargs]
 type: blog
-published: "2018-11-15"
+published: 2018-11-15
 ---
 
 Show the commit message, from every commit made by me, that altered a typescript file in `src/client`

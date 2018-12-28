@@ -1,6 +1,6 @@
 ---
 title: Bonsai Log 2
-published: "2018-10-15"
+published: 2018-10-15
 type: blog
 ---
 

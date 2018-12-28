@@ -48,7 +48,9 @@ export const query = graphql`
 						title
 						published
 						abstract
-						hero
+						hero {
+							heroURL: publicURL
+						}
 					}
 				}
 			}

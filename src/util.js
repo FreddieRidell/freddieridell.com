@@ -1,4 +1,5 @@
 import * as R from "ramda";
+import format from "date-fns/fp/format";
 
 export const getNavLinks = R.pipe(
 	R.path(["data", "allSitePage", "edges"]),
@@ -10,3 +11,5 @@ export const getNavLinks = R.pipe(
 		label: slug.replace(/\//g, "").replace("-", " "),
 	})),
 );
+
+export const formatDate = format("y-MM-dd");
