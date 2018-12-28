@@ -11,6 +11,6 @@
 	],
 	"regions": ["bru"],
 	"github": {
-		"autoAlias": false
+		"autoAlias": true
 	}
 }
