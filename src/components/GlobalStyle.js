@@ -39,6 +39,7 @@ a::hover, a::active {
 a:hover, a:active { text-decoration: underline; }
 
 img { width: 100%; }
+.no-expand>img { width: auto; }
 
 h1 { font-size: 8rem; line-height: 8rem; }
 h2 { font-size: 5.65685424949rem; line-height: 6rem; }
@@ -55,14 +56,8 @@ p {
   text-justify: auto;
 }
 
-pre > code {
-  white-space: pre;
-  display: block;
-  font-size: 2rem;
-  font-family: Monaco, Consolas, monospace;
-  padding: 1rem;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  overflow-x: scroll;
+.gatsby-highlight {
+   font-size: 2rem;
 }
 
 blockquote {
@@ -71,6 +66,10 @@ blockquote {
   padding: 1rem;
   padding-left: 2rem;
   font-size: 3rem;
+
+  & > p {
+  margin: 0;
+  }
 
   &::before {
 	content: "";
