@@ -1,14 +1,8 @@
 import React, { Fragment } from "react";
 import * as R from "ramda";
-import PropTypes from "prop-types";
 import Helmet from "react-helmet";
-import { StaticQuery, graphql } from "gatsby";
 import { Location, Link } from "@reach/router";
-import styled, {
-	withTheme,
-	ThemeProvider,
-	createGlobalStyle,
-} from "styled-components";
+import styled, { withTheme, ThemeProvider } from "styled-components";
 
 import theme from "./theme";
 import GlobalStyle from "./GlobalStyle";

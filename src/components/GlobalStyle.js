@@ -1,6 +1,5 @@
-import React, { Fragment } from "react";
 import * as R from "ramda";
-import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 html {

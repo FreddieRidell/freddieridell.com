@@ -119,17 +119,6 @@ const ContactDetails = () => (
 	</ContactsContainer>
 );
 
-const NameAndDeets = styled.div`
-	flex-direction: column;
-	display: flex;
-	@media print {
-		flex-direction: row;
-		align-items: flex-end;
-		justify-content: space-between;
-		width: 100%;
-	}
-`;
-
 export default () => (
 	<div>
 		<ContactDetails />

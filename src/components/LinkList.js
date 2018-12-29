@@ -1,10 +1,7 @@
-import React, { Fragment } from "react";
+import React from "react";
 import * as R from "ramda";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import { StaticQuery, graphql } from "gatsby";
-import { Location, Link as RouterLink } from "@reach/router";
-import styled, { ThemeProvider } from "styled-components";
+import { Link as RouterLink } from "@reach/router";
+import styled from "styled-components";
 import { transparentize } from "polished";
 
 import { formatDate } from "../util";
