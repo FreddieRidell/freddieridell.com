@@ -1,3 +1,5 @@
+const theme = require("./src/components/theme");
+
 module.exports = {
 	siteMetadata: {
 		title: "Gatsby Default Starter",
@@ -44,11 +46,11 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: "gatsby-starter-default",
-				short_name: "starter",
+				name: "Freddie Ridell",
+				short_name: "Freddie Ridell",
 				start_url: "/",
-				background_color: "#663399",
-				theme_color: "#663399",
+				background_color: theme.color.text,
+				theme_color: theme.color.text,
 				display: "minimal-ui",
 			},
 		},

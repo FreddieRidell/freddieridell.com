@@ -1,7 +1,7 @@
-import * as R from "ramda";
-import { baseTheme } from "@freddieridell/little-bonsai-styles";
+const R = require("ramda");
+const { baseTheme } = require("@freddieridell/little-bonsai-styles");
 
-export default R.applySpec({
+module.exports = R.applySpec({
 	color: {
 		code: {
 			bg: R.path(["palette", "base", "black"]),

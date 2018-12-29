@@ -14,6 +14,7 @@ const Topbar = styled.header`
 	color: ${R.path(["theme", "color", "white"])};
 	padding: ${R.path(["theme", "size", "space", 0])};
 	display: flex;
+	flex-shrink: 0;
 `;
 
 const Breadcrumbs = styled.div`
@@ -24,7 +25,6 @@ const Breadcrumbs = styled.div`
 const Breadcrumb = styled(Link)`
 	color: ${R.path(["theme", "color", "white"])};
 	::after {
-		margin: ${R.path(["theme", "size", "space", 0])};
 		content: "/";
 		text-decoration: none;
 		&::hover {
