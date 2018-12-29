@@ -38,7 +38,9 @@ a::hover, a::active {
 
 a:hover, a:active { text-decoration: underline; }
 
-img { width: 100%; }
+img {
+width: 100%;
+}
 .no-expand>img { width: auto; }
 
 h1 { font-size: 8rem; line-height: 8rem; }
