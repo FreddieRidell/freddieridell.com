@@ -10,8 +10,9 @@ import PrisimStyle from "./PrisimStyle";
 import { smol } from "../util";
 
 const Topbar = styled.header`
+${console.log}
 	background-color: ${R.path(["theme", "color", "black"])};
-	color: ${R.path(["theme", "color", "white"])};
+	color: ${R.path(["theme", "color", "bg"])};
 	padding: ${R.path(["theme", "size", "space", 0])};
 	display: flex;
 	flex-shrink: 0;
@@ -19,7 +20,6 @@ const Topbar = styled.header`
 
 const Breadcrumbs = styled.div`
 	flex: 1;
-	background-color: ${R.path(["theme", "color", "black"])};
 `;
 
 const Breadcrumb = styled(Link)`

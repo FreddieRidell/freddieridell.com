@@ -49,6 +49,7 @@ h3 { font-size: 4rem; line-height: 4rem; }
 h4 { font-size: 2.82842712475rem; line-height: 3rem; }
 h1, h2, h3, h4 { margin: 3rem 0 1rem; }
 p, code, blockquote { margin: 0 0 2rem; }
+ul { padding-left: 2rem; }
 
 p {
   line-height: 3rem;
