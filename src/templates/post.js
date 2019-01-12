@@ -52,7 +52,9 @@ const Badges = ({ npm, repo }) => (
 			<BadgeContainer>
 				{[
 					{
-						badge: `https://badgen.net/badge/npm/${npm}?icon=npm&color=cb3837`,
+						badge: `https://badgen.net/badge/npm/${encodeURIComponent(
+							npm,
+						)}?icon=npm&color=cb3837`,
 						href: `https://npmjs.com/package/${npm}`,
 					},
 					{
