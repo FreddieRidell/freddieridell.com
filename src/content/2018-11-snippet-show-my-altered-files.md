@@ -9,7 +9,7 @@ Show the commit message, from every commit made by me, that altered a typescript
 
 ```bash
 $ find src/client -type f -name '*.ts' | #find all the typescript files in src/client
-	 xargs -n 1 git blame HEAD -- | get the blame
+	 xargs -n 1 git blame HEAD -- | #get the blame
 	 ag freddie | #find lines containing my name
 	 cut -d " " -f 1 | #get the commit hash
 	 sort | uniq -c | sort | tr -s ' ' | cut -d " " -f 3 | #get a list of unique commit hashes, with the one that i'm blamed most on at the bottom
