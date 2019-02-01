@@ -1,7 +1,7 @@
 ---
 title: Will WASM change the frontend
 type: blog
-tags: wasm, js, frontend, thinkpiece
+tags: [wasm, js, frontend, thinkpiece]
 published: 2019-01-20
 ---
 
