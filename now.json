@@ -1,6 +1,6 @@
 {
 	"name": "freddieridell.com",
-	"alias": "freddieridell.com",
+	"alias": ["freddieridell.com", "www.freddieridell.com"],
 	"version": 2,
 	"builds": [
 		{
