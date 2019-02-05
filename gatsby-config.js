@@ -13,25 +13,12 @@ module.exports = {
 				path: `${__dirname}/src/content`,
 			},
 		},
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				name: `media`,
-				path: `${__dirname}/src/media`,
-			},
-		},
 		"gatsby-plugin-react-helmet",
 		{
 			resolve: `gatsby-transformer-remark`,
 			options: {
 				plugins: [
-					{
-						resolve: `gatsby-remark-images`,
-						options: {
-							maxWidth: 590,
-						},
-					},
-
+					"cloudinaryify-images",
 					{
 						resolve: `gatsby-remark-prismjs`,
 						options: {
@@ -39,7 +26,6 @@ module.exports = {
 							showLineNumbers: true,
 						},
 					},
-					"gatsby-remark-copy-linked-files",
 				],
 			},
 		},
