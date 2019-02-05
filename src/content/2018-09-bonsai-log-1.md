@@ -6,7 +6,7 @@ type: blog
 
 My fiance bought me a bonsai last week, and I thought it might be nice to record my progress growing it.
 
-![Little Tree](../media/img/Bonsai2.jpg)
+![Little Tree](Bonsai2)
 
 I've always been _really_ bad at keeping plants alive, I had a few succulents and cacti as a child, and they mostly perished. I'm trying to make a consistent effort with this tiny tree: It's far sadder to kill a plant that your wife gave you. I've read up on proper bonsai maintenance online, and It seems that I should be watering it once a day, fertilising it once a week, keeping it indoors over winter, and occasionally trimming its leaves/branches
 

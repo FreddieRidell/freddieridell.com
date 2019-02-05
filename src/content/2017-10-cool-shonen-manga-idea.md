@@ -17,5 +17,5 @@ Each of the magical items is actually literally the thing it sounds like: the fi
 
 And it shall be called:
 
-![for now is the time to gain the items, young man](http://res.cloudinary.com/codogo/image/upload/c_fill,dpr_auto,f_auto,g_auto,q_auto,w_1000/v1507032969/gifts_no_christmas_avml1e)
+![for now is the time to gain the items, young man](giftsNoChristmas)
 A Netflix Original
