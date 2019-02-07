@@ -4,6 +4,13 @@ type: blog
 tags: [ snippet, html, css ]
 ---
 
+__virtues:__
+- uses the body to scroll, no need for nested `<div>`s with `overflow: auto`
+- compartmentalizes the `header`, `footer` and `main` asap
+- creates a new stacking context for header and footer
+   - optimises animations that only affect the header or the footer
+   - means you don't have to mess around with `z-index` to keep them above `<main/>`
+
 ```html
 <html>
    <head>
@@ -25,7 +32,7 @@ html, body {
 }
 
 body {
-  overflowy: scroll;
+  overflow-y: scroll;
   --header-height: 30px;
   --footer-height: 30px;
 }
