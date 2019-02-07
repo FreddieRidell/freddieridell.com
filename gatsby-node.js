@@ -13,10 +13,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 		const slug =
 			"/" +
 			path.join(
+				...[
 				node.frontmatter.type,
-				format("y", node.frontmatter.published),
-				format("MM", node.frontmatter.published),
-				keb(node.frontmatter.slug || node.frontmatter.title),
+				node.frontmatter.type !== "open-source" && format("y", node.frontmatter.published),
+				node.frontmatter.type !== "open-source" && format("MM", node.frontmatter.published),
+					keb(node.frontmatter.slug || node.frontmatter.title),
+				].filter(Boolean)
 			)
 
 		createNodeField({
