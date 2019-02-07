@@ -10,7 +10,6 @@ import PrisimStyle from "./PrisimStyle";
 import { smol } from "../util";
 
 const Topbar = styled.header`
-${console.log}
 	background-color: ${R.path(["theme", "color", "black"])};
 	color: ${R.path(["theme", "color", "bg"])};
 	padding: ${R.path(["theme", "size", "space", 0])};
