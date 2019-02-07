@@ -1,4 +1,6 @@
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const { format, getYear, getMonth } = require("date-fns/fp");
+const keb = require("@freddieridell/kebab-case");
 
 const path = require(`path`);
 
@@ -10,8 +12,13 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 		const slug =
 			"/" +
-			node.frontmatter.type +
-			createFilePath({ node, getNode, basePath: `pages` });
+			path.join(
+				node.frontmatter.type,
+				format("y", node.frontmatter.published),
+				format("MM", node.frontmatter.published),
+				keb(node.frontmatter.slug || node.frontmatter.title),
+			)
+
 		createNodeField({
 			node,
 			name: `slug`,
@@ -37,6 +44,8 @@ exports.createPages = ({ graphql, actions }) => {
 							}
 							frontmatter {
 								type
+								published
+								title
 							}
 						}
 					}

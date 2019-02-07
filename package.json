@@ -10,6 +10,7 @@
 		"trailingComma": "all"
 	},
 	"dependencies": {
+		"@freddieridell/kebab-case": "0.0.1",
 		"date-fns": "^2.0.0-alpha.26",
 		"feather-icons": "^4.9.0",
 		"gatsby-plugin-sharp": "^2.0.16",
