@@ -124,7 +124,8 @@ export default () => (
 		<ContactDetails />
 
 		<Bio>
-			Hi, I'm Freddie Ridell, a Senior Fullstack JavaScript Developer specialising in React.js and React Native.
+			Hi, I'm Freddie Ridell, a Senior Fullstack JavaScript Developer
+			specialising in React.js and React Native.
 			{false &&
 				"I'm currently looking for new opportunities as a contractor in Manchester."}
 		</Bio>

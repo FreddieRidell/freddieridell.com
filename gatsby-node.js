@@ -14,12 +14,14 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 			"/" +
 			path.join(
 				...[
-				node.frontmatter.type,
-				node.frontmatter.type !== "open-source" && format("y", node.frontmatter.published),
-				node.frontmatter.type !== "open-source" && format("MM", node.frontmatter.published),
+					node.frontmatter.type,
+					node.frontmatter.type !== "open-source" &&
+						format("y", node.frontmatter.published),
+					node.frontmatter.type !== "open-source" &&
+						format("MM", node.frontmatter.published),
 					keb(node.frontmatter.slug || node.frontmatter.title),
-				].filter(Boolean)
-			)
+				].filter(Boolean),
+			);
 
 		createNodeField({
 			node,

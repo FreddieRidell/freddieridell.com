@@ -111,7 +111,7 @@ const Content = styled.div`
 	flex-direction: column;
 	align-items: flex-start;
 
-	.gatsby-highlight { 
+	.gatsby-highlight {
 		width: calc(-2rem + 100vw);
 		max-width: 80rem;
 		align-self: center;

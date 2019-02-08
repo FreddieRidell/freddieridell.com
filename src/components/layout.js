@@ -70,48 +70,48 @@ const Layout = ({
 	...props
 }) => (
 	<Location>
-		{({ location }) => 
-				<ThemeProvider theme={theme}>
-					<Fragment>
-						<Helmet>
-							<title>
-								{title
-									? `${title} - FreddieRidell.com`
-									: "FreddieRidell.com"}
-							</title>
-							<meta
-								name="description"
-								content={`${description} on freddieridell.com`}
-							/>
-							<meta
-								name="keywords"
-								content={(keywords || []).join(", ")}
-							/>
-							<meta
-								name="viewport"
-								content="width=device-width, initial-scale=1, shrink-to-fit=no"
-							/>
-							<html lang="en" />
-						</Helmet>
-						<GlobalStyle />
-						<PrisimStyle />
-						<Topbar>
-							<Breadcrumbs>
-								<Breadcrumb to="/">freddieridell.com</Breadcrumb>
-							</Breadcrumbs>
-						</Topbar>
-						<Title>{title}</Title>
-						<ChildrenContainer>{children}</ChildrenContainer>
-						<Footer>
-							©Ya' boi Freddie Ridell
-							{new Date()
-								.toISOString()
-								.replace("T", " ")
-								.replace(/\..*/, "")}
-						</Footer>
-					</Fragment>
-				</ThemeProvider>
-		}
+		{({ location }) => (
+			<ThemeProvider theme={theme}>
+				<Fragment>
+					<Helmet>
+						<title>
+							{title
+								? `${title} - FreddieRidell.com`
+								: "FreddieRidell.com"}
+						</title>
+						<meta
+							name="description"
+							content={`${description} on freddieridell.com`}
+						/>
+						<meta
+							name="keywords"
+							content={(keywords || []).join(", ")}
+						/>
+						<meta
+							name="viewport"
+							content="width=device-width, initial-scale=1, shrink-to-fit=no"
+						/>
+						<html lang="en" />
+					</Helmet>
+					<GlobalStyle />
+					<PrisimStyle />
+					<Topbar>
+						<Breadcrumbs>
+							<Breadcrumb to="/">freddieridell.com</Breadcrumb>
+						</Breadcrumbs>
+					</Topbar>
+					<Title>{title}</Title>
+					<ChildrenContainer>{children}</ChildrenContainer>
+					<Footer>
+						©Ya' boi Freddie Ridell
+						{new Date()
+							.toISOString()
+							.replace("T", " ")
+							.replace(/\..*/, "")}
+					</Footer>
+				</Fragment>
+			</ThemeProvider>
+		)}
 	</Location>
 );
 

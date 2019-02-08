@@ -1,10 +1,11 @@
 const theme = require("./src/components/theme");
-
 module.exports = {
 	siteMetadata: {
 		title: "Gatsby Default Starter",
+		siteUrl: `https://freddieridell.com`,
 	},
 	plugins: [
+		"gatsby-plugin-sitemap",
 		"gatsby-plugin-styled-components",
 		{
 			resolve: `gatsby-source-filesystem`,
