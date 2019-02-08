@@ -111,9 +111,13 @@ const Content = styled.div`
 	flex-direction: column;
 	align-items: flex-start;
 
-.gatsby-highlight { 
-	align-self: center;
-	max-width: calc(100vw - 2rem);
+	.gatsby-highlight { 
+		width: calc(-2rem + 100vw);
+		max-width: 80rem;
+		align-self: center;
+
+		display: flex;
+		justify-content: center;
 	}
 `;
 export default props => {
