@@ -106,6 +106,16 @@ const Badges = ({ npm, repo }) => (
 	</Fragment>
 );
 
+const Content = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+.gatsby-highlight { 
+	align-self: center;
+	max-width: calc(100vw - 2rem);
+	}
+`;
 export default props => {
 	const {
 		data: {
@@ -120,7 +130,7 @@ export default props => {
 		<Layout title={title} navLinks={getNavLinks(props)} keywords={tags}>
 			{abstract && <Abstract> {abstract} </Abstract>}
 			<Badges npm={npm} repo={repo} />
-			<div dangerouslySetInnerHTML={{ __html: html }} />
+			<Content dangerouslySetInnerHTML={{ __html: html }} />
 		</Layout>
 	);
 };
