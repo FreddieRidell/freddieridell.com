@@ -70,27 +70,7 @@ const Layout = ({
 	...props
 }) => (
 	<Location>
-		{({ location }) => {
-			const breadcrumb = location.pathname
-				.split("/")
-				.filter(R.length)
-				.reduce(
-					(acc, val) => [
-						...acc,
-						{
-							path: ((R.last(acc) || {}).path || "") + "/" + val,
-							label: val,
-						},
-					],
-					[
-						{
-							path: "",
-							label: "freddie",
-						},
-					],
-				);
-
-			return (
+		{({ location }) => 
 				<ThemeProvider theme={theme}>
 					<Fragment>
 						<Helmet>
@@ -117,17 +97,8 @@ const Layout = ({
 						<PrisimStyle />
 						<Topbar>
 							<Breadcrumbs>
-								{breadcrumb.map(({ path, label }) => (
-									<Fragment key={path}>
-										<Breadcrumb to={path}>
-											{label}
-										</Breadcrumb>
-									</Fragment>
-								))}
+								<Breadcrumb to="/">freddieridell.com</Breadcrumb>
 							</Breadcrumbs>
-							{navLinks.map(({ slug, label }) => (
-								<NavLink to={slug}>{label}</NavLink>
-							))}
 						</Topbar>
 						<Title>{title}</Title>
 						<ChildrenContainer>{children}</ChildrenContainer>
@@ -140,8 +111,7 @@ const Layout = ({
 						</Footer>
 					</Fragment>
 				</ThemeProvider>
-			);
-		}}
+		}
 	</Location>
 );
 
