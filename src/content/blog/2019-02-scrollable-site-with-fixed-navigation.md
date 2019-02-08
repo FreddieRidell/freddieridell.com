@@ -2,6 +2,7 @@
 title: Scrollable site with fixed navigation
 type: blog
 tags: [snippet, html, css, react]
+published: 2019-02-08
 ---
 
 I've often wanted to make a website/webapp that satisfies some or all of the following criteria:
