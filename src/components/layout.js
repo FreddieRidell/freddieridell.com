@@ -99,6 +99,10 @@ const Layout = ({
 						<Breadcrumbs>
 							<Breadcrumb to="/">freddieridell.com</Breadcrumb>
 						</Breadcrumbs>
+						         {navLinks.map(({ slug, label }) => (
+                                                               <NavLink to={slug}>{label}</NavLink>
+                                                       ))}
+
 					</Topbar>
 					<Title>{title}</Title>
 					<ChildrenContainer>{children}</ChildrenContainer>

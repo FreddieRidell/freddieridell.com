@@ -120,12 +120,34 @@ const Content = styled.div`
 		justify-content: center;
 	}
 `;
+
+const GalleryContainer = styled.div`
+	overflow-x: auto;
+`;
+
+const Gallery = styled.div`
+	align-self: center;
+	display: flex;
+	flex-direction: row;
+`;
+
+const GalleryImage = styled.a`
+	width: 25rem;
+	height: 25rem;
+	display: block;
+	background-image: url(${R.prop("src")});
+	background-size: cover;
+	background-position: center center;
+	margin: 0 1rem;
+	flex: 0 0 auto;
+`;
+
 export default props => {
 	const {
 		data: {
 			markdownRemark: {
 				html,
-				frontmatter: { title, abstract, tags, repo, npm },
+				frontmatter: { title, abstract, tags, repo, npm, gallery },
 			},
 		},
 	} = props;
@@ -133,6 +155,20 @@ export default props => {
 	return (
 		<Layout title={title} navLinks={getNavLinks(props)} keywords={tags}>
 			{abstract && <Abstract> {abstract} </Abstract>}
+			{gallery && (
+				<GalleryContainer>
+					<Gallery>
+						{" "}
+						{gallery.map(url => (
+							<GalleryImage
+								key={url}
+								href={`https://res.cloudinary.com/little-bonsai/image/upload/f_auto/v1548885223/${url}`}
+								src={`https://res.cloudinary.com/little-bonsai/image/upload/c_fill,f_auto,q_auto,w_700,ar_1.0/v1548885223/${url}`}
+							/>
+						))}
+					</Gallery>
+				</GalleryContainer>
+			)}
 			<Badges npm={npm} repo={repo} />
 			<Content dangerouslySetInnerHTML={{ __html: html }} />
 		</Layout>
@@ -157,6 +193,7 @@ export const query = graphql`
 				tags
 				npm
 				repo
+				gallery
 			}
 		}
 	}
