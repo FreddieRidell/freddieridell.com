@@ -59,8 +59,8 @@ export default () => (
 				I was instrumental in making major decisions during the
 				development: technical choices and policy decisions that were
 				foundational to the app as a whole. I was also trusted to
-				provide training to tutoring to other members to the team to
-				bring them up to speed with react best practices.
+				provide training to other members of the team to bring them up
+				to speed with react best practices.{" "}
 			</p>
 		</Experience>
 
