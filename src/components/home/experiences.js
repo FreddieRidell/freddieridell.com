@@ -73,13 +73,12 @@ export default () => (
 			<p>
 				The core focus of my work has been producing Codogo Write, a
 				state-of-the-art writing web app with a focus on ease-of-use and
-				polished user experience. We were recently invited to pitch with
-				Y Combinator in California on the strength of the MVP I
-				developed.
+				polished user experience. We were invited to pitch with Y
+				Combinator in California on the strength of the MVP I developed.
 			</p>
 			<p>
-				To support development of this product, I’ve produced complex
-				web and native apps and websites for over 20 clients, across a
+				To support development of this product, I produced complex web
+				and native apps and websites for over 20 clients, across a
 				breadth of fields (including chat apps, social networks, and
 				data-vis) both from scratch and on legacy systems in React and
 				React Native.

@@ -9,6 +9,7 @@ export default () => (
 				"CSS / SCSS",
 				"GraphQL",
 				"Linux, Shell, Git",
+				"rust",
 				"C / C++",
 				"Performance analysis and optimisation",
 				"Agile Project Management",
