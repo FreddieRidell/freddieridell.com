@@ -153,7 +153,7 @@ export default props => {
 	} = props;
 
 	return (
-		<Layout title={title} navLinks={getNavLinks(props)} keywords={tags}>
+		<Layout title={title} navLinks={getNavLinks(props)} keywords={tags} description = { abstract || title } >
 			{abstract && <Abstract> {abstract} </Abstract>}
 			{gallery && (
 				<GalleryContainer>

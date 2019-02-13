@@ -6,7 +6,7 @@ import { Experiences, PersonalInfo, Skills } from "../components/home";
 import { getNavLinks } from "../util";
 
 const IndexPage = props => (
-	<Layout title="Freddie Ridell" navLinks={getNavLinks(props)}>
+	<Layout title="Freddie Ridell" navLinks={getNavLinks(props)} description="Home Page" >
 		<PersonalInfo />
 		<Skills />
 		<Experiences />

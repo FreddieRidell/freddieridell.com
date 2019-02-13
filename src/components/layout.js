@@ -81,7 +81,7 @@ const Layout = ({
 						</title>
 						<meta
 							name="description"
-							content={`${description} on freddieridell.com`}
+							content={`${description} - freddieridell.com`}
 						/>
 						<meta
 							name="keywords"
