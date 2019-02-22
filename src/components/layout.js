@@ -16,19 +16,8 @@ const Topbar = styled.header`
 	flex-shrink: 0;
 `;
 
-const Breadcrumbs = styled.div`
+const HomeLink = styled.div`
 	flex: 1;
-`;
-
-const Breadcrumb = styled(Link)`
-	color: ${R.path(["theme", "color", "white"])};
-	::after {
-		content: "/";
-		text-decoration: none;
-		&::hover {
-			text-decoration: none;
-		}
-	}
 `;
 
 const NavLink = styled(Link)`
@@ -49,9 +38,7 @@ const ChildrenContainer = styled.div`
 	width: calc(100% - ${R.path(["theme", "size", "space", 1])});
 	padding: ${R.path(["theme", "size", "space", 1])};
 
-	${smol(`
-      padding: 0;
-      `)}
+	${smol(`padding: 0;`)}
 `;
 
 const Footer = styled.footer`
@@ -72,9 +59,9 @@ const Layout = ({
 		<Fragment>
 			<Head {...{ title, description, keywords }} />
 			<Topbar>
-				<Breadcrumbs>
-					<Breadcrumb to="/">freddieridell.com</Breadcrumb>
-				</Breadcrumbs>
+				<HomeLink>
+					<NavLink to="/">home</NavLink>
+				</HomeLink>
 				{navLinks.map(({ slug, label }) => (
 					<NavLink to={slug}>{label}</NavLink>
 				))}
