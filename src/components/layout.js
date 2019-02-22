@@ -5,9 +5,8 @@ import { Location, Link } from "@reach/router";
 import styled, { withTheme, ThemeProvider } from "styled-components";
 
 import theme from "./theme";
-import GlobalStyle from "./GlobalStyle";
-import PrisimStyle from "./PrisimStyle";
 import { smol } from "../util";
+import Head from "./Head";
 
 const Topbar = styled.header`
 	background-color: ${R.path(["theme", "color", "black"])};
@@ -69,53 +68,28 @@ const Layout = ({
 	navLinks = [],
 	...props
 }) => (
-	<Location>
-		{({ location }) => (
-			<ThemeProvider theme={theme}>
-				<Fragment>
-					<Helmet>
-						<title>
-							{title
-								? `${title} - FreddieRidell.com`
-								: "FreddieRidell.com"}
-						</title>
-						<meta
-							name="description"
-							content={`${description} - freddieridell.com`}
-						/>
-						<meta
-							name="keywords"
-							content={(keywords || []).join(", ")}
-						/>
-						<meta
-							name="viewport"
-							content="width=device-width, initial-scale=1, shrink-to-fit=no"
-						/>
-						<html lang="en" />
-					</Helmet>
-					<GlobalStyle />
-					<PrisimStyle />
-					<Topbar>
-						<Breadcrumbs>
-							<Breadcrumb to="/">freddieridell.com</Breadcrumb>
-						</Breadcrumbs>
-						{navLinks.map(({ slug, label }) => (
-							<NavLink to={slug}>{label}</NavLink>
-						))}
-					</Topbar>
-					<Title>{title}</Title>
-					<ChildrenContainer>{children}</ChildrenContainer>
-					<Footer>
-						©Ya' boi Freddie Ridell
-						{new Date()
-							.toISOString()
-							.replace("T", " ")
-							.replace(/\..*/, "")}
-					</Footer>
-				</Fragment>
-			</ThemeProvider>
-		)}
-	</Location>
+	<ThemeProvider theme={theme}>
+		<Fragment>
+			<Head {...{ title, description, keywords }} />
+			<Topbar>
+				<Breadcrumbs>
+					<Breadcrumb to="/">freddieridell.com</Breadcrumb>
+				</Breadcrumbs>
+				{navLinks.map(({ slug, label }) => (
+					<NavLink to={slug}>{label}</NavLink>
+				))}
+			</Topbar>
+			<Title>{title}</Title>
+			<ChildrenContainer>{children}</ChildrenContainer>
+			<Footer>
+				©Ya' boi Freddie Ridell
+				{new Date()
+					.toISOString()
+					.replace("T", " ")
+					.replace(/\..*/, "")}
+			</Footer>
+		</Fragment>
+	</ThemeProvider>
 );
 
 export default withTheme(Layout);

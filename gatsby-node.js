@@ -74,9 +74,7 @@ exports.createPages = ({ graphql, actions }) => {
 				});
 			}
 
-			console.log();
 			result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-				console.log(node.fields.slug);
 				createPage({
 					path: node.fields.slug,
 					component: path.resolve(`./src/templates/post.js`),
