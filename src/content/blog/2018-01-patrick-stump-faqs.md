@@ -14,7 +14,7 @@ Patrick Stump...
 -   has got such good fashion sense
 -   just wants to know what it's like to be you
 -   is making out inside crashed cars
--   used to waste his time dreaming of being alive (now he only waste it dreaming of you)
+-   used to waste his time dreaming of being alive (now he only wastes it dreaming of you)
 -   is two quarters and a heart down
 -   doesn't want to forget how your voice sounds
 -   only wants sympathy in the form of you crawling into bed with him.
@@ -75,8 +75,8 @@ Patrick Stump...
 -   has got those jet pack blues
 -   is the sand in the bottom half of the hourglass (glass, glass)
 -   thinks that god is gonna have to kill him twice
--   he took too many hits off this memory
--   he was just an only child of the universe
--   he always make such expensive mistakes
--   he hates all his friends.
--   is pedal to the metal, make no mistake
+-   took too many hits off this memory
+-   was just an only child of the universe
+-   always make such expensive mistakes
+-   hates all his friends
+-   is pedal to the metal; make no mistake.
