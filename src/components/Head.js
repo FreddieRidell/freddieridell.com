@@ -22,7 +22,7 @@ const Head = ({ title, description, keywords, theme }) => (
 			<meta name="twitter:title" content={title} />
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 			<meta property="article:author" content="Freddie Ridell" />
-			<meta property="og:description" content="Description Here" />
+			<meta property="og:description" content={description} />
 			<meta property="og:locale" content="en_GB" />
 			<meta property="og:site_name" content="FreddieRidell.com" />
 			<meta property="og:title" content={title} />
