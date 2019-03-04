@@ -92,6 +92,37 @@ const foo = input => {
 };
 ```
 
+## Use Cases
+A very common use case for bailout returning is [redux][redux] reducers:
+
+```js
+const reducer = (state, action) => {
+   if(!action.success){
+      return state;
+   }
+
+      
+   //do lots of calculation and...
+   return newState;
+}
+```
+
+or in [react][react] components:
+
+```js
+const Component = (props) => {
+   if(props.error){
+      return null
+   }
+
+   return <div>
+      { /* lots of clever components... */ }
+   </div>
+```
+
 ## Conclusion
 
 Although this seems like a very small and trivial change, it often really helps me to reduce the complexity of a function, reason about it more easily and reduce my cognitive load. Next time you find yourself wrapping most of your function code in a conditional, just to return `null`, consider [Bailout Returning](.) instead.
+
+[react]: https://reactjs.org/
+[redux]: https://redux.js.org/
