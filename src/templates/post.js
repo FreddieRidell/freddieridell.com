@@ -11,12 +11,21 @@ const wipein = keyframes`
 	to { right: 0; }
 `;
 
+const Tldr = styled.div`
+	font-size: 3rem;
+   background-color: ${R.path(["theme", "color", "black"])};
+   color: ${R.path(["theme", "color", "white"])};
+   margin-bottom: 2rem;
+   padding: 2rem;
+`;
+
 const Abstract = styled.div`
 	position: relative;
 	background-color: ${R.path(["theme", "color", "lightgray"])};
 	padding: 1rem;
 	padding-top: 2rem;
 	font-size: 3rem;
+	margin-bottom: 3rem;
 
 	&::after {
 		content: "";
@@ -147,7 +156,15 @@ export default props => {
 		data: {
 			markdownRemark: {
 				html,
-				frontmatter: { title, abstract, tags, repo, npm, gallery },
+				frontmatter: {
+					abstract,
+					gallery,
+					npm,
+					repo,
+					tags,
+					title,
+               tldr,
+				},
 			},
 		},
 	} = props;
@@ -159,7 +176,11 @@ export default props => {
 			keywords={tags}
 			description={abstract || title}
 		>
-			{abstract && <Abstract> {abstract} </Abstract>}
+			{tldr ? (
+				<Tldr>TLDR: {tldr}</Tldr>
+			) : (
+				abstract && <Abstract> {abstract} </Abstract>
+			)}
 			{gallery && (
 				<GalleryContainer>
 					<Gallery>
@@ -193,12 +214,13 @@ export const query = graphql`
 		markdownRemark(fields: { slug: { eq: $slug } }) {
 			html
 			frontmatter {
-				title
 				abstract
-				tags
+				gallery
 				npm
 				repo
-				gallery
+				tags
+				title
+				tldr
 			}
 		}
 	}

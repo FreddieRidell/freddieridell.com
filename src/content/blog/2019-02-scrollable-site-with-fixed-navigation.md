@@ -1,5 +1,6 @@
 ---
 title: Scrollable site with fixed navigation
+tldr: "Making your header and footer position: fixed makes them much easier to animate, and puts them in a new stacking context."
 type: blog
 tags: [snippet, html, css, react]
 published: 2019-02-08

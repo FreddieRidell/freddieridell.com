@@ -1,6 +1,7 @@
 ---
 title: Bailout Returning
-abstract: My prefered way of handling returning from functions, and why.
+abstract: My prefered way of handling returning from functions, and why I prefer it.
+tldr: Instead of wrapping most of your function in a conditional, why not just return early?
 published: 2019-03-04
 type: blog
 tags: 
@@ -35,8 +36,8 @@ const foo = input => {
 Here `isValid` is our simple check for special cases, `if` no special case problems are found `then` we do our calculations, `else` we return a default value that signals we couldn't do anything.
 This style of solution has a fair amount to recommend it:
 
-* We're using `happy path == true`, `sad path == false`; a useful convention
-* We have a balanced else statement, which can often make code easier to reason about.
+* We're using `happyPath == true`, `sadPath == false`; a useful convention
+* We have a balanced `else` statement, which can often make code easier to reason about.
 
 However, I prefer a different way of handling these special cases:
 
@@ -100,7 +101,6 @@ const reducer = (state, action) => {
    if(!action.success){
       return state;
    }
-
       
    //do lots of calculation and...
    return newState;

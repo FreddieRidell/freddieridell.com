@@ -33,6 +33,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 pre[class*="language-"] {
 	padding: ${R.path(["theme", "size", "space", 0])};
 	margin: ${R.path(["theme", "size", "space", 0])} 0;
+	margin-bottom: ${R.path(["theme", "size", "space", 2])};
 	overflow: auto;
 }
 
@@ -44,11 +45,11 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	color: ${R.path(["theme", "color", "text"])};
-	background: ${R.path(["theme", "color", "bg"])};
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
+	background-color: ${R.path(["theme", "color", "text"])};
+   box-sizing: content-box;
+	color: ${R.path(["theme", "color", "bg"])};
+	padding: 0.1em 0.2em;
+   white-space: normal;
 }
 
 .token.comment,

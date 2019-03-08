@@ -51,13 +51,6 @@ h4 { font-size: 2.82842712475rem; line-height: 3rem; }
 h1, h2, h3, h4 { margin: 3rem 0 1rem; }
 p, code, blockquote { margin: 0 0 2rem; }
 
-code.language-text {
-   font-family: monospaced;
-   background-color: ${R.path(["theme", "color", "text"])};
-   color: ${R.path(["theme", "color", "bg"])};
-   border-radius: 2px;
-}
-
 ul {
    font-size: 2rem;
    line-height: 3rem;

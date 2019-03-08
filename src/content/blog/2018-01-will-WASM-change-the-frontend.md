@@ -1,5 +1,6 @@
 ---
 title: Will WASM change the frontend
+tldr: "JS is a great match for the web because they grew up together, there are specific properties that other languages need to emulate or superceed to de-throne it"
 type: blog
 tags: [wasm, js, frontend, thinkpiece]
 published: 2019-01-20
