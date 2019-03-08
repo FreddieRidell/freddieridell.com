@@ -9,7 +9,7 @@ tags:
    - thinkpiece
 ---
 
-Often in a function you have to deal with a special case. When I say "special case" I don't mean the sort of special case that's been tacked on later in a functions life ("ohh, `foo` does almost exactly what I need, if I just add a new parameter I can make it..." <- never do this).
+Often in a function you have to deal with a special case. When I say "special case" I don't mean the sort of special case that's been tacked on later in a functions life ("ohh, `foo` does almost exactly what I need, if I just add a new parameter I can make it..." ←  (never do this)).
 
 In this situation, the special cases I'm talking about are ones that are know at the functions original authoring; eg:
 
@@ -35,7 +35,7 @@ const foo = input => {
 Here `isValid` is our simple check for special cases, `if` no special case problems are found `then` we do our calculations, `else` we return a default value that signals we couldn't do anything.
 This style of solution has a fair amount to recommend it:
 
-* We're using happy path == true, sad path == false; a useful convention
+* We're using `happy path == true`, `sad path == false`; a useful convention
 * We have a balanced else statement, which can often make code easier to reason about.
 
 However, I prefer a different way of handling these special cases:

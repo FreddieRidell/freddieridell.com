@@ -7,10 +7,10 @@ html {
 }
 
 body {
-  margin: 0;
-  font-size: 2rem;
-  font-family: "Trebuchet MS", arial, sans-serif;
-  hanging-punctuation: first last;
+   margin: 0;
+   font-size: 2rem;
+   font-family: "Trebuchet MS", arial, sans-serif;
+   hanging-punctuation: first last;
    color: ${R.path(["theme", "color", "text"])};
    background-color: ${R.path(["theme", "color", "bg"])};
 }
@@ -39,8 +39,9 @@ a::hover, a::active {
 a:hover, a:active { text-decoration: underline; }
 
 img {
-width: 100%;
+   width: 100%;
 }
+
 .no-expand>img { width: auto; }
 
 h1 { font-size: 8rem; line-height: 8rem; }
@@ -49,12 +50,25 @@ h3 { font-size: 4rem; line-height: 4rem; }
 h4 { font-size: 2.82842712475rem; line-height: 3rem; }
 h1, h2, h3, h4 { margin: 3rem 0 1rem; }
 p, code, blockquote { margin: 0 0 2rem; }
-ul { padding-left: 2rem; margin-top: 0; }
+
+code.language-text {
+   font-family: monospaced;
+   background-color: ${R.path(["theme", "color", "text"])};
+   color: ${R.path(["theme", "color", "bg"])};
+   border-radius: 2px;
+}
+
+ul {
+   font-size: 2rem;
+   line-height: 3rem;
+   margin-top: 0;
+   padding-left: 2rem;
+}
 
 p {
-  line-height: 3rem;
   font-size: 2rem;
   letter-spacing: 0.5px;
+  line-height: 3rem;
   text-align: justify;
   text-justify: auto;
 }
@@ -64,42 +78,42 @@ p {
 }
 
 blockquote {
-  position: relative;
-		background-color: ${R.path(["theme", "color", "lightgray"])};
-  padding: 1rem;
-  padding-left: 2rem;
-  font-size: 3rem;
+   background-color: ${R.path(["theme", "color", "lightgray"])};
+   font-size: 3rem;
+   padding-left: 2rem;
+   padding: 1rem;
+   position: relative;
 
-  & > p {
-  margin: 0;
-  }
+   & > p {
+      margin: 0;
+   }
 
-  &::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	min-width: 1rem;
-		background-color: ${R.path(["theme", "color", "gray"])};
-  }
+   &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      min-width: 1rem;
+      background-color: ${R.path(["theme", "color", "gray"])};
+   }
 
-  & > blockquote {
-	padding: 0;
-	margin: 0;
-	margin-top: 1rem;
-	margin-left: 2rem;
-	font-size: 2rem;
+   & > blockquote {
+      padding: 0;
+      margin: 0;
+      margin-top: 1rem;
+      margin-left: 2rem;
+      font-size: 2rem;
 
-	&::before {
-	  content: "-";
-	  position: absolute;
-	  top: 0;
-	  bottom: 0;
-	  left: -1rem;
-	  background-color: initial;
-	}
-  }
+      &::before {
+         content: "-";
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         left: -1rem;
+         background-color: initial;
+      }
+   }
 }
 
 `;
