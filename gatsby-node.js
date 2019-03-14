@@ -1,24 +1,50 @@
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const { format, getYear, getMonth } = require("date-fns/fp");
 const keb = require("@freddieridell/kebab-case");
-
 const path = require(`path`);
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
+exports.onCreateNode = ({
+	node,
+	actions: { createNodeField, createParentChildLink },
+	getNode,
+	getNodes,
+	getNodesByType,
+	...rest
+}) => {
 	//this modifies data, adding a slug property to each markdown file
-	//
+
 	if (node.internal.type === `MarkdownRemark`) {
-		const { createNodeField } = actions;
+		if (node.frontmatter.translationFor) {
+			getNodesByType("MarkdownRemark")
+				.filter(
+					x =>
+						x.fileAbsolutePath ===
+						path.join(
+							path.dirname(node.fileAbsolutePath),
+							node.frontmatter.translationFor,
+						),
+				)
+				.forEach(parent => {
+					createParentChildLink({
+						parent,
+						child: node,
+					});
+				});
+		}
+
+		const dateSlug = [
+			format("y", node.frontmatter.published),
+			format("MM", node.frontmatter.published),
+		];
 
 		const slug =
 			"/" +
 			path.join(
 				...[
 					node.frontmatter.type,
-					node.frontmatter.type !== "open-source" &&
-						format("y", node.frontmatter.published),
-					node.frontmatter.type !== "open-source" &&
-						format("MM", node.frontmatter.published),
+					...(node.frontmatter.type !== "open-source"
+						? dateSlug
+						: []),
 					keb(node.frontmatter.slug || node.frontmatter.title),
 				].filter(Boolean),
 			);
@@ -31,12 +57,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 	}
 };
 
-exports.createPages = ({ graphql, actions }) => {
-	//this creates the pages,
-	//first by generating listings for each post type,
-	//then a page for each post
-
-	const { createPage } = actions;
+exports.createPages = ({ graphql, actions: { createPage } }) => {
 	return new Promise((resolve, reject) => {
 		graphql(`
 			{
@@ -64,24 +85,28 @@ exports.createPages = ({ graphql, actions }) => {
 			);
 
 			for (const type of types) {
-				createPage({
-					path: `/${type}/`,
-					component: path.resolve(`./src/templates/listing.js`),
-					context: {
-						type,
-						listing: true,
-					},
-				});
+				if (type !== "translation") {
+					createPage({
+						path: `/${type}/`,
+						component: path.resolve(`./src/templates/listing.js`),
+						context: {
+							type,
+							listing: true,
+						},
+					});
+				}
 			}
 
 			result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-				createPage({
-					path: node.fields.slug,
-					component: path.resolve(`./src/templates/post.js`),
-					context: {
-						slug: node.fields.slug,
-					},
-				});
+				if (!node.frontmatter.type === "translation") {
+					createPage({
+						path: node.fields.slug,
+						component: path.resolve(`./src/templates/post.js`),
+						context: {
+							slug: node.fields.slug,
+						},
+					});
+				}
 			});
 
 			resolve();

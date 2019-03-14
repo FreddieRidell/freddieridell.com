@@ -14,6 +14,13 @@ module.exports = {
 				path: `${__dirname}/src/content`,
 			},
 		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `translations`,
+				path: `${__dirname}/src/translations`,
+			},
+		},
 		"gatsby-plugin-react-helmet",
 		{
 			resolve: `gatsby-transformer-remark`,
