@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
-import * as R from "ramda";
 import Helmet from "react-helmet";
-import styled, { withTheme, ThemeProvider } from "styled-components";
+import { withTheme, } from "styled-components";
 
 import GlobalStyle from "./GlobalStyle";
 import PrisimStyle from "./PrisimStyle";

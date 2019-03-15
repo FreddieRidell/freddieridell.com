@@ -9,6 +9,7 @@ import phoneIcon from "feather-icons/dist/icons/phone.svg";
 import twitterIcon from "feather-icons/dist/icons/twitter.svg";
 
 const Bio = styled.p`
+	grid-column: left / right;
 	font-style: italic;
 	font-size: 2.5rem;
 	@media print {
@@ -17,6 +18,7 @@ const Bio = styled.p`
 `;
 
 const ContactsContainer = styled.div`
+	grid-column: left / right;
 	margin-bottom: ${R.path(["theme", "size", "space", 1])};
 	display: flex;
 	flex: 1;
@@ -120,7 +122,7 @@ const ContactDetails = () => (
 );
 
 export default () => (
-	<div>
+	<React.Fragment>
 		<ContactDetails />
 
 		<Bio>
@@ -129,5 +131,5 @@ export default () => (
 			{false &&
 				"I'm currently looking for new opportunities as a contractor in Manchester."}
 		</Bio>
-	</div>
+	</React.Fragment>
 );

@@ -1,8 +1,8 @@
 import React from "react";
-
 import styled from "styled-components";
 
 const AddressesCodeBlock = styled.code`
+	grid-column: left / right;
   is: 'code',
 	display: block;
 	font-family: monospace;

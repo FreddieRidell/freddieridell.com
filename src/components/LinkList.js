@@ -83,6 +83,7 @@ const Link = ({
 
 const List = styled.ol`
 	padding: 0;
+	grid-column: left / right;
 `;
 
 const LinkList = ({ data }) => (

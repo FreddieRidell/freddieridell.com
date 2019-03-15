@@ -14,6 +14,7 @@ const formatDate = date => {
 
 const ExperienceStyled = styled.section`
 	margin: ${R.path(["theme", "size", "space", 3])} 0;
+	grid-column: left / right;
 `;
 
 const PositionStyled = styled.h3`
@@ -43,7 +44,7 @@ const Experience = ({ position, biz, start, end, children }) => (
 );
 
 export default () => (
-	<div title="Experience">
+	<React.Fragment>
 		<Experience
 			position="Senior React Contractor"
 			biz="Workshare"
@@ -122,5 +123,5 @@ export default () => (
 				problem I've encountered since.
 			</p>
 		</Experience>
-	</div>
+	</React.Fragment>
 );

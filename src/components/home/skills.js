@@ -1,8 +1,12 @@
 import React from "react";
+import styled from "styled-components";
+
+const List = styled.ul`
+	grid-column: left / right;
+`;
 
 export default () => (
-	<div width="50%" title="Skills">
-		<ul>
+	<List>
 			{[
 				/*eslint-disable no-script-url*/
 				"Javascript: Node, React, ReactNative, Redux, Babel, ES6+",
@@ -18,6 +22,5 @@ export default () => (
 			].map(skill => (
 				<li key={skill}> {skill}</li>
 			))}
-		</ul>
-	</div>
+		</List>
 );

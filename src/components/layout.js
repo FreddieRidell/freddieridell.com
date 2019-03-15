@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import * as R from "ramda";
-import Helmet from "react-helmet";
-import { Location, Link } from "@reach/router";
+import { Link } from "@reach/router";
 import styled, { withTheme, ThemeProvider } from "styled-components";
 
 import theme from "./theme";
@@ -26,19 +25,17 @@ const NavLink = styled(Link)`
 	text-transform: capitalize;
 `;
 
+const GridContainer = styled.div`
+	flex: 1;
+	display: grid;
+	grid-template-columns: [start] 1fr [left] minmax(40%, 65rem) [right] 1fr [end];
+`;
+
 const Title = styled.h1`
 	text-transform: capitalize;
 	margin: ${R.path(["theme", "size", "space", 2])};
-`;
-
-const ChildrenContainer = styled.div`
-	flex: 1;
-	align-self: center;
-	max-width: 65rem;
-	width: calc(100% - ${R.path(["theme", "size", "space", 1])});
-	padding: ${R.path(["theme", "size", "space", 1])};
-
-	${smol(`padding: 0;`)}
+	grid-column: start / right;
+	grid-gap: 1rem;
 `;
 
 const Footer = styled.footer`
@@ -66,8 +63,10 @@ const Layout = ({
 					<NavLink to={slug}>{label}</NavLink>
 				))}
 			</Topbar>
+			<GridContainer>
 			<Title>{title}</Title>
-			<ChildrenContainer>{children}</ChildrenContainer>
+			{children}
+		</GridContainer>
 			<Footer>
 				©Ya' boi Freddie Ridell
 				{new Date()

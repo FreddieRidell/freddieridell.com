@@ -17,15 +17,18 @@ const Tldr = styled.div`
    color: ${R.path(["theme", "color", "white"])};
    margin-bottom: 2rem;
    padding: 2rem;
+	grid-column: left / end;
 `;
 
 const Abstract = styled.div`
-	position: relative;
 	background-color: ${R.path(["theme", "color", "lightgray"])};
+	font-size: 3rem;
+	grid-column: start / right;
+	margin-bottom: 3rem;
 	padding: 1rem;
 	padding-top: 2rem;
-	font-size: 3rem;
-	margin-bottom: 3rem;
+	position: relative;
+	text-align: right;
 
 	&::after {
 		content: "";
@@ -45,6 +48,7 @@ const BadgeContainer = styled.div`
 	align-items: flex-start;
    flex-flow: row wrap;
 	margin-bottom: ${R.path(["theme", "size", "space", 0])};
+	grid-column: left / right;
 `;
 
 const Badge = styled.img`
@@ -119,6 +123,8 @@ const Content = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+	grid-column: left / right;
+	padding: 0 1rem;
 
 	.gatsby-highlight {
 		width: calc(-2rem + 100vw);
@@ -132,6 +138,7 @@ const Content = styled.div`
 
 const GalleryContainer = styled.div`
 	overflow-x: auto;
+	grid-column: start / end;
 `;
 
 const Gallery = styled.div`
@@ -184,7 +191,6 @@ export default props => {
 			{gallery && (
 				<GalleryContainer>
 					<Gallery>
-						{" "}
 						{gallery.map(url => (
 							<GalleryImage
 								key={url}
