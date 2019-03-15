@@ -98,7 +98,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
 			}
 
 			result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-				if (!node.frontmatter.type === "translation") {
+				if (node.frontmatter.type !== "translation") {
 					createPage({
 						path: node.fields.slug,
 						component: path.resolve(`./src/templates/post.js`),
