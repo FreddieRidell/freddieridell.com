@@ -12,7 +12,7 @@ tags:
 
 Often in a function you have to deal with a special case. When I say "special case" I don't mean the sort of special case that's been tacked on later in a functions life ("ohh, `foo` does almost exactly what I need, if I just add a new parameter I can make it..." ←  (never do this)).
 
-In this situation, the special cases I'm talking about are ones that are know at the functions original authoring; eg:
+In this situation, the special cases I'm talking about are ones that are know at the function's original authoring; eg:
 
 * the function takes an array **which might be empty**
 * the function takes a parameter **which might be `null`**
@@ -122,7 +122,7 @@ const Component = (props) => {
 
 ## Conclusion
 
-Although this seems like a very small and trivial change, it often really helps me to reduce the complexity of a function, reason about it more easily and reduce my cognitive load. Next time you find yourself wrapping most of your function code in a conditional, just to return `null`, consider [Bailout Returning](.) instead.
+Although this seems like a very small and trivial change, it often really helps me to reduce the complexity of a function, reason about it more easily and reduce my cognitive load. Next time you find yourself wrapping most of your function code in a conditional, just to return `null`, consider Bailout Returning instead.
 
 [react]: https://reactjs.org/
 [redux]: https://redux.js.org/
