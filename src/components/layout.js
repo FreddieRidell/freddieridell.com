@@ -42,6 +42,7 @@ const Footer = styled.footer`
 	background-color: ${R.path(["theme", "color", "black"])};
 	color: ${R.path(["theme", "color", "white"])};
 	padding: ${R.path(["theme", "size", "space", 0])};
+	margin-top: ${R.path(["theme", "size", "space", 3])};
 `;
 
 const Layout = ({
