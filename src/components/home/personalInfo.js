@@ -90,12 +90,12 @@ const ContactDetails = () => (
 				name: "twitter",
 				text: "@FreddieRidell",
 				icon: twitterIcon,
-			},
+			},07720510951
 			{
 				title: "phone",
-				href: "tel:+447521160572",
+				href: "tel:+447720510951",
 				name: "phone",
-				text: "+44 7521 160572",
+				text: "+44 7720 510951",
 				print: true,
 				icon: phoneIcon,
 			},
