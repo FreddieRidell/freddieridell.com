@@ -90,7 +90,7 @@ const ContactDetails = () => (
 				name: "twitter",
 				text: "@FreddieRidell",
 				icon: twitterIcon,
-			},07720510951
+			},
 			{
 				title: "phone",
 				href: "tel:+447720510951",

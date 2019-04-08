@@ -6,6 +6,7 @@ import styled, { withTheme, ThemeProvider } from "styled-components";
 import theme from "./theme";
 import { smol } from "../util";
 import Head from "./Head";
+import WebRing from "./WebRing";
 
 const Topbar = styled.header`
 	background-color: ${R.path(["theme", "color", "black"])};
@@ -41,8 +42,13 @@ const Title = styled.h1`
 const Footer = styled.footer`
 	background-color: ${R.path(["theme", "color", "black"])};
 	color: ${R.path(["theme", "color", "white"])};
-	padding: ${R.path(["theme", "size", "space", 0])};
+	padding: ${R.path(["theme", "size", "space", 1])};
 	margin-top: ${R.path(["theme", "size", "space", 3])};
+`;
+
+const FooterSection = styled.section`
+	display: inline;
+	margin: 0 ${R.path(["theme", "size", "space", 0])};
 `;
 
 const Layout = ({
@@ -65,15 +71,20 @@ const Layout = ({
 				))}
 			</Topbar>
 			<GridContainer>
-			<Title>{title}</Title>
-			{children}
-		</GridContainer>
+				<Title>{title}</Title>
+				{children}
+			</GridContainer>
 			<Footer>
-				©Ya' boi Freddie Ridell
-				{new Date()
-					.toISOString()
-					.replace("T", " ")
-					.replace(/\..*/, "")}
+				<FooterSection>©Ya' boi Freddie Ridell</FooterSection>
+				<FooterSection>
+					{new Date()
+						.toISOString()
+						.replace("T", " ")
+						.replace(/\..*/, "")}
+					</FooterSection>
+					<FooterSection>
+						<WebRing />
+					</FooterSection>
 			</Footer>
 		</Fragment>
 	</ThemeProvider>

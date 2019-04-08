@@ -13,7 +13,7 @@ const formatDate = date => {
 };
 
 const ExperienceStyled = styled.section`
-	margin: ${R.path(["theme", "size", "space", 3])} 0 0;
+	margin: ${R.path(["theme", "size", "space", 2])} 0 0;
 	grid-column: left / right;
 `;
 
