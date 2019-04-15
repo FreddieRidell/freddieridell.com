@@ -3,28 +3,11 @@ import * as R from "ramda";
 import { Link } from "@reach/router";
 import styled, { withTheme, ThemeProvider } from "styled-components";
 
-import theme from "./theme";
-import { smol } from "../util";
-import Head from "./Head";
-import WebRing from "./WebRing";
-
-const Topbar = styled.header`
-	background-color: ${R.path(["theme", "color", "black"])};
-	color: ${R.path(["theme", "color", "bg"])};
-	padding: ${R.path(["theme", "size", "space", 0])};
-	display: flex;
-	flex-shrink: 0;
-`;
-
-const HomeLink = styled.div`
-	flex: 1;
-`;
-
-const NavLink = styled(Link)`
-	color: ${R.path(["theme", "color", "white"])};
-	margin-left: ${R.path(["theme", "size", "space", 1])};
-	text-transform: capitalize;
-`;
+import theme from "../theme";
+import { smol } from "../../util";
+import Head from "../Head";
+import WebRing from "../WebRing";
+import Topbar from "./Topbar"
 
 const GridContainer = styled.div`
 	flex: 1;
@@ -62,18 +45,11 @@ const Layout = ({
 	<ThemeProvider theme={theme}>
 		<Fragment>
 			<Head {...{ title, description, keywords }} />
-			<Topbar>
-				<HomeLink>
-					<NavLink to="/">home</NavLink>
-				</HomeLink>
-				{navLinks.map(({ slug, label }) => (
-					<NavLink to={slug}>{label}</NavLink>
-				))}
-			</Topbar>
 			<GridContainer>
 				<Title>{title}</Title>
 				{children}
 			</GridContainer>
+			<Topbar navLinks = { navLinks } />
 			<Footer>
 				<FooterSection>©Ya' boi Freddie Ridell</FooterSection>
 				<FooterSection>

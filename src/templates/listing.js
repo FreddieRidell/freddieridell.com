@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import * as R from "ramda";
 
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import LinkList from "../components/LinkList";
 import { getNavLinks } from "../util";
 

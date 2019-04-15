@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import { Experiences, PersonalInfo, Skills } from "../components/home";
 import { getNavLinks } from "../util";
 

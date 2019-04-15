@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import styled, { keyframes } from "styled-components";
 import * as R from "ramda";
 
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import { getNavLinks } from "../util";
 
 const wipein = keyframes`
