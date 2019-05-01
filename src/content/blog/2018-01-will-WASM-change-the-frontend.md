@@ -10,8 +10,8 @@ Over the last few months I've seen quite a few people excited about the possibil
 
 Moving parts of your frontend logic into a WASM already make a lot of sense if it's
 
-- Performance sensitive: WASM performs more predictably due to lack of a garbage collector.
-- Mission critical: Use more advanced static analysis/type checking than any js-variant/compile-to-js language provides.
+-   Performance sensitive: WASM performs more predictably due to lack of a garbage collector.
+-   Mission critical: Use more advanced static analysis/type checking than any js-variant/compile-to-js language provides.
 
 And with tools like [parcel][parcel-wasm] integrating WASM code into your frontend app is super easy.
 

@@ -8,9 +8,9 @@ published: 2019-02-08
 
 I've often wanted to make a website/webapp that satisfies some or all of the following criteria:
 
-- has body contents that will overflow the screen size if there's lots of content
-- has a header that stays locked in place at the top of the screen.
-- has a footer that is always either at the bottom of the screen, or the bottom of the page.
+-   has body contents that will overflow the screen size if there's lots of content
+-   has a header that stays locked in place at the top of the screen.
+-   has a footer that is always either at the bottom of the screen, or the bottom of the page.
 
 The following is my general purpose solution for achieving this...
 
@@ -78,6 +78,7 @@ footer {
 ```
 
 ## With React
+
 You can use react to create a solution identical to the above, but in some situations, the following idea might be more suitable
 
 ```jsx
@@ -108,8 +109,8 @@ const Header = () => (
 
 const App = () => (
 	<React.Fragment>
-      <Header />
-      <main></main>
+		<Header />
+		<main />
 	</React.Fragment>
 );
 //follow the same logic to make a Footer

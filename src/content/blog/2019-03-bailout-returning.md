@@ -4,19 +4,19 @@ abstract: My prefered way of handling returning from functions, and why I prefer
 tldr: Instead of wrapping most of your function in a conditional, why not just return early?
 published: 2019-03-04
 type: blog
-tags: 
-   - js 
-   - code
-   - thinkpiece
+tags:
+    - js
+    - code
+    - thinkpiece
 ---
 
-Often in a function you have to deal with a special case. When I say "special case" I don't mean the sort of special case that's been tacked on later in a functions life ("ohh, `foo` does almost exactly what I need, if I just add a new parameter I can make it..." ←  (never do this)).
+Often in a function you have to deal with a special case. When I say "special case" I don't mean the sort of special case that's been tacked on later in a functions life ("ohh, `foo` does almost exactly what I need, if I just add a new parameter I can make it..." ← (never do this)).
 
 In this situation, the special cases I'm talking about are ones that are know at the function's original authoring; eg:
 
-* the function takes an array **which might be empty**
-* the function takes a parameter **which might be `null`**
-* the function performs an operation **unless certain, very specific conditions are met**
+-   the function takes an array **which might be empty**
+-   the function takes a parameter **which might be `null`**
+-   the function performs an operation **unless certain, very specific conditions are met**
 
 In these situations, 95% of the body of the function won't do anything, the function should simply return whatever value it's meant to in these special cases.
 
@@ -25,8 +25,8 @@ In these situations, 95% of the body of the function won't do anything, the func
 ```js
 const foo = input => {
 	if (isValid(input)) {
-      //do lots of calculation and...
-      return something;
+		//do lots of calculation and...
+		return something;
 	} else {
 		return null;
 	}
@@ -36,8 +36,8 @@ const foo = input => {
 Here `isValid` is our simple check for special cases, `if` no special case problems are found `then` we do our calculations, `else` we return a default value that signals we couldn't do anything.
 This style of solution has a fair amount to recommend it:
 
-* We're using `happyPath == true`, `sadPath == false`; a useful convention
-* We have a balanced `else` statement, which can often make code easier to reason about.
+-   We're using `happyPath == true`, `sadPath == false`; a useful convention
+-   We have a balanced `else` statement, which can often make code easier to reason about.
 
 However, I prefer a different way of handling these special cases:
 
@@ -49,8 +49,8 @@ const foo = input => {
 		return null;
 	}
 
-   //do lots of calculation and...
-   return something;
+	//do lots of calculation and...
+	return something;
 };
 ```
 
@@ -64,13 +64,12 @@ This hopefully becomes clearer when you compare a function with a special case c
 
 ```js
 const foo = input => {
-
 	//if (isInvalid(input)) {
-		//return null;
+	//return null;
 	//}
 
-   //do lots of calculation and...
-   return something;
+	//do lots of calculation and...
+	return something;
 };
 ```
 
@@ -88,23 +87,24 @@ const foo = input => {
 		return null;
 	}
 
-   //do lots of calculation and...
-   return something;
+	//do lots of calculation and...
+	return something;
 };
 ```
 
 ## Use Cases
+
 A very common use case for bailout returning is [redux][redux] reducers:
 
 ```js
 const reducer = (state, action) => {
-   if(!action.success){
-      return state;
-   }
-      
-   //do lots of calculation and...
-   return newState;
-}
+	if (!action.success) {
+		return state;
+	}
+
+	//do lots of calculation and...
+	return newState;
+};
 ```
 
 or in [react][react] components:
