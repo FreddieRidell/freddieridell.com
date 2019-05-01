@@ -45,11 +45,11 @@ const Layout = ({
 	<ThemeProvider theme={theme}>
 		<Fragment>
 			<Head {...{ title, description, keywords }} />
+			<Topbar navLinks = { navLinks } />
 			<GridContainer>
 				<Title>{title}</Title>
 				{children}
 			</GridContainer>
-			<Topbar navLinks = { navLinks } />
 			<Footer>
 				<FooterSection>©Ya' boi Freddie Ridell</FooterSection>
 				<FooterSection>
