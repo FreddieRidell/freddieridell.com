@@ -1,16 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
-import * as R from "ramda";
 
 import Layout from "../components/Layout";
-import LinkList from "../components/LinkList";
+import Listing from "../components/Listing";
 import { getNavLinks } from "../util";
 
 export default props => {
 	const {
-		data: {
-			allMarkdownRemark: { edges },
-		},
 		pageContext: { type },
 	} = props;
 	return (
@@ -19,7 +15,7 @@ export default props => {
 			navLinks={getNavLinks(props)}
 			description={`${type} listing`}
 		>
-			<LinkList data={edges.map(R.prop("node"))} />
+			<Listing {...props} />
 		</Layout>
 	);
 };

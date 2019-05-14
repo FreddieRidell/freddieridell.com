@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
-import { Experiences, PersonalInfo, Skills } from "../components/home";
+import Home from "../components/Home";
 import { getNavLinks } from "../util";
 
 const IndexPage = props => (
@@ -11,9 +11,7 @@ const IndexPage = props => (
 		navLinks={getNavLinks(props)}
 		description="Home Page"
 	>
-		<PersonalInfo />
-		<Skills />
-		<Experiences />
+		<Home />
 	</Layout>
 );
 

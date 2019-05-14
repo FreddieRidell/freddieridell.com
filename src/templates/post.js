@@ -1,176 +1,18 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { graphql } from "gatsby";
-import styled, { keyframes } from "styled-components";
-import * as R from "ramda";
 
 import Layout from "../components/Layout";
+import Post from "../components/Post";
 import { getNavLinks } from "../util";
-
-const wipein = keyframes`
-	from { right: 100%; }
-	to { right: 0; }
-`;
-
-const Tldr = styled.div`
-	font-size: 3rem;
-   background-color: ${R.path(["theme", "color", "black"])};
-   color: ${R.path(["theme", "color", "white"])};
-   margin-bottom: 2rem;
-   padding: 2rem;
-	grid-column: left / end;
-`;
-
-const Abstract = styled.div`
-	background-color: ${R.path(["theme", "color", "lightgray"])};
-	font-size: 3rem;
-	grid-column: start / right;
-	margin-bottom: 3rem;
-	padding: 1rem;
-	padding-top: 2rem;
-	position: relative;
-	text-align: right;
-
-	&::after {
-		content: "";
-		position: absolute;
-		left: 0;
-		top: 0;
-		min-height: 1rem;
-		background-color: ${R.path(["theme", "color", "gray"])};
-
-		animation: ${wipein} 1.5s ease-out both;
-	}
-`;
-
-const BadgeContainer = styled.div`
-	display: flex;
-	justify-content: flex-start
-	align-items: flex-start;
-   flex-flow: row wrap;
-	margin-bottom: ${R.path(["theme", "size", "space", 0])};
-	grid-column: left / right;
-`;
-
-const Badge = styled.img`
-	width: auto;
-	min-width: ${R.path(["theme", "size", "space", 2])};
-	min-height: ${R.path(["theme", "size", "space", 1])};
-	margin-top: ${R.path(["theme", "size", "space", 0])};
-	margin-right: ${R.path(["theme", "size", "space", 0])};
-`;
-
-const Badges = ({ npm, repo }) => (
-	<Fragment>
-		{npm && (
-			<BadgeContainer>
-				{[
-					{
-						badge: `https://badgen.net/badge/npm/${encodeURIComponent(
-							npm,
-						)}?icon=npm&color=cb3837`,
-						href: `https://npmjs.com/package/${npm}`,
-					},
-					{
-						badge: `https://badgen.net/npm/v/${npm}`,
-						href: `https://npmjs.com/package/${npm}`,
-					},
-					{
-						badge: `https://badgen.net/npm/dependents/${npm}`,
-						href: `https://www.npmjs.com/browse/depended/${npm}`,
-					},
-					{
-						badge: `https://badgen.net/bundlephobia/min/${npm}`,
-						href: `https://bundlephobia.com/result?p=${npm}`,
-					},
-					{
-						badge: `https://badgen.net/bundlephobia/minzip/${npm}`,
-						href: `https://bundlephobia.com/result?p=${npm}`,
-					},
-				].map(({ badge, href }) => (
-					<a href={href}>
-						<Badge src={badge} />
-					</a>
-				))}
-			</BadgeContainer>
-		)}
-
-		{repo && (
-			<BadgeContainer>
-				{[
-					{
-						badge: `https://badgen.net/badge/github/${repo}?icon=github&color=333333`,
-						href: `https://github.com/${repo}`,
-					},
-					{
-						badge: `https://badgen.net/github/license/${repo}`,
-						href: `https://github.com/${repo}`,
-					},
-					{
-						badge: `https://badgen.net/github/stars/${repo}`,
-						href: `https://github.com/${repo}/stargazers`,
-					},
-				].map(({ badge, href }) => (
-					<a href={href}>
-						<Badge src={badge} />
-					</a>
-				))}
-			</BadgeContainer>
-		)}
-	</Fragment>
-);
-
-const Content = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	grid-column: left / right;
-	padding: 0 1rem;
-
-	.gatsby-highlight {
-		width: calc(-2rem + 100vw);
-		max-width: 80rem;
-		align-self: center;
-
-		display: flex;
-		justify-content: center;
-	}
-`;
-
-const GalleryContainer = styled.div`
-	overflow-x: auto;
-	grid-column: start / end;
-`;
-
-const Gallery = styled.div`
-	align-self: center;
-	display: flex;
-	flex-direction: row;
-`;
-
-const GalleryImage = styled.a`
-	width: 25rem;
-	height: 25rem;
-	display: block;
-	background-image: url(${R.prop("src")});
-	background-size: cover;
-	background-position: center center;
-	margin: 0 1rem;
-	flex: 0 0 auto;
-`;
 
 export default props => {
 	const {
 		data: {
 			markdownRemark: {
-				html,
 				frontmatter: {
 					abstract,
-					gallery,
-					npm,
-					repo,
 					tags,
 					title,
-               tldr,
 				},
 			},
 		},
@@ -183,26 +25,7 @@ export default props => {
 			keywords={tags}
 			description={abstract || title}
 		>
-			{tldr ? (
-				<Tldr>TLDR: {tldr}</Tldr>
-			) : (
-				abstract && <Abstract> {abstract} </Abstract>
-			)}
-			{gallery && (
-				<GalleryContainer>
-					<Gallery>
-						{gallery.map(url => (
-							<GalleryImage
-								key={url}
-								href={`https://res.cloudinary.com/little-bonsai/image/upload/f_auto/v1548885223/${url}`}
-								src={`https://res.cloudinary.com/little-bonsai/image/upload/c_fill,f_auto,q_auto,w_700,ar_1.0/v1548885223/${url}`}
-							/>
-						))}
-					</Gallery>
-				</GalleryContainer>
-			)}
-			<Badges npm={npm} repo={repo} />
-			<Content dangerouslySetInnerHTML={{ __html: html }} />
+			<Post {...props} />
 		</Layout>
 	);
 };

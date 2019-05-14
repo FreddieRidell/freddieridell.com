@@ -1,4 +1,5 @@
-const theme = require("./src/components/theme");
+const theme = require("./src/theme");
+
 module.exports = {
 	siteMetadata: {
 		title: "Gatsby Default Starter",
@@ -6,7 +7,7 @@ module.exports = {
 	},
 	plugins: [
 		"gatsby-plugin-sitemap",
-		"gatsby-plugin-styled-components",
+		"gatsby-plugin-emotion",
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
