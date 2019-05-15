@@ -1,26 +1,35 @@
 import React from 'react';
 import * as R from 'ramda';
 import styled from '@emotion/styled';
+import { createShadow } from '@freddieridell/little-bonsai-styles';
+
+import Spacer from "../Toolbox/Spacer";
 
 import HeadShot from './HeadShot';
 import Profile from './Profile';
+import Experiences from './Experiences';
 
 const Hero = styled.section(
-	{ display: 'flex', flexWrap: 'wrap', margin: "auto"},
+	{ display: 'flex', flexWrap: 'wrap', margin: 'auto' },
 	R.applySpec({
 		maxWidth: R.pipe(
 			R.path(['theme', 'size', 'paragraphWidth']),
 
 			R.multiply(2.5),
 		),
+		boxShadow: ({ theme }) => createShadow(5)(theme),
 	}),
 );
 
 const Home = () => (
-	<Hero>
-		<HeadShot />
-		<Profile />
-	</Hero>
+	<React.Fragment>
+		<Hero>
+			<HeadShot />
+			<Profile />
+		</Hero>
+		<Spacer height = {1} />
+		<Experiences />
+	</React.Fragment>
 );
 
 export default Home;

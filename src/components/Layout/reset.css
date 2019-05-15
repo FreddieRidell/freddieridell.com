@@ -10,6 +10,6 @@ html, body, #___gatsby, #___gatsby>div {
 	align-items: stretch;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h5,h6,p {
 	margin: 0
 }

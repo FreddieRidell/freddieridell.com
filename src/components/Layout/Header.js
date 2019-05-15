@@ -2,6 +2,7 @@ import React from "react";
 import * as R from "ramda";
 import styled from "@emotion/styled";
 import { Link } from "gatsby"
+import { adjustRadience } from '@freddieridell/little-bonsai-styles';
 
 const headerStylesShared = [
 	{ display: "flex", justifyContents: "center" },
@@ -35,7 +36,7 @@ const linkStylesShared = [
 	R.applySpec({
 		paddingLeft: R.path(["theme", "size", "space", 0]),
 		paddingRight: R.path(["theme", "size", "space", 0]),
-		color: R.path(["theme", "color", "symantic", "link"]),
+		color: adjustRadience(-0.2, ["theme", "color", "symantic", "link"]),
 	}),
 ];
 

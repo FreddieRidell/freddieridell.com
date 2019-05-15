@@ -8,15 +8,10 @@ const globalCss = R.applySpec({
 		backgroundColor: R.path(["color", "symantic", "background"]),
 		color: R.path(["color", "symantic", "text"]),
 	},
-});
 
-//const globalCss = (theme) => {
-//return {
-//html: {
-//fontSize: theme.size.font[2],
-//backgroundColor: theme.color.symantic.background,
-//},
-//}
-//};
+	mark: {
+		backgroundColor: R.path(["color", "symantic", "warning"]),
+	}
+});
 
 export default ({ children }) => <Global styles={globalCss} />;

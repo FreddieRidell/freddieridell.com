@@ -2,9 +2,9 @@ import React from 'react';
 import * as R from 'ramda';
 import styled from '@emotion/styled';
 
-import Spacer from "../Toolbox/Spacer";
+import Spacer from '../Toolbox/Spacer';
 
-const thingsIAm = ['a Frontend Developer', 'a Voice Actor', 'an Open Source Contributor', 'a Juggler'];
+const thingsIAm = ['a Frontend Developer', 'a Voice Actor', 'an Open Source Contributor', 'a Podcaster', 'a Seamster', 'a Juggler', "a Standup Comic", ];
 
 const HeadShotContainer = styled.section(
 	{
@@ -14,7 +14,7 @@ const HeadShotContainer = styled.section(
 	R.applySpec({
 		backgroundColor: R.path(['theme', 'color', 'chromatic', 'black']),
 		color: R.path(['theme', 'color', 'chromatic', 'white']),
-		maxHeight: R.path(['theme', 'size', 'space', 10]),
+		maxHeight: R.path(['theme', 'size', 'space', 9]),
 		maxWidth: R.path(['theme', 'size', 'space', 10]),
 		padding: R.path(['theme', 'size', 'space', 1]),
 	}),
@@ -38,14 +38,14 @@ export default () => {
 	}, 0);
 
 	React.useEffect(() => {
-		const x = setInterval(dispatch, 1500);
+		const x = setInterval(dispatch, 1000);
 		return () => clearInterval(x);
 	}, [dispatch]);
 
 	return (
 		<HeadShotContainer>
 			<H1>Hi, I'm Freddie</H1>
-			<Spacer height = { 0 } />
+			<Spacer height={0} />
 			<H2>I'm {thingsIAm[state % thingsIAm.length]}</H2>
 		</HeadShotContainer>
 	);
