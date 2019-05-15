@@ -1,6 +1,5 @@
-
 import React from "react";
 
-const Listing = ()  => (<div/>);
+const Listing = () => <div />;
 
 export default Listing;

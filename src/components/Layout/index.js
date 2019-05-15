@@ -1,14 +1,25 @@
 import React from "react";
+import { ThemeProvider } from "emotion-theming";
 
+import "./reset.css";
+import theme from "../../theme";
+
+import Footer from "./Footer";
+import GlobalStyles from "./GlobalStyles";
 import Head from "./Head";
+import Header from "./Header";
+import Main from "./Main";
 
 const Layout = ({ title, navLinks, description, children }) => (
-	<React.Fragment>
-		<Head />
-		<header>{title}</header>
-		<main>{children}</main>
-		<footer>footer</footer>
-	</React.Fragment>
+	<ThemeProvider theme={theme}>
+		<React.Fragment>
+			<GlobalStyles />
+			<Head />
+			<Header title={title} />
+			<Main>{children}</Main>
+			<Footer />
+		</React.Fragment>
+	</ThemeProvider>
 );
 
 export default Layout;

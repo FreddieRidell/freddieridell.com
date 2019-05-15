@@ -1,5 +1,5 @@
 import React from "react";
 
-const Post = ()  => (<div/>);
+const Post = () => <div />;
 
 export default Post;

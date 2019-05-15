@@ -4,12 +4,12 @@ import { Link } from "@reach/router";
 import styled, { withTheme, ThemeProvider } from "styled-components";
 
 const WebRingStyled = styled.nav`
-		display: inline;
+	display: inline;
 `;
 
 const WebRingLinkStyled = styled.a`
-		margin: 0 ${R.path(["theme", "size", "space", 0])};
-`
+	margin: 0 ${R.path(["theme", "size", "space", 0])};
+`;
 
 const WebRing = () => (
 	<WebRingStyled>

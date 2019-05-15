@@ -9,11 +9,7 @@ export default props => {
 	const {
 		data: {
 			markdownRemark: {
-				frontmatter: {
-					abstract,
-					tags,
-					title,
-				},
+				frontmatter: { abstract, tags, title },
 			},
 		},
 	} = props;
