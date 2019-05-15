@@ -1,6 +1,7 @@
 import React from "react";
 import * as R from "ramda";
 import styled from "@emotion/styled";
+import { Link } from "gatsby"
 
 const headerStylesShared = [
 	{ display: "flex", justifyContents: "center" },
@@ -38,7 +39,7 @@ const linkStylesShared = [
 	}),
 ];
 
-const SiteName = styled.a(
+const SiteName = styled(Link)(
 	...linkStylesShared,
 	{
 		flex: 1,
@@ -46,16 +47,16 @@ const SiteName = styled.a(
 	R.applySpec({}),
 );
 
-const SiteNavLink = styled.a(...linkStylesShared);
+const SiteNavLink = styled(Link)(...linkStylesShared);
 
 const Header = () => (
 	<React.Fragment>
 		<HeaderStyled>
 			<NavContainer>
-				<SiteName href="/">Home</SiteName>
-				<SiteNavLink href="/blog">Blog</SiteNavLink>
-				<SiteNavLink href="/crafts">Crafts</SiteNavLink>
-				<SiteNavLink href="/open-source">OpenSource</SiteNavLink>
+				<SiteName to="/">Home</SiteName>
+				<SiteNavLink to="/blog">Blog</SiteNavLink>
+				<SiteNavLink to="/crafts">Crafts</SiteNavLink>
+				<SiteNavLink to="/open-source">OpenSource</SiteNavLink>
 			</NavContainer>
 		</HeaderStyled>
 		<HeaderSpacer>___</HeaderSpacer>
