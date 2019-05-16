@@ -17,7 +17,7 @@ const Hero = styled.section(
 
 			R.multiply(2.5),
 		),
-		boxShadow: ({ theme }) => createShadow(5)(theme),
+		boxShadow: createShadow(5),
 	}),
 );
 

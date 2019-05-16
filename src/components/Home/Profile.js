@@ -1,7 +1,7 @@
 import React from 'react';
 import * as R from 'ramda';
 import styled from '@emotion/styled';
-import { createShadow, adjustRadience } from '@freddieridell/little-bonsai-styles';
+import {  adjustRadience } from '@freddieridell/little-bonsai-styles';
 
 import Spacer from '../Toolbox/Spacer';
 

@@ -42,7 +42,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"devDependencies": {
-		"@freddieridell/little-bonsai-styles": "0.1.2",
+		"@freddieridell/little-bonsai-styles": "^0.2.0",
 		"gatsby": "^2.4.4",
 		"gatsby-plugin-manifest": "^2.1.1",
 		"gatsby-plugin-offline": "^2.1.0",
