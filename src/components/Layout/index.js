@@ -10,12 +10,12 @@ import Head from "./Head";
 import Header from "./Header";
 import Main from "./Main";
 
-const Layout = ({ title, navLinks, description, children }) => (
+const Layout = ({ children }) => (
 	<ThemeProvider theme={theme}>
 		<React.Fragment>
 			<GlobalStyles />
 			<Head />
-			<Header title={title} />
+			<Header title="title" />
 			<Main>{children}</Main>
 			<Footer />
 		</React.Fragment>

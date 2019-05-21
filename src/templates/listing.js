@@ -1,19 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import Layout from "../components/Layout";
 import Listing from "../components/Listing";
 import { getNavLinks } from "../util";
 
 export default props => {
-	const {
-		pageContext: { type },
-	} = props;
-	return (
-		<Layout title={type} description={`${type} listing`}>
-			<Listing {...props} />
-		</Layout>
-	);
+	return <Listing {...props} />;
 };
 
 export const query = graphql`

@@ -42,6 +42,12 @@ module.exports = {
 				display: "minimal-ui",
 			},
 		},
+		{
+			resolve: `gatsby-plugin-layout`,
+			options: {
+				component: require.resolve(`./src/components/Layout/index.js`),
+			},
+		},
 		//"gatsby-plugin-offline",
 	],
 };

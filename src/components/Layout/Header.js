@@ -5,7 +5,11 @@ import { StaticQuery, graphql, Link } from "gatsby";
 import { adjustRadience } from "@freddieridell/little-bonsai-styles";
 
 const headerStylesShared = [
-	{ display: "flex", justifyContents: "center", textDecoration: "none" },
+	{
+		display: "flex",
+		justifyContents: "center",
+		textDecoration: "none",
+	},
 	R.applySpec({
 		backgroundColor: R.path(["theme", "color", "symantic", "background"]),
 		fontSize: R.path(["theme", "size", "font", 3]),
@@ -25,10 +29,31 @@ const HeaderStyled = styled.header(...headerStylesShared, {
 const HeaderSpacer = styled.div(...headerStylesShared);
 
 const NavContainer = styled.nav(
-	{ display: "flex", margin: "auto" },
+	{
+		display: "flex",
+		margin: "auto",
+		position: "relative",
+
+		"&::before": {
+			bottom: 0,
+			content: '""',
+			left: 0,
+			position: "absolute",
+			right: 0,
+		},
+	},
 	R.applySpec({
 		maxWidth: R.path(["theme", "size", "paragraphWidth"]),
 		width: R.path(["theme", "size", "paragraphWidth"]),
+
+		"&::before": {
+			backgroundColor: R.path(["theme", "color", "symantic", "link"]),
+			bottom: R.pipe(
+				R.path(["theme", "size", "space", 1]),
+				x => `-${x}`,
+			),
+			height: R.path(["theme", "size", "space", 1]),
+		},
 	}),
 );
 
@@ -38,11 +63,18 @@ const linkStylesShared = [
 		position: "relative",
 
 		"&::after": {
-			content: '""',
-			position: "absolute",
-			left: 0,
-			right: 0,
 			bottom: 0,
+			content: '""',
+			left: 0,
+			position: "absolute",
+			right: 0,
+			transformOrigin: "left",
+			transform: "scaleX(0)",
+			transitionProperty: "all",
+			transitionTimingFunction: "ease",
+		},
+		"&.active::after": {
+			transform: "scaleX(1)",
 		},
 	},
 	R.applySpec({
@@ -56,13 +88,8 @@ const linkStylesShared = [
 				R.path(["theme", "size", "space", 1]),
 				x => `-${x}`,
 			),
-			transition: R.pipe(
-				R.path(["theme", "time", "normal"]),
-				x => `all ${x}`,
-			),
-		},
-		"&.active::after": {
 			height: R.path(["theme", "size", "space", 1]),
+			transitionDuration: R.path(["theme", "time", "normal"]),
 		},
 	}),
 ];
