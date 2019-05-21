@@ -1,10 +1,18 @@
-import React from 'react';
-import * as R from 'ramda';
-import styled from '@emotion/styled';
+import React from "react";
+import * as R from "ramda";
+import styled from "@emotion/styled";
 
-import Spacer from '../Toolbox/Spacer';
+import Spacer from "../Toolbox/Spacer";
 
-const thingsIAm = ['a Frontend Developer', 'a Voice Actor', 'an Open Source Contributor', 'a Podcaster', 'a Seamster', 'a Juggler', "a Standup Comic", ];
+const thingsIAm = [
+	"a Frontend Developer",
+	"a Voice Actor",
+	"an Open Source Contributor",
+	"a Podcaster",
+	"a Seamster",
+	"a Juggler",
+	"a Standup Comic",
+];
 
 const HeadShotContainer = styled.section(
 	{
@@ -12,23 +20,23 @@ const HeadShotContainer = styled.section(
 		flexShrink: 1,
 	},
 	R.applySpec({
-		backgroundColor: R.path(['theme', 'color', 'chromatic', 'black']),
-		color: R.path(['theme', 'color', 'chromatic', 'white']),
-		maxHeight: R.path(['theme', 'size', 'space', 9]),
-		maxWidth: R.path(['theme', 'size', 'space', 10]),
-		padding: R.path(['theme', 'size', 'space', 1]),
+		backgroundColor: R.path(["theme", "color", "chromatic", "black"]),
+		color: R.path(["theme", "color", "chromatic", "white"]),
+		maxHeight: R.path(["theme", "size", "space", 9]),
+		maxWidth: R.path(["theme", "size", "space", 10]),
+		padding: R.path(["theme", "size", "space", 1]),
 	}),
 );
 
 const H1 = styled.h1(
 	R.applySpec({
-		fontSize: R.path(['theme', 'size', 'font', 5]),
+		fontSize: R.path(["theme", "size", "font", 5]),
 	}),
 );
 
 const H2 = styled.h2(
 	R.applySpec({
-		fontSize: R.path(['theme', 'size', 'font', 3]),
+		fontSize: R.path(["theme", "size", "font", 3]),
 	}),
 );
 

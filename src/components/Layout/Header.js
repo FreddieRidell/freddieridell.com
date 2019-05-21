@@ -1,17 +1,17 @@
 import React from "react";
 import * as R from "ramda";
 import styled from "@emotion/styled";
-import { Link } from "gatsby"
-import { adjustRadience } from '@freddieridell/little-bonsai-styles';
+import { StaticQuery, graphql, Link } from "gatsby";
+import { adjustRadience } from "@freddieridell/little-bonsai-styles";
 
 const headerStylesShared = [
-	{ display: "flex", justifyContents: "center" },
+	{ display: "flex", justifyContents: "center", textDecoration: "none" },
 	R.applySpec({
 		backgroundColor: R.path(["theme", "color", "symantic", "background"]),
 		fontSize: R.path(["theme", "size", "font", 3]),
-		padding: R.path(["theme", "size", "space", 0]),
-		paddingTop: R.path(["theme", "size", "space", 1]),
-		paddingBottom: R.path(["theme", "size", "space", 1]),
+		padding: R.path(["theme", "size", "space", 1]),
+		paddingTop: R.path(["theme", "size", "space", 2]),
+		paddingBottom: R.path(["theme", "size", "space", 2]),
 	}),
 ];
 
@@ -33,14 +33,41 @@ const NavContainer = styled.nav(
 );
 
 const linkStylesShared = [
+	{
+		textTransform: "capitalize",
+		position: "relative",
+
+		"&::after": {
+			content: '""',
+			position: "absolute",
+			left: 0,
+			right: 0,
+			bottom: 0,
+		},
+	},
 	R.applySpec({
-		paddingLeft: R.path(["theme", "size", "space", 0]),
-		paddingRight: R.path(["theme", "size", "space", 0]),
-		color: adjustRadience(-0.2, ["theme", "color", "symantic", "link"]),
+		paddingLeft: R.path(["theme", "size", "space", 2]),
+		paddingRight: R.path(["theme", "size", "space", 2]),
+		color: R.path(["theme", "color", "symantic", "text"]),
+
+		"&::after": {
+			backgroundColor: R.path(["theme", "color", "symantic", "text"]),
+			bottom: R.pipe(
+				R.path(["theme", "size", "space", 1]),
+				x => `-${x}`,
+			),
+			transition: R.pipe(
+				R.path(["theme", "time", "normal"]),
+				x => `all ${x}`,
+			),
+		},
+		"&.active::after": {
+			height: R.path(["theme", "size", "space", 1]),
+		},
 	}),
 ];
 
-const SiteName = styled(Link)(
+const SiteHomeLink = styled(Link)(
 	...linkStylesShared,
 	{
 		flex: 1,
@@ -50,18 +77,54 @@ const SiteName = styled(Link)(
 
 const SiteNavLink = styled(Link)(...linkStylesShared);
 
+const navLinksQuery = graphql`
+	query {
+		allSitePage(filter: { context: { listing: { eq: true } } }) {
+			edges {
+				node {
+					path
+				}
+			}
+		}
+	}
+`;
+
+const getNavLinks = R.pipe(
+	R.path(["allSitePage", "edges"]),
+	R.map(R.path(["node", "path"])),
+	R.filter(slug => (slug.match(/\//g) || []).length === 2),
+	R.sortBy(R.identity),
+	R.map(slug => ({
+		slug,
+		label: slug.replace(/\//g, "").replace("-", " "),
+	})),
+);
+
 const Header = () => (
-	<React.Fragment>
-		<HeaderStyled>
-			<NavContainer>
-				<SiteName to="/">Home</SiteName>
-				<SiteNavLink to="/blog">Blog</SiteNavLink>
-				<SiteNavLink to="/crafts">Crafts</SiteNavLink>
-				<SiteNavLink to="/open-source">OpenSource</SiteNavLink>
-			</NavContainer>
-		</HeaderStyled>
-		<HeaderSpacer>___</HeaderSpacer>
-	</React.Fragment>
+	<StaticQuery
+		query={navLinksQuery}
+		render={data => (
+			<React.Fragment>
+				<HeaderStyled>
+					<NavContainer>
+						<SiteHomeLink to="/" activeClassName="active">
+							Home
+						</SiteHomeLink>
+						{getNavLinks(data).map(({ slug, label }) => (
+							<SiteNavLink
+								to={slug}
+								activeClassName="active"
+								partiallyActive
+							>
+								{label}
+							</SiteNavLink>
+						))}
+					</NavContainer>
+				</HeaderStyled>
+				<HeaderSpacer>___</HeaderSpacer>
+			</React.Fragment>
+		)}
+	/>
 );
 
 export default Header;

@@ -11,7 +11,7 @@ const globalCss = R.applySpec({
 
 	mark: {
 		backgroundColor: R.path(["color", "symantic", "warning"]),
-	}
+	},
 });
 
 export default ({ children }) => <Global styles={globalCss} />;

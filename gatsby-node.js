@@ -1,5 +1,5 @@
 const { createFilePath } = require(`gatsby-source-filesystem`);
-const { format, getYear, getMonth } = require("date-fns/fp");
+const { format } = require("date-fns/fp");
 const keb = require("@freddieridell/kebab-case");
 const path = require(`path`);
 
@@ -33,8 +33,8 @@ exports.onCreateNode = ({
 		}
 
 		const dateSlug = [
-			format("y", node.frontmatter.published),
-			format("MM", node.frontmatter.published),
+			format("y", new Date(node.frontmatter.published)),
+			format("MM", new Date(node.frontmatter.published)),
 		];
 
 		const slug =

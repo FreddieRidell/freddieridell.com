@@ -15,12 +15,7 @@ export default props => {
 	} = props;
 
 	return (
-		<Layout
-			title={title}
-			navLinks={getNavLinks(props)}
-			keywords={tags}
-			description={abstract || title}
-		>
+		<Layout title={title} keywords={tags} description={abstract || title}>
 			<Post {...props} />
 		</Layout>
 	);
@@ -28,14 +23,6 @@ export default props => {
 
 export const query = graphql`
 	query($slug: String!) {
-		allSitePage(filter: { context: { listing: { eq: true } } }) {
-			edges {
-				node {
-					path
-				}
-			}
-		}
-
 		markdownRemark(fields: { slug: { eq: $slug } }) {
 			html
 			frontmatter {

@@ -1,9 +1,9 @@
-import React from 'react';
-import * as R from 'ramda';
-import styled from '@emotion/styled';
-import {  adjustRadience } from '@freddieridell/little-bonsai-styles';
+import React from "react";
+import * as R from "ramda";
+import styled from "@emotion/styled";
+import { adjustRadience } from "@freddieridell/little-bonsai-styles";
 
-import Spacer from '../Toolbox/Spacer';
+import Spacer from "../Toolbox/Spacer";
 
 //-                               "Javascript: Node, React, ReactNative, Redux, Babel, ES6+",                                                                                                                                                              │info ℹ ｢wdm｣:
 //-                               "CSS / SCSS",                                                                                                                                                                                                            │info ℹ ｢wdm｣: Compiled successfully.
@@ -18,32 +18,32 @@ import Spacer from '../Toolbox/Spacer';
 
 const ProfileContainer = styled.section(
 	{
-		alignSelf: 'stretch',
+		alignSelf: "stretch",
 		flexGrow: 1,
 		flexShrink: 0,
 	},
 	R.applySpec({
-		backgroundColor: R.path(['theme', 'color', 'symantic', 'background']),
-		color: R.path(['theme', 'color', 'symantic', 'text']),
-		padding: R.path(['theme', 'size', 'space', 1]),
+		backgroundColor: R.path(["theme", "color", "symantic", "background"]),
+		color: R.path(["theme", "color", "symantic", "text"]),
+		padding: R.path(["theme", "size", "space", 1]),
 	}),
 );
 
 const H2 = styled.h2(
 	R.applySpec({
-		fontSize: R.path(['theme', 'size', 'font', 3]),
+		fontSize: R.path(["theme", "size", "font", 3]),
 
-		':before': {
+		":before": {
 			content: R.always('"#"'),
-			paddingRight: R.path(['theme', 'size', 'space', 0]),
-			color: adjustRadience(0.2, ['theme', 'color', 'symantic', 'text']),
+			paddingRight: R.path(["theme", "size", "space", 0]),
+			color: adjustRadience(0.2, ["theme", "color", "symantic", "text"]),
 		},
 	}),
 );
 
 const P = styled.p(
 	R.applySpec({
-		fontSize: R.path(['theme', 'size', 'font', 2]),
+		fontSize: R.path(["theme", "size", "font", 2]),
 	}),
 );
 

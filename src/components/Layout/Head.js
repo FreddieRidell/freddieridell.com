@@ -30,10 +30,7 @@ const Head = ({ title, description, keywords, theme }) => (
 			<meta property="og:title" content={title} />
 			<meta property="og:type" content="website" />
 			<title>
-				{" "}
-				{title
-					? `${title} - FreddieRidell.com`
-					: "FreddieRidell.com"}{" "}
+				{title ? `${title} - FreddieRidell.com` : "FreddieRidell.com"}
 			</title>
 		</Helmet>
 	</Fragment>

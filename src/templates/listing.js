@@ -10,11 +10,7 @@ export default props => {
 		pageContext: { type },
 	} = props;
 	return (
-		<Layout
-			title={type}
-			navLinks={getNavLinks(props)}
-			description={`${type} listing`}
-		>
+		<Layout title={type} description={`${type} listing`}>
 			<Listing {...props} />
 		</Layout>
 	);
@@ -22,14 +18,6 @@ export default props => {
 
 export const query = graphql`
 	query($type: String!) {
-		allSitePage(filter: { context: { listing: { eq: true } } }) {
-			edges {
-				node {
-					path
-				}
-			}
-		}
-
 		allMarkdownRemark(
 			filter: { frontmatter: { type: { eq: $type } } }
 			sort: { fields: frontmatter___published, order: DESC }
