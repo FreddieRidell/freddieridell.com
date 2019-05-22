@@ -5,30 +5,45 @@ import { mix } from "polished";
 import { StaticQuery, graphql, Link } from "gatsby";
 import { calm } from "@freddieridell/little-bonsai-styles";
 
+import { smallerThan } from "../../util";
+
 //////////////////////////////
 // Header
 //////////////////////////////
 const headerStylesShared = calm({
+	alignItems: "center",
 	display: "flex",
-	justifyContents: "center",
+	justifyContent: "center",
 
-	height: R.path(["theme", "size", "space", 7]),
-	maxHeight: R.path(["theme", "size", "space", 7]),
-	minHeight: R.path(["theme", "size", "space", 7]),
-	padding: R.path(["theme", "size", "space", 2]),
+	height: R.path(["theme", "size", "space", 6]),
+	maxHeight: R.path(["theme", "size", "space", 6]),
+	minHeight: R.path(["theme", "size", "space", 6]),
+	padding: R.path(["theme", "size", "space", 3]),
+	paddingTop: R.path(["theme", "size", "space", 5]),
 
 	backgroundColor: R.path(["theme", "color", "symantic", "background"]),
 
 	fontSize: R.path(["theme", "size", "font", 3]),
 	textDecoration: "none",
+
+	[smallerThan("350px")]: {
+		fontSize: R.path(["theme", "size", "font", 2]),
+	},
 });
 
-const HeaderStyled = styled.header(headerStylesShared, {
-	position: "fixed",
-	top: 0,
-	left: 0,
-	right: 0,
-});
+const HeaderStyled = styled.header(
+	headerStylesShared,
+	props => {
+		const r = headerStylesShared(props);
+		console.log({ props, r });
+	},
+	{
+		position: "fixed",
+		top: 0,
+		left: 0,
+		right: 0,
+	},
+);
 
 const HeaderSpacer = styled.div(headerStylesShared);
 
@@ -39,7 +54,6 @@ const NavContainer = styled.nav(
 	calm({
 		alignItems: "flex-end",
 		display: "flex",
-		margin: "auto",
 		position: "relative",
 
 		maxWidth: R.path(["theme", "size", "paragraphWidth"]),
@@ -105,10 +119,14 @@ const linkStylesShared = calm({
 });
 
 const SiteHomeLink = styled(Link)(linkStylesShared, {
-	flex: 1,
+	flex: 4,
 });
 
-const SiteNavLink = styled(Link)(linkStylesShared);
+const SiteNavLink = styled(Link)(linkStylesShared, {
+	flexGrow: 1,
+	flexShrink: 0,
+	flexBasis: "auto",
+});
 
 //////////////////////////////
 // Component
