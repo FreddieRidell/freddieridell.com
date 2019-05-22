@@ -7,7 +7,6 @@ import Spacer from "../Toolbox/Spacer";
 
 import HeadShot from "./HeadShot";
 import Profile from "./Profile";
-import Experiences from "./Experiences";
 
 const Hero = styled.section(
 	{ display: "flex", flexWrap: "wrap", margin: "auto" },

@@ -2,7 +2,6 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import Listing from "../components/Listing";
-import { getNavLinks } from "../util";
 
 export default props => {
 	return <Listing {...props} />;

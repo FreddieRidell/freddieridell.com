@@ -2,7 +2,6 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import Post from "../components/Post";
-import { getNavLinks } from "../util";
 
 export default props => {
 	return <Post {...props} />;
