@@ -29,6 +29,12 @@ const headerStylesShared = calm({
 	[smallerThan("350px")]: {
 		fontSize: R.path(["theme", "size", "font", 2]),
 	},
+	[smallerThan("270px")]: {
+		fontSize: R.path(["theme", "size", "font", 1]),
+	},
+	[smallerThan("200px")]: {
+		fontSize: R.path(["theme", "size", "font", 0]),
+	},
 });
 
 const HeaderStyled = styled.header(
@@ -84,6 +90,8 @@ const NavContainer = styled.nav(
 //////////////////////////////
 const linkStylesShared = calm({
 	display: "block",
+	flexBasis: "auto",
+	flexShrink: 0,
 	position: "relative",
 
 	paddingLeft: R.path(["theme", "size", "space", 1]),
@@ -119,13 +127,11 @@ const linkStylesShared = calm({
 });
 
 const SiteHomeLink = styled(Link)(linkStylesShared, {
-	flex: 4,
+	flexGrow: 8,
 });
 
 const SiteNavLink = styled(Link)(linkStylesShared, {
 	flexGrow: 1,
-	flexShrink: 0,
-	flexBasis: "auto",
 });
 
 //////////////////////////////
