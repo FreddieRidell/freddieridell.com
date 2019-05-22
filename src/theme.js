@@ -9,6 +9,4 @@ const baseTheme = buildScheme({
 	black: "#222",
 });
 
-console.log(baseTheme);
-
 module.exports = baseTheme;

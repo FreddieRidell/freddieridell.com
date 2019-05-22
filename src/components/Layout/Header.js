@@ -1,9 +1,13 @@
 import React from "react";
 import * as R from "ramda";
 import styled from "@emotion/styled";
+import { mix } from "polished";
 import { StaticQuery, graphql, Link } from "gatsby";
 import { adjustRadience } from "@freddieridell/little-bonsai-styles";
 
+//////////////////////////////
+// Header
+//////////////////////////////
 const headerStylesShared = [
 	{
 		display: "flex",
@@ -13,9 +17,10 @@ const headerStylesShared = [
 	R.applySpec({
 		backgroundColor: R.path(["theme", "color", "symantic", "background"]),
 		fontSize: R.path(["theme", "size", "font", 3]),
-		padding: R.path(["theme", "size", "space", 1]),
-		paddingTop: R.path(["theme", "size", "space", 2]),
-		paddingBottom: R.path(["theme", "size", "space", 2]),
+		height: R.path(["theme", "size", "space", 7]),
+		minHeight: R.path(["theme", "size", "space", 7]),
+		maxHeight: R.path(["theme", "size", "space", 7]),
+		padding: R.path(["theme", "size", "space", 2]),
 	}),
 ];
 
@@ -28,6 +33,9 @@ const HeaderStyled = styled.header(...headerStylesShared, {
 
 const HeaderSpacer = styled.div(...headerStylesShared);
 
+//////////////////////////////
+// Nav
+//////////////////////////////
 const NavContainer = styled.nav(
 	{
 		display: "flex",
@@ -47,7 +55,10 @@ const NavContainer = styled.nav(
 		width: R.path(["theme", "size", "paragraphWidth"]),
 
 		"&::before": {
-			backgroundColor: R.path(["theme", "color", "symantic", "link"]),
+			backgroundColor: R.pipe(
+				R.path(["theme", "color", "symantic"]),
+				cols => mix(1 / 4, cols.text, cols.inverted.text),
+			),
 			bottom: R.pipe(
 				R.path(["theme", "size", "space", 1]),
 				x => `-${x}`,
@@ -57,6 +68,25 @@ const NavContainer = styled.nav(
 	}),
 );
 
+function foo(x) {
+	return R.pipe(
+		R.map(spec => {
+			switch (typeof spec) {
+				case "function":
+					return spec;
+				case "object":
+					return foo(spec);
+				default:
+					return R.allways(spec);
+			}
+		}),
+		R.applySpec,
+	)(x);
+}
+
+//////////////////////////////
+// Links
+//////////////////////////////
 const linkStylesShared = [
 	{
 		textTransform: "capitalize",
@@ -78,11 +108,12 @@ const linkStylesShared = [
 		},
 	},
 	R.applySpec({
-		paddingLeft: R.path(["theme", "size", "space", 2]),
-		paddingRight: R.path(["theme", "size", "space", 2]),
+		paddingLeft: R.path(["theme", "size", "space", 1]),
+		paddingRight: R.path(["theme", "size", "space", 1]),
 		color: R.path(["theme", "color", "symantic", "text"]),
 
 		"&::after": {
+			maxWidth: R.path(["theme", "size", "space", 11]),
 			backgroundColor: R.path(["theme", "color", "symantic", "text"]),
 			bottom: R.pipe(
 				R.path(["theme", "size", "space", 1]),
@@ -94,16 +125,15 @@ const linkStylesShared = [
 	}),
 ];
 
-const SiteHomeLink = styled(Link)(
-	...linkStylesShared,
-	{
-		flex: 1,
-	},
-	R.applySpec({}),
-);
+const SiteHomeLink = styled(Link)(...linkStylesShared, {
+	flex: 1,
+});
 
 const SiteNavLink = styled(Link)(...linkStylesShared);
 
+//////////////////////////////
+// Component
+//////////////////////////////
 const navLinksQuery = graphql`
 	query {
 		allSitePage(filter: { context: { listing: { eq: true } } }) {
@@ -148,7 +178,7 @@ const Header = () => (
 						))}
 					</NavContainer>
 				</HeaderStyled>
-				<HeaderSpacer>___</HeaderSpacer>
+				<HeaderSpacer />
 			</React.Fragment>
 		)}
 	/>
