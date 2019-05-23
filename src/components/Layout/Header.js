@@ -6,6 +6,7 @@ import { StaticQuery, graphql, Link } from "gatsby";
 import { calm } from "@freddieridell/little-bonsai-styles";
 
 import { smallerThan } from "../../util";
+import hideHeaderOnScroll from "./hideHeaderOnScroll";
 
 //////////////////////////////
 // Header
@@ -39,16 +40,20 @@ const headerStylesShared = calm({
 
 const HeaderStyled = styled.header(
 	headerStylesShared,
-	props => {
-		const r = headerStylesShared(props);
-		console.log({ props, r });
-	},
-	{
+	calm({
 		position: "fixed",
 		top: 0,
 		left: 0,
 		right: 0,
-	},
+
+		transitionDuration: R.path(["theme", "time", "normal"]),
+		transitionProperty: "all",
+		transform: R.ifElse(
+			R.prop("hidden"),
+			R.always("translateY(-100%)"),
+			R.always("translateY(0)"),
+		),
+	}),
 );
 
 const HeaderSpacer = styled.div(headerStylesShared);
@@ -117,7 +122,7 @@ const linkStylesShared = calm({
 
 		transform: "scaleX(0)",
 		transformOrigin: "left",
-		transitionDuration: R.path(["theme", "time", "normal"]),
+		transitionDuration: R.path(["theme", "time", "slow"]),
 		transitionProperty: "all",
 		transitionTimingFunction: "ease",
 	},
@@ -160,31 +165,35 @@ const getNavLinks = R.pipe(
 	})),
 );
 
-const Header = () => (
-	<StaticQuery
-		query={navLinksQuery}
-		render={data => (
-			<React.Fragment>
-				<HeaderStyled>
-					<NavContainer>
-						<SiteHomeLink to="/" activeClassName="active">
-							Home
-						</SiteHomeLink>
-						{getNavLinks(data).map(({ slug, label }) => (
-							<SiteNavLink
-								to={slug}
-								activeClassName="active"
-								partiallyActive
-							>
-								{label}
-							</SiteNavLink>
-						))}
-					</NavContainer>
-				</HeaderStyled>
-				<HeaderSpacer />
-			</React.Fragment>
-		)}
-	/>
-);
+const Header = () => {
+	const hidden = hideHeaderOnScroll();
+
+	return (
+		<StaticQuery
+			query={navLinksQuery}
+			render={data => (
+				<React.Fragment>
+					<HeaderStyled hidden={hidden}>
+						<NavContainer>
+							<SiteHomeLink to="/" activeClassName="active">
+								Home
+							</SiteHomeLink>
+							{getNavLinks(data).map(({ slug, label }) => (
+								<SiteNavLink
+									to={slug}
+									activeClassName="active"
+									partiallyActive
+								>
+									{label}
+								</SiteNavLink>
+							))}
+						</NavContainer>
+					</HeaderStyled>
+					<HeaderSpacer />
+				</React.Fragment>
+			)}
+		/>
+	);
+};
 
 export default Header;
