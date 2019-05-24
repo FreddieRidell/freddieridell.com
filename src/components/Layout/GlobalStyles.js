@@ -38,6 +38,10 @@ const globalCss = R.applySpec({
 		paddingBottom: R.path(["size", "space", 2]),
 	},
 
+	a: {
+		color: R.path(["color", "symantic", "link"]),
+	},
+
 	html: {
 		fontSize: R.path(["size", "font", 2]),
 		backgroundColor: R.path(["color", "symantic", "background"]),
