@@ -14,7 +14,6 @@ const ListingTitle = styled.h1(
 	}),
 );
 
-
 const PostHr = styled.hr(
 	calm({
 		display: "block",
@@ -31,6 +30,7 @@ const PostDivider = () => (
 const Listing = props => (
 	<React.Fragment>
 		<ListingTitle>{props["*"]} Posts</ListingTitle>
+		<Spacer height={6} />
 		<nav>
 			<DividedList
 				data={props.data.allMarkdownRemark.edges}
@@ -39,6 +39,7 @@ const Listing = props => (
 				renderDivider={() => <PostDivider />}
 			/>
 		</nav>
+		<Spacer height={3} />
 	</React.Fragment>
 );
 

@@ -27,10 +27,10 @@ const PostMetaContainer = styled.aside(
 		display: "flex",
 		flexWrap: "wrap",
 
-		paddingBottom: R.path(["theme", "size", "space", 2]),
 		paddingLeft: R.path(["theme", "size", "space", 3]),
 	}),
 );
+
 const PostMeta = styled.span(
 	calm({
 		flex: "0 0 auto",
