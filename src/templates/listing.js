@@ -16,6 +16,12 @@ export const query = graphql`
 			edges {
 				node {
 					excerpt
+					timeToRead
+					wordCount {
+						paragraphs
+						sentences
+						words
+					}
 					fields {
 						slug
 					}

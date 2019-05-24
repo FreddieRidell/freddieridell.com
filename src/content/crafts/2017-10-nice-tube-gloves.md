@@ -2,6 +2,7 @@
 title: Tube Gloves
 published: 2017-10-17
 hero: tubeGloves1
+emoji: 🧤
 type: crafts
 ---
 

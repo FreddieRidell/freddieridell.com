@@ -11,7 +11,13 @@ const FooterStyled = styled.footer(
 		paddingRight: R.path(["theme", "size", "space", 2]),
 
 		color: R.path(["theme", "color", "symantic", "inverted", "text"]),
-		backgroundColor: R.path(["theme", "color", "symantic", "inverted", "background"]),
+		backgroundColor: R.path([
+			"theme",
+			"color",
+			"symantic",
+			"inverted",
+			"background",
+		]),
 	}),
 );
 

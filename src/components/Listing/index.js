@@ -3,6 +3,11 @@ import * as R from "ramda";
 import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import { calm } from "@freddieridell/little-bonsai-styles";
+import { mix } from "polished";
+
+import DividedList from "../Toolbox/DividedList";
+import Spacer from "../Toolbox/Spacer";
+import { formatDate } from "../../util";
 
 const ListingTitle = styled.h1(
 	calm({
@@ -13,32 +18,95 @@ const ListingTitle = styled.h1(
 
 const PostContainer = styled(Link)(
 	calm({
-		display: "block",
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "flex-start",
+
+		padding: R.path(["theme", "size", "space", 3]),
+		paddingRight: R.path(["theme", "size", "space", 0]),
+
 		color: R.path(["theme", "color", "symantic", "text"]),
-		paddingLeft: R.path(["theme", "size", "space", 3]),
 	}),
 );
 
-const PostTitle = styled.h3({});
-const PostDate = styled.p({});
+const PostTitle = styled.h3({ padding: 0 });
+
+const PostMetaContainer = styled.aside(
+	calm({
+		display: "flex",
+		flexWrap: "wrap",
+
+		paddingBottom: R.path(["theme", "size", "space", 2]),
+		paddingLeft: R.path(["theme", "size", "space", 3]),
+	}),
+);
+const PostMeta = styled.span(
+	calm({
+		flex: "0 0 auto",
+		display: "block",
+		fontSize: R.path(["theme", "size", "font", 2]),
+		lineHeight: R.path(["theme", "size", "space", 5]),
+
+		paddingLeft: R.path(["theme", "size", "space", 1]),
+		paddingRight: R.path(["theme", "size", "space", 1]),
+
+		color: R.pipe(
+			R.applySpec([
+				R.path(["theme", "color", "symantic", "background"]),
+				R.path(["theme", "color", "symantic", "text"]),
+			]),
+			([x, y]) => mix(1 / 3, x, y),
+		),
+	}),
+);
+
 const PostDescription = styled.div({});
 
-const Post = ({ excerpt, fields: { slug }, frontmatter: { title, published, abstract } }) => (
+const Post = ({
+	excerpt,
+	timeToRead,
+	wordCount,
+	fields: { slug },
+	frontmatter: { title, published, abstract, emoji },
+}) => (
 	<PostContainer to={slug}>
-		<PostTitle>{title}</PostTitle>
-		<PostDate></PostDate>
-		<PostDescription>{ abstract || excerpt }</PostDescription>
+		<PostTitle>
+			{emoji}
+			{title}
+		</PostTitle>
+
+		<PostMetaContainer>
+			<PostMeta>published {formatDate(published)}</PostMeta>
+			<PostMeta>|</PostMeta>
+			<PostMeta>{wordCount.words} words</PostMeta>
+		</PostMetaContainer>
+		<PostDescription>{abstract || excerpt}</PostDescription>
 	</PostContainer>
 );
 
+const PostHr = styled.hr(
+	calm({
+		display: "block",
+		color: R.path(["theme", "color", "symantic", "text"]),
+	}),
+);
+const PostDivider = () => (
+	<React.Fragment>
+		<Spacer height={4} />
+		<PostHr />
+		<Spacer height={3} />
+	</React.Fragment>
+);
 const Listing = props => (
 	<React.Fragment>
 		<ListingTitle>{props["*"]} Posts</ListingTitle>
-		{props.data.allMarkdownRemark.edges.map(({ node }) => (
-			<Post {...node} />
-		))}
 		<nav>
-			<pre>{JSON.stringify(props, null, 2)}</pre>
+			<DividedList
+				data={props.data.allMarkdownRemark.edges}
+				getKey={R.path(["node", "fields", "slug"])}
+				renderItem={({ node }) => <Post {...node} />}
+				renderDivider={() => <PostDivider />}
+			/>
 		</nav>
 	</React.Fragment>
 );
