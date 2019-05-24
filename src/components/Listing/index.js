@@ -29,6 +29,7 @@ const PostDivider = () => (
 );
 const Listing = props => (
 	<React.Fragment>
+		<Spacer height={3} />
 		<ListingTitle>{props["*"]} Posts</ListingTitle>
 		<Spacer height={6} />
 		<nav>

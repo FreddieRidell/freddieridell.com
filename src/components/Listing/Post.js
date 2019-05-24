@@ -14,7 +14,6 @@ const PostContainer = styled(Link)(
 		alignItems: "flex-start",
 
 		padding: R.path(["theme", "size", "space", 3]),
-		paddingRight: R.path(["theme", "size", "space", 0]),
 
 		color: R.path(["theme", "color", "symantic", "text"]),
 	}),
