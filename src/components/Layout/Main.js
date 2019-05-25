@@ -5,7 +5,9 @@ import { calm } from "@freddieridell/little-bonsai-styles";
 
 const MainStyled = styled.main(
 	calm({
+		display: "flex",
 		flex: 1,
+		flexDirection: "column",
 		padding: R.path(["theme", "size", "space", 1]),
 	}),
 );

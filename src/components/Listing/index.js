@@ -20,6 +20,7 @@ const PostHr = styled.hr(
 		color: R.path(["theme", "color", "symantic", "text"]),
 	}),
 );
+
 const PostDivider = () => (
 	<React.Fragment>
 		<Spacer height={4} />
@@ -27,19 +28,25 @@ const PostDivider = () => (
 		<Spacer height={3} />
 	</React.Fragment>
 );
+
+const PostContaner = styled.nav(calm({
+	alignSelf: "center",
+	maxWidth: R.path(["theme", "size", "paragraphWidth"]),
+}));
+
 const Listing = props => (
 	<React.Fragment>
 		<Spacer height={3} />
 		<ListingTitle>{props["*"]} Posts</ListingTitle>
 		<Spacer height={6} />
-		<nav>
+		<PostContaner>
 			<DividedList
 				data={props.data.allMarkdownRemark.edges}
 				getKey={R.path(["node", "fields", "slug"])}
 				renderItem={({ node }) => <Post {...node} />}
 				renderDivider={() => <PostDivider />}
 			/>
-		</nav>
+		</PostContaner>
 		<Spacer height={3} />
 	</React.Fragment>
 );
