@@ -6,32 +6,36 @@ const globalCss = R.applySpec({
 	h1: {
 		fontSize: R.path(["size", "font", 6]),
 		lineHeight: R.path(["size", "space", 8]),
-		paddingTop: R.path(["size", "space", 4]),
+		paddingTop: R.path(["size", "space", 6]),
 	},
 
 	h2: {
 		fontSize: R.path(["size", "font", 5]),
 		lineHeight: R.path(["size", "space", 7]),
-		paddingTop: R.path(["size", "space", 3]),
+		paddingTop: R.path(["size", "space", 6]),
 	},
 
 	h3: {
 		fontSize: R.path(["size", "font", 4]),
 		lineHeight: R.path(["size", "space", 6]),
-		paddingTop: R.path(["size", "space", 2]),
+		paddingTop: R.path(["size", "space", 6]),
 	},
 
 	h4: {
 		fontSize: R.path(["size", "font", 3]),
 		lineHeight: R.path(["size", "space", 5]),
-		paddingTop: R.path(["size", "space", 1]),
+		paddingTop: R.path(["size", "space", 6]),
 	},
 
-	p: {
+	"p, ol, ul, code, pre": {
 		fontSize: R.path(["size", "font", 3]),
 		lineHeight: R.path(["size", "space", 5]),
 		paddingTop: R.path(["size", "space", 2]),
 		paddingBottom: R.path(["size", "space", 3]),
+	},
+
+	"ol, ul": {
+		paddingLeft: R.path(["size", "space", 5]),
 	},
 
 	"h1, h2, h3, h4, p": {

@@ -5,14 +5,9 @@ import { calm } from "@freddieridell/little-bonsai-styles";
 
 import DividedList from "../Toolbox/DividedList";
 import Spacer from "../Toolbox/Spacer";
-import Post from "./Post";
+import PageTitle from "../Toolbox/PageTitle";
 
-const ListingTitle = styled.h1(
-	calm({
-		textTransform: "capitalize",
-		paddingLeft: R.path(["theme", "size", "space", 2]),
-	}),
-);
+import Post from "./Post";
 
 const PostHr = styled.hr(
 	calm({
@@ -31,14 +26,15 @@ const PostDivider = () => (
 
 const PostContaner = styled.nav(calm({
 	alignSelf: "center",
-	maxWidth: R.path(["theme", "size", "paragraphWidth"]),
+		maxWidth: R.pipe(
+			R.path(["theme", "size", "paragraphWidth"]),
+			R.multiply(3/4),
+		),
 }));
 
 const Listing = props => (
 	<React.Fragment>
-		<Spacer height={3} />
-		<ListingTitle>{props["*"]} Posts</ListingTitle>
-		<Spacer height={6} />
+		<PageTitle>{props["*"]} Posts</PageTitle>
 		<PostContaner>
 			<DividedList
 				data={props.data.allMarkdownRemark.edges}

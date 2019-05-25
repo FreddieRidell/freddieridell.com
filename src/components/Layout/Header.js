@@ -6,12 +6,15 @@ import { StaticQuery, graphql, Link } from "gatsby";
 import { calm } from "@freddieridell/little-bonsai-styles";
 
 import { smallerThan } from "../../util";
+
+import zIndecies from "../zIndex";
 import hideHeaderOnScroll from "./hideHeaderOnScroll";
 
 //////////////////////////////
 // Header
 //////////////////////////////
 const headerStylesShared = calm({
+
 	alignItems: "center",
 	display: "flex",
 	justifyContent: "center",
@@ -45,6 +48,8 @@ const HeaderStyled = styled.header(
 		top: 0,
 		left: 0,
 		right: 0,
+
+		zIndex: zIndecies["header"],
 
 		transitionDuration: R.path(["theme", "time", "normal"]),
 		transitionProperty: "all",

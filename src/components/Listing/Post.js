@@ -16,6 +16,19 @@ const PostContainer = styled(Link)(
 		padding: R.path(["theme", "size", "space", 3]),
 
 		color: R.path(["theme", "color", "symantic", "text"]),
+
+		transform: "translateX(0)",
+		transition: R.pipe(
+			R.path(["theme", "time", "normal"]),
+			x => `all ${x}`,
+		),
+
+		":hover": {
+			transform: R.pipe(
+				R.path(["theme", "size", "space", 3]),
+				x => `translateX(${x})`,
+			),
+		},
 	}),
 );
 

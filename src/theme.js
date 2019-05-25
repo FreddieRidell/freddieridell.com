@@ -5,7 +5,7 @@ const {
 
 const baseTheme = buildScheme({
 	...corePallete,
-	white: "#eee",
+	white: "#fcfcfc",
 	black: "#222",
 });
 
