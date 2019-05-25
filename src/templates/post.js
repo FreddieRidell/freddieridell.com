@@ -11,7 +11,14 @@ export const query = graphql`
 	query($slug: String!) {
 		markdownRemark(fields: { slug: { eq: $slug } }) {
 			html
+			timeToRead
+			wordCount {
+				paragraphs
+				sentences
+				words
+			}
 			frontmatter {
+				published
 				emoji
 				abstract
 				gallery

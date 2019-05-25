@@ -10,7 +10,7 @@ const PostArticle = styled.article(
 		alignSelf: "center",
 		maxWidth: R.pipe(
 			R.path(["theme", "size", "paragraphWidth"]),
-			R.multiply(3/4),
+			R.multiply(3 / 4),
 		),
 	}),
 );
@@ -19,12 +19,24 @@ const Post = ({
 	data: {
 		markdownRemark: {
 			html,
-			frontmatter: { abstract, gallery, npm, repo, tags, title, tldr },
+			timeToRead,
+			wordCount,
+			frontmatter: {
+				published,
+				abstract,
+				gallery,
+				npm,
+				repo,
+				tags,
+				title,
+				tldr,
+			},
 		},
 	},
 }) => (
 	<React.Fragment>
 		<PageTitle>{title}</PageTitle>
+
 		<PostArticle
 			dangerouslySetInnerHTML={{
 				__html: html,

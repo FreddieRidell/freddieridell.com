@@ -14,7 +14,6 @@ import hideHeaderOnScroll from "./hideHeaderOnScroll";
 // Header
 //////////////////////////////
 const headerStylesShared = calm({
-
 	alignItems: "center",
 	display: "flex",
 	justifyContent: "center",

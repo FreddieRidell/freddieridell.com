@@ -83,6 +83,7 @@ const Post = ({
 			<PostMeta>|</PostMeta>
 			<PostMeta>{wordCount.words} words</PostMeta>
 		</PostMetaContainer>
+
 		<PostDescription>{abstract || excerpt}</PostDescription>
 	</PostContainer>
 );

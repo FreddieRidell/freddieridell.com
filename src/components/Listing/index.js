@@ -24,13 +24,15 @@ const PostDivider = () => (
 	</React.Fragment>
 );
 
-const PostContaner = styled.nav(calm({
-	alignSelf: "center",
+const PostContaner = styled.nav(
+	calm({
+		alignSelf: "center",
 		maxWidth: R.pipe(
 			R.path(["theme", "size", "paragraphWidth"]),
-			R.multiply(3/4),
+			R.multiply(3 / 4),
 		),
-}));
+	}),
+);
 
 const Listing = props => (
 	<React.Fragment>
