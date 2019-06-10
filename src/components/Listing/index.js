@@ -37,6 +37,7 @@ const PostContaner = styled.nav(
 const Listing = props => (
 	<React.Fragment>
 		<PageTitle>{props["*"]} Posts</PageTitle>
+		<Spacer height={6} />
 		<PostContaner>
 			<DividedList
 				data={props.data.allMarkdownRemark.edges}

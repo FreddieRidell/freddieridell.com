@@ -4,10 +4,21 @@ import styled from "@emotion/styled";
 import { calm } from "@freddieridell/little-bonsai-styles";
 
 import PageTitle from "../Toolbox/PageTitle";
+import Spacer from "../Toolbox/Spacer";
 
 const PostArticle = styled.article(
 	calm({
-		alignSelf: "center",
+      alignSelf: "center",
+		maxWidth: R.pipe( R.path(["theme", "size", "paragraphWidth"]), R.multiply(3 / 4),),
+      width: "100%",
+	}),
+);
+
+const Tldr = styled.aside(
+	calm({
+		paddingLeft: R.path(["theme", "size", "space", 3]),
+      fontSize: R.path(["theme", "size", "font", 4]),
+      fontStyle: "italic",
 		maxWidth: R.pipe(
 			R.path(["theme", "size", "paragraphWidth"]),
 			R.multiply(3 / 4),
@@ -36,6 +47,8 @@ const Post = ({
 }) => (
 	<React.Fragment>
 		<PageTitle>{title}</PageTitle>
+		{tldr && <Tldr>TLDR: {tldr}</Tldr>}
+		<Spacer height={6} />
 
 		<PostArticle
 			dangerouslySetInnerHTML={{

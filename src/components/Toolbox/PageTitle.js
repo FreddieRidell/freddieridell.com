@@ -16,7 +16,6 @@ const PageTitle = ({ children }) => (
 	<React.Fragment>
 		<Spacer height={3} />
 		<PageTitleStyled>{children}</PageTitleStyled>
-		<Spacer height={6} />
 	</React.Fragment>
 );
 
