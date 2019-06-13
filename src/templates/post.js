@@ -194,8 +194,8 @@ export default props => {
 						{gallery.map(url => (
 							<GalleryImage
 								key={url}
-								href={`https://res.cloudinary.com/little-bonsai/image/upload/f_auto/v1548885223/${url}`}
-								src={`https://res.cloudinary.com/little-bonsai/image/upload/c_fill,f_auto,q_auto,w_700,ar_1.0/v1548885223/${url}`}
+                        href={`https://res.cloudinary.com/little-bonsai/image/upload/f_auto/v1548885223/freddieridell.com/${url}`}
+                        src={`https://res.cloudinary.com/little-bonsai/image/upload/c_fill,f_auto,q_auto,w_700,ar_1.0/v1548885223/freddieridell.com/${url}`}
 							/>
 						))}
 					</Gallery>

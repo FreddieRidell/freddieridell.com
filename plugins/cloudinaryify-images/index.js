@@ -9,11 +9,11 @@ const runRecursive = fn => {
 
 cloudinaryifyHtml = (imgName, alt) => {
 	return [
-		'<a target="_blank" href="https://res.cloudinary.com/little-bonsai/image/upload/f_auto/v1548885223/',
+		'<a target="_blank" href="https://res.cloudinary.com/little-bonsai/image/upload/f_auto/v1548885223/freddieridell.com/',
 		imgName,
 		'"><img alt="',
 		alt,
-		'" src="https://res.cloudinary.com/little-bonsai/image/upload/c_scale,f_auto,q_auto,w_700/v1548885223/',
+		'" src="https://res.cloudinary.com/little-bonsai/image/upload/c_scale,f_auto,q_auto,w_700/v1548885223/freddieridell.com/',
 		imgName,
 		'"/></a>',
 	].join("");
