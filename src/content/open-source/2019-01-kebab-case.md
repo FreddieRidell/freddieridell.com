@@ -6,6 +6,7 @@ tags: [js, library, kebab-case]
 published: 2019-01-12
 type: open-source
 abstract: A stripped down, minimal kebab-case parser, to deal with 90% of programmatic conversion usage
+lang: js
 ---
 
 Sometimes, you need [lodash](https://www.npmjs.com/package/lodash.kebabcase), but sometimes a simple minimalist library will do.

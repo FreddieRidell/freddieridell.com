@@ -1,4 +1,5 @@
 const theme = require("./src/components/theme");
+
 module.exports = {
 	siteMetadata: {
 		title: "Gatsby Default Starter",
