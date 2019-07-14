@@ -54,7 +54,7 @@ const HeaderStyled = styled.header(
 		transitionProperty: "all",
 		transform: R.ifElse(
 			R.prop("hidden"),
-			R.always("translateY(-100%)"),
+			R.always("translateY(calc(-100% - 1px))"),
 			R.always("translateY(0)"),
 		),
 	}),

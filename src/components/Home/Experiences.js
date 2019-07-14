@@ -2,47 +2,59 @@ import React from "react";
 import * as R from "ramda";
 import styled from "@emotion/styled";
 import { mix } from "polished";
+import { calm } from "@freddieridell/little-bonsai-styles";
 
 import { formatDate } from "../../util";
 
 const ExperienceWrapper = styled.div(
-	R.applySpec({
+	calm({
 		padding: R.path(["theme", "size", "space", 0]),
 	}),
 );
 
 const ExperienceStyled = styled.details(
-	{ borderRadius: "4px 4px 0 0 ", overflow: "hidden" },
-	R.applySpec({}),
+	calm({
+		borderRadius: "4px 4px 0 0 ",
+		overflow: "hidden",
+		paddingTop: R.path(["theme", "size", "space", 2]),
+		paddingBottom: R.path(["theme", "size", "space", 7]),
+	}),
 );
 
-const Position = styled.h3(R.applySpec({}));
+const Position = styled.h3(
+	calm({
+		flex: "1 0 100%",
+		padding: 0,
+	}),
+);
 
-const Business = styled.h4(R.applySpec({}));
+const Business = styled.h4(
+	calm({
+		padding: R.path(["theme", "size", "space", 1]),
+		paddingLeft: 0,
+	}),
+);
 
 const DateRange = styled.aside(
-	{ alignSelf: "flex-end" },
-	R.applySpec({
-		fontSize: R.path(["theme", "size", "font", 1]),
+	calm({
+		alignSelf: "flex-end",
+		fontStyle: "italic",
+		padding: 0,
+		padding: R.path(["theme", "size", "space", 1]),
 	}),
 );
 
 const Description = styled.div(
-	R.applySpec({
+	calm({
 		padding: R.path(["theme", "size", "space", 0]),
 	}),
 );
 
 const Summary = styled.summary(
-	{
-		listStyle: "none",
+	calm({
 		display: "flex",
-		flexDirection: "column",
-	},
-	R.applySpec({
-		//backgroundColor: R.path(['theme', 'color', 'chromatic', 'black']),
-		//color: R.path(['theme', 'color', 'chromatic', 'white']),
-		padding: R.path(["theme", "size", "space", 0]),
+		flexFlow: "row wrap",
+		listStyle: "none",
 	}),
 );
 
@@ -62,7 +74,9 @@ const Experience = ({ biz, children, end, position, start }) => (
 );
 
 export default () => (
-	<React.Fragment>
+	<section>
+		<h2>Experience</h2>
+
 		<Experience
 			position="Senior React Contractor"
 			biz="Workshare"
@@ -141,5 +155,5 @@ export default () => (
 				problem I've encountered since
 			</p>
 		</Experience>
-	</React.Fragment>
+	</section>
 );

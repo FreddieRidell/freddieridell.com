@@ -4,10 +4,12 @@ import styled from "@emotion/styled";
 import { calm } from "@freddieridell/little-bonsai-styles";
 
 import DividedList from "../Toolbox/DividedList";
-import HeadShot from "./HeadShot";
 import PageTitle from "../Toolbox/PageTitle";
-import Profile from "./Profile";
 import Spacer from "../Toolbox/Spacer";
+
+import Bio from "./Bio";
+import Skills from "./Skills";
+import Experiences from "./Experiences";
 
 const PostHr = styled.hr(
 	calm({
@@ -29,6 +31,7 @@ const PostContaner = styled.nav(
 		alignSelf: "center",
 		maxWidth: R.pipe(
 			R.path(["theme", "size", "paragraphWidth"]),
+			R.multiply(3/4),
 		),
 	}),
 );
@@ -38,12 +41,9 @@ const Home = () => (
 		<PageTitle>Home</PageTitle>
 		<Spacer height={6} />
 		<PostContaner>
-			<DividedList
-				data={[]}
-				getKey={() => "x"}
-				renderItem={() => <div />}
-				renderDivider={() => PostDivider}
-			/>
+			<Bio />
+			<Skills/>
+			<Experiences/>
 		</PostContaner>
 		<Spacer height={3} />
 	</React.Fragment>
