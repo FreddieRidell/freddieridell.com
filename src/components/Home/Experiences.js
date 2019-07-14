@@ -32,15 +32,28 @@ const Business = styled.h4(
 	calm({
 		padding: R.path(["theme", "size", "space", 1]),
 		paddingLeft: 0,
+
+		fontSize: R.path(["theme", "size", "font", 3]),
+		lineHeight: R.path(["theme", "size", "space", 6]),
 	}),
 );
 
 const DateRange = styled.aside(
 	calm({
 		alignSelf: "flex-end",
-		fontStyle: "italic",
 		padding: 0,
 		padding: R.path(["theme", "size", "space", 1]),
+
+		fontSize: R.path(["theme", "size", "font", 2]),
+		lineHeight: R.path(["theme", "size", "space", 5]),
+
+		color: R.pipe(
+			R.applySpec([
+				R.path(["theme", "color", "symantic", "background"]),
+				R.path(["theme", "color", "symantic", "text"]),
+			]),
+			([x, y]) => mix(1 / 3, x, y),
+		),
 	}),
 );
 

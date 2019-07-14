@@ -63,7 +63,12 @@ const PostMeta = styled.span(
 	}),
 );
 
-const PostDescription = styled.div({});
+const PostDescription = styled.div(
+	calm({
+		fontSize: R.path(["theme", "size", "font", 3]),
+		lineHeight: R.path(["theme", "size", "space", 6]),
+	}),
+);
 
 const Post = ({
 	excerpt,
