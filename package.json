@@ -7,10 +7,19 @@
 		"singleQuote": false,
 		"tabWidth": 4,
 		"useTabs": true,
-		"trailingComma": "all"
+		"trailingComma": "all",
+		"overrides": [
+			{
+				"files": "*.md",
+				"options": {
+					"tabWidth": 2
+				}
+			}
+		]
 	},
 	"dependencies": {
 		"@freddieridell/kebab-case": "0.0.1",
+		"@freddieridell/little-bonsai-styles": "0.0.2",
 		"date-fns": "^2.0.0-alpha.26",
 		"feather-icons": "^4.9.0",
 		"gatsby-plugin-sharp": "^2.0.16",
@@ -33,14 +42,12 @@
 	],
 	"license": "MIT",
 	"scripts": {
-		"now-build": "npm run build",
 		"build": "gatsby build",
-		"develop": "gatsby develop -H 0.0.0.0",
+		"start": "gatsby develop -H 0.0.0.0",
 		"format": "prettier --write '**/*.js'",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"now-build": "npm run build"
 	},
 	"devDependencies": {
-		"@freddieridell/little-bonsai-styles": "0.0.2",
 		"gatsby": "^2.0.67",
 		"gatsby-plugin-manifest": "^2.0.12",
 		"gatsby-plugin-offline": "^2.0.19",

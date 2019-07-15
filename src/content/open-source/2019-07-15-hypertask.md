@@ -1,10 +1,11 @@
 ---
 title: HyperTask
-repo: FreddieRidell/hypertask
+abstract: A rust cli for managing ToDo lists and tasks
 crates: hypertask # https://crates.io/api/v1/crates?q=hypertask
+published: 2019-07-15
+repo: FreddieRidell/hypertask
 tags: [rust, cli, hypertask, code, git, openSource]
 type: open-source
-abstract: A rust cli for managing ToDo lists and tasks
 ---
 
 I've recently spent some time re-writing my js task manager in rust.
@@ -21,25 +22,34 @@ The overall goal of this tool is to provide a powerful and expressive cli to tra
 
 ### Add a task
 
-`task add take out the trash +chores due:now recur:3d`
+```bash
+$ task add take out the trash +chores due:now recur:3d
+```
+
 Adds a recurring task with the description `"take out the trash"`, that's due now, has the tag `chores` and recurs once every 3 days
 
 ### Modify a task
 
-`task f2peyd5aw4n7e22f +chores modify recur:1w`
+```bash
+$ task f2peyd5aw4n7e22f +chores modify recur:1w
+```
+
 Selects every task with the tag `chores`, and the task with the id `f2peyd5aw4n7e22f` and changes them to recur once a week
 
 ### Mark a task as complete
 
-`task f2peyd5aw4n7e22f +chores done`
+```bash
+$ task f2peyd5aw4n7e22f +chores done
+```
+
 Selects every task with the tag `chores`, and the task with the id `f2peyd5aw4n7e22f` and marks them as done; these tasks will no longer show up in task summaries
 
 ### Special Tags
 
 Some tags have special semantic meanings:
 
--   `+timely`: if this task is overdue, it's internal score will be doubled, moving it up the ranking
--   `+urgent` this task's score we always be doubled, this stacks with `+timely`, so an overdue task with both tags will have quadruple its regular score
+- `+timely`: if this task is overdue, it's internal score will be doubled, moving it up the ranking
+- `+urgent` this task's score we always be doubled, this stacks with `+timely`, so an overdue task with both tags will have quadruple its regular score
 
 ## Task Warrior
 
@@ -69,15 +79,20 @@ Finally - and I'm not exaggerating here - the growing ecosystem of reusable crat
 
 ## Future of `hypertask`
 
--   [ ] _Config_: hypertask is currently configured through [two environment variables][docs] as this was the quickest way for me to hit the ground running. In future I'll be moving this config to a dedicated .dotfile
--   [ ] _Customisability_: currently the ordering of tasks is calculated by a hard-coded function. I'd like to replace this with some simple scripting language; I'm currently considering [rhai][rhai]
--   [ ] _Dat_: hypertask is actually called hypertask because it was originally meant to integrate with the [dat][dat] ecosystem (dat is powered by [hyperdrive][hyperdrive]). When multiwriter support is a bit better in the dat eco system I'm really looking forward to re-introducing it as a first class concept.
--   [ ] _Dependencies, Parents, Projects_: I don't currently have much of a use for these, but if they can be added relativly simply and would be of use to others I'd be happy to add them
--   [ ] _Garbage Collection_:
--   [ ] _Id Abreviation_:
--   [ ] _Projects_:
--   [ ] _WASM / WebApp version_:
+- [ ] _Config_: hypertask is currently configured through [two environment variables][docs] as this was the quickest way for me to hit the ground running. In future I'll be moving this config to a dedicated .dotfile
+- [ ] _Customisability_: currently the ordering of tasks is calculated by a hard-coded function. I'd like to replace this with some simple scripting language; I'm currently considering [rhai][rhai] as the most likely candidate, but I also want to try out [dyon][dyon], [ketos][ketos], and [moss][moss] as interesting alternatives.
+- [ ] _Dat_: hypertask is actually called hypertask because it was originally meant to integrate with the [dat][dat] ecosystem (dat is powered by [hyperdrive][hyperdrive]). When multiwriter support is a bit better in the dat eco system I'm really looking forward to re-introducing it as a first class concept.
+- [ ] _Dependencies, Parents, Projects_: I don't currently have much of a use for these, but if they can be added relativly simply and would be of use to others I'd be happy to add them.
+- [ ] _Garbage Collection_: Currently, when a task is marked as `done`, we just set its `done` field to the current date. This means that the collection of tasks will continue to grow unbounded as the program is used. We could probably do with some functionality that deletes old task file after they've been done for a month
+- [ ] _Improve CLI Id Selection_: [task warrior][taskwarrior] assigns each task a numerical id so that they can easily be addressed from the command line. I think there are two possible solutions:
+  - find the minimum uniquely identifying prefix for each id, let the user interact these prefixes instead of the full Id (e.g: `nkm9xp94ypq82hsp`& `nk8ycg45c7kb3egk` map to `nkm` & `nk8`, that's how they're rendered, and they can be selected like that)
+  - add tab completion to the cli, so that half completed ids and tags can be auto completed
+- [ ] _WASM / WebApp version_: Rust has great support for compiling down to WASM, and building a web-app version of hypertask is high on the priority list for me. There are lots of cool build tools that simplify working with rust in js, including [parcel][parcel] which i've worked with before. There has been some work done on frontend UI libraries built in rust, but they're currently not quite mature and easy enough to use for them to be viable solutions
 
-[taskwarrior]: https://taskwarrior.org/
-[rhai]: https://github.com/jonathandturner/rhai
+[dyon]: https://github.com/PistonDevelopers/dyon
 [hyperdrive]: https://github.com/mafintosh/hyperdrive
+[ketos]: https://github.com/murarth/ketos
+[moss]: https://github.com/JohnBSmith/moss
+[rhai]: https://github.com/jonathandturner/rhai
+[taskwarrior]: https://taskwarrior.org/
+[parcel]: https://parceljs.org/
