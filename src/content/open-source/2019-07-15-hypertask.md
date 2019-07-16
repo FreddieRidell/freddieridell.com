@@ -85,8 +85,8 @@ Finally - and I'm not exaggerating here - the growing ecosystem of reusable crat
 - [ ] _Dependencies, Parents, Projects_: I don't currently have much of a use for these, but if they can be added relativly simply and would be of use to others I'd be happy to add them.
 - [ ] _Garbage Collection_: Currently, when a task is marked as `done`, we just set its `done` field to the current date. This means that the collection of tasks will continue to grow unbounded as the program is used. We could probably do with some functionality that deletes old task file after they've been done for a month
 - [ ] _Improve CLI Id Selection_: [task warrior][taskwarrior] assigns each task a numerical id so that they can easily be addressed from the command line. I think there are two possible solutions:
-  - find the minimum uniquely identifying prefix for each id, let the user interact these prefixes instead of the full Id (e.g: `nkm9xp94ypq82hsp`& `nk8ycg45c7kb3egk` map to `nkm` & `nk8`, that's how they're rendered, and they can be selected like that)
-  - add tab completion to the cli, so that half completed ids and tags can be auto completed
+  - find the minimum uniquely identifying prefix for each id, let the user interact these prefixes instead of the full Id (e.g: `nkm9xp94ypq82hsp` & `nk8ycg45c7kb3egk` map to `nkm` & `nk8`, that's how they're rendered, and they can be selected like that)
+  - add [tab completion][rust-completion] to the cli, so that half completed ids and tags can be auto completed
 - [ ] _WASM / WebApp version_: Rust has great support for compiling down to WASM, and building a web-app version of hypertask is high on the priority list for me. There are lots of cool build tools that simplify working with rust in js, including [parcel][parcel] which i've worked with before. There has been some work done on frontend UI libraries built in rust, but they're currently not quite mature and easy enough to use for them to be viable solutions
 
 [dyon]: https://github.com/PistonDevelopers/dyon
@@ -96,3 +96,4 @@ Finally - and I'm not exaggerating here - the growing ecosystem of reusable crat
 [rhai]: https://github.com/jonathandturner/rhai
 [taskwarrior]: https://taskwarrior.org/
 [parcel]: https://parceljs.org/
+[rust-completion]: https://www.joshmcguigan.com/blog/shell-completions-pure-rust/
