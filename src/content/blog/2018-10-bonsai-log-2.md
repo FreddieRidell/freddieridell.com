@@ -2,6 +2,8 @@
 title: Bonsai Log 2
 published: 2018-10-15
 type: blog
+tags: 
+   - bonsai
 ---
 
 ![What was lost](Bonsai3)
