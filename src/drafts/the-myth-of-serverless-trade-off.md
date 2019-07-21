@@ -1,0 +1,3 @@
+I've often heard people say that "Serverless might give greater performance at scale, but for smaller project it's not worth the complexity; just have a server on heroku or something". This is patently untrue, and the existing complexities in serverless are simply a product of it's youth as an idea. Zeit shows that setting up a set of serverless services can actually be much easier than provisioning a server, sticking apache infront of node, getting an SSL cert, managing a fleet of servers with harddrive space and deploying new versions.
+
+Much of the percieved simplicty of monolithic servers isn't actually there, it's just familiarity 

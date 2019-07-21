@@ -1,7 +1,7 @@
 import React from "react";
 import * as R from "ramda";
 import styled from "@emotion/styled";
-import { mix } from "polished";
+import mix from "polished/lib/color/mix";
 import { calm } from "@freddieridell/little-bonsai-styles";
 
 import { formatDate } from "../../util";
@@ -48,11 +48,11 @@ const DateRange = styled.aside(
 		lineHeight: R.path(["theme", "size", "space", 5]),
 
 		color: R.pipe(
-			R.applySpec([
-				R.path(["theme", "color", "symantic", "background"]),
-				R.path(["theme", "color", "symantic", "text"]),
-			]),
-			([x, y]) => mix(1 / 3, x, y),
+			R.applySpec({
+				x: R.path(["theme", "color", "symantic", "background"]),
+				y: R.path(["theme", "color", "symantic", "text"]),
+			}),
+			({ x, y }) => mix(1 / 3, x, y),
 		),
 	}),
 );
