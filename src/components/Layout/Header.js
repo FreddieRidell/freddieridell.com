@@ -48,6 +48,8 @@ const HeaderStyled = styled.header(
 		left: 0,
 		right: 0,
 
+		backgroundColor: R.path(["theme", "color", "symantic", "background"]),
+
 		zIndex: zIndecies["header"],
 
 		transitionDuration: R.path(["theme", "time", "normal"]),
@@ -108,6 +110,7 @@ const linkStylesShared = calm({
 
 	textTransform: "capitalize",
 	color: R.path(["theme", "color", "symantic", "text"]),
+	backgroundColor: R.path(["theme", "color", "symantic", "background"]),
 
 	"&::after": {
 		content: '""',

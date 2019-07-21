@@ -27,7 +27,7 @@ const globalCss = R.applySpec({
 		paddingTop: R.path(["size", "space", 6]),
 	},
 
-	"p, ol, ul, code, pre": {
+	"p, ol, ul, pre": {
 		fontSize: R.path(["size", "font", 3]),
 		lineHeight: R.path(["size", "space", 5]),
 		paddingTop: R.path(["size", "space", 2]),

@@ -18,11 +18,12 @@ export const query = graphql`
 				words
 			}
 			frontmatter {
-				published
-				emoji
 				abstract
+				crates
+				emoji
 				gallery
 				npm
+				published
 				repo
 				tags
 				title
