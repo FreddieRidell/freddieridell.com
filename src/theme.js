@@ -1,9 +1,13 @@
+const R = require("ramda");
 const {
 	corePallete,
 	buildScheme,
 } = require("@freddieridell/little-bonsai-styles");
 
-const baseTheme = buildScheme({
+const baseTheme = R.pipe(
+	buildScheme,
+	R.over(R.lensPath(["size", "paragraphWidth"]), R.multiply(5 / 6)),
+)({
 	...corePallete,
 	white: "#fcfcfc",
 	black: "#222",

@@ -11,11 +11,12 @@ import Badges from "./Badges";
 const PostArticle = styled.article(
 	calm({
 		alignSelf: "center",
-		maxWidth: R.pipe(
-			R.path(["theme", "size", "paragraphWidth"]),
-			R.multiply(3 / 4),
-		),
+		maxWidth: R.path(["theme", "size", "paragraphWidth"]),
 		width: "100%",
+
+		img: {
+			width: "100%",
+		},
 	}),
 );
 
@@ -24,10 +25,7 @@ const Tldr = styled.aside(
 		paddingLeft: R.path(["theme", "size", "space", 3]),
 		fontSize: R.path(["theme", "size", "font", 4]),
 		fontStyle: "italic",
-		maxWidth: R.pipe(
-			R.path(["theme", "size", "paragraphWidth"]),
-			R.multiply(3 / 4),
-		),
+		maxWidth: R.path(["theme", "size", "paragraphWidth"]),
 	}),
 );
 
