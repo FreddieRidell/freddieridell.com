@@ -12,7 +12,7 @@ const ExperienceWrapper = styled.div(
 	}),
 );
 
-const ExperienceStyled = styled.details(
+const ExperienceStyled = styled.div(
 	calm({
 		borderRadius: "4px 4px 0 0 ",
 		overflow: "hidden",
@@ -63,7 +63,7 @@ const Description = styled.div(
 	}),
 );
 
-const Summary = styled.summary(
+const Summary = styled.div(
 	calm({
 		display: "flex",
 		flexFlow: "row wrap",
@@ -73,7 +73,7 @@ const Summary = styled.summary(
 
 const Experience = ({ biz, children, end, position, start }) => (
 	<ExperienceWrapper>
-		<ExperienceStyled open>
+		<ExperienceStyled>
 			<Summary>
 				<Position>{position}</Position>
 				<Business>{biz}</Business>
