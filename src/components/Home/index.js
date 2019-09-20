@@ -29,10 +29,7 @@ const PostDivider = () => (
 const PostContaner = styled.nav(
 	calm({
 		alignSelf: "center",
-		maxWidth: R.pipe(
-			R.path(["theme", "size", "paragraphWidth"]),
-			R.multiply(3/4),
-		),
+		maxWidth: R.path(["theme", "size", "paragraphWidth"]),
 	}),
 );
 
@@ -42,8 +39,8 @@ const Home = () => (
 		<Spacer height={6} />
 		<PostContaner>
 			<Bio />
-			<Skills/>
-			<Experiences/>
+			<Skills />
+			<Experiences />
 		</PostContaner>
 		<Spacer height={3} />
 	</React.Fragment>

@@ -27,10 +27,7 @@ const PostDivider = () => (
 const PostContaner = styled.nav(
 	calm({
 		alignSelf: "center",
-		maxWidth: R.pipe(
-			R.path(["theme", "size", "paragraphWidth"]),
-			R.multiply(3 / 4),
-		),
+		maxWidth: R.path(["theme", "size", "paragraphWidth"]),
 	}),
 );
 
