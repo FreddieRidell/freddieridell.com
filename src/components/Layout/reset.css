@@ -14,6 +14,10 @@ body,
 	tab-size: 4;
 }
 
+body {
+	overflow-y: scroll;
+}
+
 #___gatsby > div {
 	display: flex;
 	flex-direction: column;
