@@ -20,8 +20,6 @@ Before Christmas I'd been re-watching [Gurren Lagann][gurrenlagann] (one of the 
 
 This is probably my favourite thing I've made yet, It's come out looking really cool, and matches up pretty well with the source garment.
 
-![Scarf Worn by Handsome Model](yoko-07)
-
 ## Pattern
 
 I constructed the scarf from 7 panels of circular crochet, 60 stitches wide and 16 tall. These panels are joined together by smaller red rings that are 54 wide by 7 tall. I crocheted the sections together, skipping every 10th stitch on the inner ring, so that the stitches lined up in the end. The whole thing is made with a 3.5mm crochet hook, and [cotton DK yarn by Wool And The Gang][wool], which gives it a really chunky and substantial feel, without sacrificing softness.
