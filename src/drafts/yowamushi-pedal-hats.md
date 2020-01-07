@@ -1,6 +1,6 @@
 ---
-title: Sohoku Had
-type: crafty
+title: Yowamushi Pedal
+type: crafts
 ---
 
 ![Hat](../media/img/SohokuHat1.jpg)
