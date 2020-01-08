@@ -5,12 +5,8 @@ published: 2020-01-06
 type: crafts
 carousel: 
    - yoko-01
-   - yoko-02
-   - yoko-03
    - yoko-04
-   - yoko-05
    - yoko-06
-   - yoko-07
 ---
 
 Before Christmas I'd been re-watching [Gurren Lagann][gurrenlagann] (one of the top 3 mecha anime of all time, give it a watch if you haven't already). So over the Christmas break I decided to make Yoko's scarf for my partner.
@@ -19,6 +15,8 @@ Before Christmas I'd been re-watching [Gurren Lagann][gurrenlagann] (one of the 
 ![Scarf Plan](yoko-04)
 
 This is probably my favourite thing I've made yet, It's come out looking really cool, and matches up pretty well with the source garment.
+
+![Scarf Plan](yoko-06)
 
 ## Pattern
 
