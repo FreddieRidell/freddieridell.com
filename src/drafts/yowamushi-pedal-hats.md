@@ -3,7 +3,7 @@ title: Yowamushi Pedal
 type: crafts
 ---
 
-![Hat](../media/img/SohokuHat1.jpg)
-![Hat](../media/img/SohokuHat2.jpg)
-![Hat](../media/img/SohokuHat3.jpg)
-![Hat](../media/img/SohokuHat4.jpg)
+![The Full Hat](SohokuHat1)
+![Closeup on the text](SohokuHat2)
+![The PomPom](SohokuHat3)
+![Internals](SohokuHat4)

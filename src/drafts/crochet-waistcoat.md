@@ -3,5 +3,5 @@ title: Crochet Waistcoat
 type: crafty
 ---
 
-![Waistcoat](../media/img/Waistcoat1.jpg)
-![Waistcoat](../media/img/Waistcoat2.jpg)
+![The full Waistcoat](Waistcoat1)
+![The Buttons](Waistcoat2)
