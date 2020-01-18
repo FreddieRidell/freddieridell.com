@@ -1,6 +1,6 @@
 ---
 title: Crochet Waistcoat
-type: crafty
+type: crafts
 published: 2018-03-23
 ---
 
