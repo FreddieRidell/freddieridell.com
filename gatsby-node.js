@@ -5,7 +5,7 @@ const path = require(`path`);
 
 exports.onCreateNode = ({
 	node,
-	actions: { createNodeField, createParentChildLink },
+	actions: { deleteNode, createNodeField, createParentChildLink },
 	getNode,
 	getNodes,
 	getNodesByType,
@@ -33,6 +33,7 @@ exports.onCreateNode = ({
 		}
 
 		if (!node.frontmatter.published) {
+			deleteNode(node);
 			return;
 		}
 
@@ -102,7 +103,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
 			}
 
 			result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-				if (node.frontmatter.type !== "translation") {
+				if (node.frontmatter.type !== "translation" && node.fields) {
 					createPage({
 						path: node.fields.slug,
 						component: path.resolve(`./src/templates/post.js`),

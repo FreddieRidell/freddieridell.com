@@ -1,9 +1,6 @@
 {
 	"name": "FreddieRidell.com",
 	"private": true,
-	"engines": {
-		"node": "12.x"
-	},
 	"prettier": {
 		"singleQuote": false,
 		"tabWidth": 4,
