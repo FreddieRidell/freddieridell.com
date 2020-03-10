@@ -112,13 +112,13 @@ export default () => (
 				using modern react.
 			</p>
 			<p>
-				In addition to training junior team members and onboarding
-				incoming mid/senior level developers, I have also driven
-				foundational technical changes across codebases. I was trusted
-				to investigate and implement the core state-management solution
-				for a large scale green-field app, and drove an initiative to
-				adopt state-of-the-art unit testing of an otherwise untested
-				200k LOC codebase.
+				In addition to development I have also trained junior team
+				members, onboarded incoming mid/senior level developers, and
+				driven foundational technical changes across codebases. I was
+				trusted to investigate and implement the core state-management
+				solution for a large scale green-field app, and drove an
+				initiative to adopt state-of-the-art unit testing of an
+				otherwise untested 200k LOC codebase.
 			</p>
 		</Experience>
 
