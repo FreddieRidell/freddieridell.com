@@ -123,7 +123,7 @@ export default () => (
 		</Experience>
 
 		<Experience
-			position="Co-founder/Senior Developer"
+			position="Co-founder/Lead Developer"
 			biz="Codogo"
 			end={new Date("2018-02-18")}
 			start={new Date(1451606400000)}
