@@ -19,6 +19,12 @@ const FooterStyled = styled.footer(
 			"inverted",
 			"background",
 		]),
+
+		"@media print": {
+			position: "absolute",
+			top: R.path(["theme", "size", "space", 6]),
+			right: R.path(["theme", "size", "space", 6]),
+		},
 	}),
 );
 
@@ -26,12 +32,19 @@ const FooterTitle = styled.h4(
 	calm({
 		padding: R.path(["theme", "size", "space", 1]),
 		paddingTop: R.path(["theme", "size", "space", 2]),
+
+		"@media print": {
+			display: "none",
+		},
 	}),
 );
 const FooterSection = styled.section(
 	calm({
 		padding: R.path(["theme", "size", "space", 1]),
 		paddingLeft: R.path(["theme", "size", "space", 3]),
+		"@media print": {
+			display: ({ hideOnPrint }) => (hideOnPrint ? "none" : undefined),
+		},
 	}),
 );
 
@@ -55,7 +68,7 @@ const Footer = () => (
 			github:{" "}
 			<a href="https://github.com/FreddieRidell">~FreddieRidell</a>
 		</FooterSection>
-		<FooterSection>
+		<FooterSection hideOnPrint>
 			© Ya' boi Freddie Ridell {getYear(new Date())}
 		</FooterSection>
 	</FooterStyled>

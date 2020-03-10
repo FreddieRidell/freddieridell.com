@@ -8,7 +8,7 @@ const MainStyled = styled.main(
 		display: "flex",
 		flex: 1,
 		flexDirection: "column",
-		padding: R.path(["theme", "size", "space", 1]),
+		padding: R.path(["theme", "size", "space", 2]),
 	}),
 );
 

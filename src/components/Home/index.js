@@ -29,14 +29,17 @@ const PostDivider = () => (
 const PostContaner = styled.nav(
 	calm({
 		alignSelf: "center",
-		maxWidth: R.path(["theme", "size", "paragraphWidth"]),
+
+		"@media screen": {
+			maxWidth: R.path(["theme", "size", "paragraphWidth"]),
+		},
 	}),
 );
 
 const Home = () => (
 	<React.Fragment>
-		<PageTitle>Home</PageTitle>
-		<Spacer height={6} />
+		<PageTitle hideOnPrint>Home</PageTitle>
+		<PageTitle showOnPrint>Freddie Ridell</PageTitle>
 		<PostContaner>
 			<Bio />
 			<Skills />

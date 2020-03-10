@@ -16,8 +16,14 @@ const ExperienceStyled = styled.div(
 	calm({
 		borderRadius: "4px 4px 0 0 ",
 		overflow: "hidden",
+
 		paddingTop: R.path(["theme", "size", "space", 2]),
 		paddingBottom: R.path(["theme", "size", "space", 7]),
+
+		"@media print": {
+			paddingTop: R.path(["theme", "size", "space", 1]),
+			paddingBottom: R.path(["theme", "size", "space", 4]),
+		},
 	}),
 );
 
@@ -32,16 +38,12 @@ const Business = styled.h4(
 	calm({
 		padding: R.path(["theme", "size", "space", 1]),
 		paddingLeft: 0,
-
-		fontSize: R.path(["theme", "size", "font", 3]),
-		lineHeight: R.path(["theme", "size", "space", 6]),
 	}),
 );
 
 const DateRange = styled.aside(
 	calm({
 		alignSelf: "flex-end",
-		padding: 0,
 		padding: R.path(["theme", "size", "space", 1]),
 
 		fontSize: R.path(["theme", "size", "font", 2]),
@@ -54,6 +56,10 @@ const DateRange = styled.aside(
 			}),
 			({ x, y }) => mix(1 / 3, x, y),
 		),
+
+		"@media print": {
+			padding: 0,
+		},
 	}),
 );
 
@@ -78,7 +84,7 @@ const Experience = ({ biz, children, end, position, start }) => (
 				<Position>{position}</Position>
 				<Business>{biz}</Business>
 				<DateRange>
-					{formatDate(start)} - {end ? formatDate(end) : "current"}
+					{formatDate(start)} - {end ? formatDate(end) : "Current"}
 				</DateRange>
 			</Summary>
 			<Description>{children}</Description>
@@ -86,27 +92,33 @@ const Experience = ({ biz, children, end, position, start }) => (
 	</ExperienceWrapper>
 );
 
+function getYearsAsAContractor() {
+	return Math.round(
+		(new Date() - new Date("2018-02-18")) / (60 * 60 * 24 * 265 * 1000),
+	);
+}
 export default () => (
 	<section>
 		<h2>Experience</h2>
 
 		<Experience
 			position="Senior React Contractor"
-			biz="Workshare"
+			biz="Workshare, Sharp Gaming"
 			start={new Date("2018-02-18")}
-			end={new Date("2018-08-19")}
 		>
 			<p>
-				I worked as a senior team-member working to modernize one of
-				Workshare's core products: producing a greenfield react app
-				built on an existing API
+				I have provided my development services for several clients,
+				working as part of agile teams to deliver high quality web apps
+				using modern react.
 			</p>
 			<p>
-				I was instrumental in making major decisions during the
-				development: technical choices and policy decisions that were
-				foundational to the app as a whole. I was also trusted to
-				provide training to other members of the team to bring them up
-				to speed with react best practices.
+				In addition to training junior team members and onboarding
+				incoming mid/senior level developers, I have also driven
+				foundational technical changes across codebases. I was trusted
+				to investigate and implement the core state-management solution
+				for a large scale green-field app, and drove an initiative to
+				adopt state-of-the-art unit testing of an otherwise untested
+				200k LOC codebase.
 			</p>
 		</Experience>
 
@@ -118,9 +130,9 @@ export default () => (
 		>
 			<p>
 				The core focus of my work has been producing Codogo Write, a
-				state-of-the-art writing web app with a focus on ease-of-use and
-				polished user experience. We were invited to pitch with Y
-				Combinator in California on the strength of the MVP I developed
+				modern writing web app with a focus on ease-of-use and polished
+				user experience. We were invited to pitch with Y Combinator in
+				California on the strength of the MVP I developed
 			</p>
 			<p>
 				To support development of this product, I produced complex web

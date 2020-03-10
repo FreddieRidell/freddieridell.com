@@ -9,13 +9,22 @@ const PageTitleStyled = styled.h1(
 	calm({
 		textTransform: "capitalize",
 		paddingLeft: R.path(["theme", "size", "space", 2]),
+
+		"@media print": {
+			display: ({ hideOnPrint }) => (hideOnPrint ? "none" : undefined),
+		},
+		"@media screen": {
+			display: ({ showOnPrint }) => (showOnPrint ? "none" : undefined),
+		},
 	}),
 );
 
-const PageTitle = ({ children }) => (
+const PageTitle = ({ children, hideOnPrint, showOnPrint }) => (
 	<React.Fragment>
 		<Spacer height={3} />
-		<PageTitleStyled>{children}</PageTitleStyled>
+		<PageTitleStyled hideOnPrint={hideOnPrint} showOnPrint={showOnPrint}>
+			{children}
+		</PageTitleStyled>
 	</React.Fragment>
 );
 

@@ -19,7 +19,6 @@ const Layout = ({ children }) => (
 			<Head />
 			<Header title="title" />
 			<Main>{children}</Main>
-			<Spacer height={7} />
 			<Footer />
 		</React.Fragment>
 	</ThemeProvider>

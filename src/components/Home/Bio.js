@@ -8,6 +8,10 @@ const BioStyled = styled.section(
 	calm({
 		alignSelf: "flex-start",
 		fontSize: R.path(["theme", "size", "font", 3]),
+
+		"@media print": {
+			display: "none",
+		},
 	}),
 );
 

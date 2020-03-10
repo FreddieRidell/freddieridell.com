@@ -38,6 +38,10 @@ const headerStylesShared = calm({
 	[smallerThan("200px")]: {
 		fontSize: R.path(["theme", "size", "font", 0]),
 	},
+
+	"@media print": {
+		display: "none",
+	},
 });
 
 const HeaderStyled = styled.header(
@@ -79,10 +83,7 @@ const NavContainer = styled.nav(
 		"&::before": {
 			content: '""',
 
-			bottom: R.pipe(
-				R.path(["theme", "size", "space", 1]),
-				x => `-${x}`,
-			),
+			bottom: R.pipe(R.path(["theme", "size", "space", 1]), x => `-${x}`),
 			height: R.path(["theme", "size", "space", 1]),
 			left: 0,
 			position: "absolute",
@@ -115,10 +116,7 @@ const linkStylesShared = calm({
 	"&::after": {
 		content: '""',
 
-		bottom: R.pipe(
-			R.path(["theme", "size", "space", 1]),
-			x => `-${x}`,
-		),
+		bottom: R.pipe(R.path(["theme", "size", "space", 1]), x => `-${x}`),
 		height: R.path(["theme", "size", "space", 1]),
 		left: 0,
 		maxWidth: R.path(["theme", "size", "space", 11]),
