@@ -5,5 +5,5 @@ export const smallerThan = breakPoint => `@media (max-width: ${breakPoint})`;
 
 export const formatDate = R.pipe(
 	x => new Date(x),
-	format("y-MM-dd"),
+	format("dd/MM/y"),
 );
