@@ -8,13 +8,13 @@ import Spacer from "./Spacer";
 const PageTitleStyled = styled.h1(
 	calm({
 		textTransform: "capitalize",
-		paddingLeft: R.path(["theme", "size", "space", 2]),
 
 		"@media print": {
 			display: ({ hideOnPrint }) => (hideOnPrint ? "none" : undefined),
 		},
 		"@media screen": {
 			display: ({ showOnPrint }) => (showOnPrint ? "none" : undefined),
+			paddingLeft: R.path(["theme", "size", "space", 2]),
 		},
 	}),
 );

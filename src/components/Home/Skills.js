@@ -11,8 +11,8 @@ const Skills = () => (
 		<h2>Skills</h2>
 		<SkillsList>
 			<Skill>Javascript/Typescript/Flow, ES6+</Skill>
-			<Skill>React, React Native, Redux</Skill>
-			<Skill>Express, REST, GraphQL</Skill>
+			<Skill>React, React Native, Redux, Vue, Svelte</Skill>
+			<Skill>Express, REST, GraphQL, SQL, MongoDB</Skill>
 			<Skill>Babel, Webpack, Parcel, Next.js</Skill>
 			<Skill>Linux, Shell, Git</Skill>
 			<Skill>Rust, C, C++</Skill>

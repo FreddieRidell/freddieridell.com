@@ -6,8 +6,12 @@ import { calm } from "@freddieridell/little-bonsai-styles";
 
 import { formatDate } from "../../util";
 
+import Spacer from "../Toolbox/Spacer";
+
 const ExperienceWrapper = styled.div(
 	calm({
+		breakBefore: "auto",
+		breakAfter: "auto",
 		padding: R.path(["theme", "size", "space", 0]),
 	}),
 );
@@ -17,7 +21,7 @@ const ExperienceStyled = styled.div(
 		borderRadius: "4px 4px 0 0 ",
 		overflow: "hidden",
 
-		paddingTop: R.path(["theme", "size", "space", 2]),
+		paddingTop: R.path(["theme", "size", "space", 3]),
 		paddingBottom: R.path(["theme", "size", "space", 7]),
 
 		"@media print": {
@@ -103,13 +107,16 @@ export default () => (
 
 		<Experience
 			position="Senior React Contractor"
-			biz="Workshare, Sharp Gaming"
+			biz="Various inc: Workshare, Sharp Gaming"
 			start={new Date("2018-02-18")}
 		>
 			<p>
 				I have provided my development services for several clients,
 				working as part of agile teams to deliver high quality web apps
-				using modern react.
+				using modern React. As part of these contracts I have been moved
+				across several teams and been able to familiarise myself with
+				new code-bases and begin making meaningful contributions very
+				quickly.
 			</p>
 			<p>
 				In addition to development I have also trained junior team
@@ -129,19 +136,30 @@ export default () => (
 			start={new Date(1451606400000)}
 		>
 			<p>
-				The core focus of my work has been producing Codogo Write, a
-				modern writing web app with a focus on ease-of-use and polished
-				user experience. We were invited to pitch with Y Combinator in
-				California on the strength of the MVP I developed
+				As the technical co-founder of a startup, I had to quickly
+				develop a wide range of skills across all aspects of product
+				delivery. I was responsible for evaluating and selecting all
+				tools and solutions to enable my team to move fast and deliver
+				high-quality code and infrastructure.
 			</p>
 			<p>
-				To support development of this product, I produced complex web
+				The primary focus of our company was Codogo Write, a modern
+				writing web app with a focus on ease-of-use and polished user
+				experience. It was built with scalability as a major concern,
+				using a React and a Serverless NodeJS backend and working with
+				several 3rd party APIs. We were invited to pitch with Y
+				Combinator in California on the strength of the MVP I developed.
+			</p>
+			<p>
+				To support development of this product I produced complex web
 				and native apps and websites for over 20 clients, across a
 				breadth of fields (including chat apps, social networks, and
-				data-vis) both from scratch and on legacy systems in React and
-				React Native
+				data- vis) both from scratch and on legacy systems in React and
+				React Native.
 			</p>
 		</Experience>
+
+		<Spacer height={10} />
 
 		<Experience
 			position="Development Intern"
@@ -151,12 +169,12 @@ export default () => (
 		>
 			<p>
 				I worked on Amazon’s native instant video player: a large scale
-				real-time c++ codebase. I was responsible for porting it to OS X
+				real-time C++ codebase. I was responsible for porting it to OS X
 				and fixing performance-critical memory bugs. Taking
 				responsibility for mission-critical software and working to
 				provide tooling for other developers allowed me to gain valuable
 				experience in communicating with other developers across many
-				other teams across Amazon
+				other teams across Amazon.
 			</p>
 		</Experience>
 
@@ -176,8 +194,8 @@ export default () => (
 				systems and software development best practices. My exposure to
 				the full range of modern software at a world renowned university
 				provided me with the rock solid foundation I needed to hit the
-				ground running providing elegant and powerful solutions to every
-				problem I've encountered since
+				ground running, providing elegant and powerful solutions to
+				every problem I've encountered since.
 			</p>
 		</Experience>
 	</section>
