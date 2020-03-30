@@ -107,8 +107,9 @@ export default () => (
 
 		<Experience
 			position="Senior React Contractor"
-			biz="Various inc: Workshare, Sharp Gaming"
+			biz="Various including: Workshare, Sharp Gaming"
 			start={new Date("2018-02-18")}
+			end={new Date("2020-03-21")}
 		>
 			<p>
 				I have provided my development services for several clients,
