@@ -25,3 +25,4 @@ favicon@*
 /.cache
 /lib
 node_modules
+.next
