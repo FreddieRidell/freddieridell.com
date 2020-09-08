@@ -49,6 +49,7 @@ const DateRange = styled.aside(
 	calm({
 		alignSelf: "flex-end",
 		padding: R.path(["theme", "size", "space", 1]),
+		paddingLeft: 0,
 
 		fontSize: R.path(["theme", "size", "font", 2]),
 		lineHeight: R.path(["theme", "size", "space", 5]),
@@ -107,9 +108,7 @@ export default () => (
 
 		<Experience
 			position="Senior React Contractor"
-			biz="Various including: Workshare, Sharp Gaming"
 			start={new Date("2018-02-18")}
-			end={new Date("2020-03-21")}
 		>
 			<p>
 				I have provided my development services for several clients,
@@ -127,6 +126,13 @@ export default () => (
 				solution for a large scale green-field app, and drove an
 				initiative to adopt state-of-the-art unit testing of an
 				otherwise untested 200k LOC codebase.
+			</p>
+			<p>
+				<ul>
+					<li>Mkodo - 6 months (3 renewals)</li>
+					<li>Sharp Gaming - 1 Year, 8 months (6 renewals)</li>
+					<li>Workshare - 3 months (1 renewal)</li>
+				</ul>
 			</p>
 		</Experience>
 

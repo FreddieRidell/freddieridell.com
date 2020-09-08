@@ -8,7 +8,7 @@ const BioStyled = styled.section(
 	calm({
 		alignSelf: "flex-start",
 		paddingTop: R.path(["theme", "size", "space", 3]),
-		fontSize: R.path(["theme", "size", "font", 3]),
+		fontSize: R.path(["theme", "size", "font", 2]),
 
 		//"@media print": {
 		//display: "none",
