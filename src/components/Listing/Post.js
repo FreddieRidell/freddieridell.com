@@ -38,8 +38,6 @@ const PostMetaContainer = styled.aside(
 	calm({
 		display: "flex",
 		flexWrap: "wrap",
-
-		paddingLeft: R.path(["theme", "size", "space", 3]),
 	}),
 );
 
@@ -84,7 +82,7 @@ const Post = ({
 		</PostTitle>
 
 		<PostMetaContainer>
-			<PostMeta>published {formatDate(published)}</PostMeta>
+			<PostMeta>Published {formatDate(published)}</PostMeta>
 			<PostMeta>|</PostMeta>
 			<PostMeta>{wordCount.words} words</PostMeta>
 		</PostMetaContainer>
