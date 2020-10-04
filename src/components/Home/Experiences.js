@@ -129,9 +129,9 @@ export default () => (
 			</p>
 			<p>
 				<ul>
-					<li>Mkodo - 6 months (3 renewals)</li>
-					<li>Sharp Gaming - 1 Year, 8 months (6 renewals)</li>
-					<li>Workshare - 3 months (1 renewal)</li>
+					<li>Mkodo: Mar 2020 - Aug 2020 (3 renewals)</li>
+					<li>Sharp Gaming: Aug 2018 - Mar 2020(6 renewals)</li>
+					<li>Workshare: Jun 2018 - Aug 2018 (1 renewal)</li>
 				</ul>
 			</p>
 		</Experience>
