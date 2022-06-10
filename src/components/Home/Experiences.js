@@ -103,7 +103,7 @@ export default () => (
 
 		<Experience
 			position="Senior React Contractor"
-			biz="Workshare, Sharp Gaming"
+			biz="Workshare, Sharp Gaming, Imagine Cruising"
 			start={new Date("2018-02-18")}
 		>
 			<p>
