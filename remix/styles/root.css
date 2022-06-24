@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+	font-size: 16px;
+	font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+}
+
+html {
+	height: 100%;
+	margin: 1in;
+}
+
+body {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+@page { size: auto;  margin: 0mm; }
