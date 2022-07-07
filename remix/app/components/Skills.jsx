@@ -11,7 +11,8 @@ export default function Skills() {
 				<Skill>Javascript (ES6+), Typescript </Skill>
 				<Skill>React (Hooks & Suspense), React Native, D3.js</Skill>
 				<Skill>Next.js, Gatsby, Expo.io</Skill>
-				<Skill>Node, Express, REST, GraphQL, AWS</Skill>
+				<Skill>Styled Components, Storybook</Skill>
+				<Skill>Node, Express, REST, GraphQL, AWS, Docker</Skill>
 				<Skill>React Testing Library, Jest, TDD, CI/CD</Skill>
 				<Skill>Juggling, Knitting, Crochet</Skill>
 				<Skill>Standup & Sketch Comedy</Skill>
