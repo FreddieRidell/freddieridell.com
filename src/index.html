@@ -2,362 +2,140 @@
   <head>
     <style />
   </head>
+  <body>
+    <main>
+      <h1 class="text-2xl">Freddie Ridell</h1>
+
+      <hr />
+
+      <section class="float-right">
+        <h2>Skills</h2>
+        <ul class="list-disc">
+          <li>Javascript/Typescript</li>
+          <li>React, React Native, Expo.io</li>
+          <li>Next.js, Gatsby, Remix, vite, D3.js</li>
+          <li>Express, REST, GraphQL</li>
+          <li>Linux, Shell, Git</li>
+          <li>Rust, C, C++</li>
+          <li>Test Driven Development, Continuous Integration/Deployment</li>
+          <li>Podcasting, Voice Acting</li>
+          <li>Juggling, Knitting, Crochet</li>
+          <li>Standup & Sketch Comedy</li>
+        </ul>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>Experience</h2>
+
+        <section>
+          <h3>Senior React Contractor</h3>
+          <div class="role">
+            <div class="client">
+              Hilton, Workshare, Sharp Gaming, Imagine Cruising
+            </div>
+            <div class="date-range">
+              From <time datetime="2018-02-18">18/02/2018</time> to Present
+            </div>
+          </div>
+          <p>
+            I have provided my development services for several clients, working
+            as part of agile teams to deliver high quality web apps using modern
+            react.
+          </p>
+          <p>
+            In addition to development I have also trained junior team members,
+            onboarded incoming mid/senior level developers, and driven
+            foundational technical changes across codebases. I was trusted to
+            investigate and implement the core state-management solution for a
+            large scale green-field app, and drove an initiative to adopt
+            state-of-the-art unit testing of an otherwise untested 200k LOC
+            codebase.
+          </p>
+        </section>
+
+        <hr />
+
+        <section>
+          <h3>Co-founder/Lead Developer</h3>
+          <div class="role">
+            <div class="client">Codogo</div>
+            <div class="date-range">
+              From <time datetime="2016-01-01">2016</time> to
+              <time datetime="2018-02-18">18/02/2018</time>
+            </div>
+          </div>
+          <p>
+            My core work work was producing Codogo Write, a modern writing web
+            app with a focus on ease-of-use and polished user experience. We
+            were invited to pitch with Y Combinator in California on the
+            strength of the MVP I developed
+          </p>
+          <p>
+            To support development of this product, I produced complex web and
+            native apps and websites for over 20 clients, across a breadth of
+            fields (including chat apps, social networks, and data-vis) both
+            from scratch and on legacy systems in React and React Native
+          </p>
+        </section>
+
+        <hr />
+
+        <section>
+          <h3>Development Intern</h3>
+          <div class="role">
+            <div class="client">Amazon Instant Video</div>
+            <div class="date-range">
+              From <time datetime="2015-06-01"> June 2015 </time> to
+              <time datetime="2015-09-01">September 2015</time>
+            </div>
+          </div>
+          <p>
+            I worked on Amazon’s native instant video player: a large scale
+            real-time c++ codebase. I was responsible for porting it to OS X and
+            fixing performance-critical memory bugs. Taking responsibility for
+            mission-critical software and working to provide tooling for other
+            developers allowed me to gain valuable experience in communicating
+            with other developers across many other teams at Amazon
+          </p>
+        </section>
+
+        <hr />
+
+        <section>
+          <h3>Computer Science Degree (2:1)</h3>
+          <div class="role">
+            <div class="client">Durham University</div>
+            <div class="date-range">
+              From <time datetime="2013-09-01">2013</time> to
+              <time datetime="2016-01-01">2016</time>
+            </div>
+          </div>
+          <aside>
+            Dissertation: Designing, evaluating, and optimizing a system for
+            population simulation
+          </aside>
+          <p>
+            During my degree I studied a wide range of subjects: from
+            runtime/space analysis and higher order logic to database systems
+            and software development best practices. My exposure to the full
+            range of modern software at a world renowned university provided me
+            with the rock solid foundation I needed to hit the ground running
+            providing elegant and powerful solutions to every problem I've
+            encountered since
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <ul>
+        <li>email: contact@freddieridell.com</li>
+        <li>phone: +443331 122420</li>
+        <li>github: ~FreddieRidell</li>
+      </ul>
+      <aside>© Ya' boi Freddie Ridell 2025</aside>
+    </footer>
+  </body>
 </html>
-<!--
-
-import React from "react";
-import * as R from "ramda";
-import styled from "@emotion/styled";
-import { calm } from "@freddieridell/little-bonsai-styles";
-import { Link } from "gatsby";
-
-const BioStyled = styled.section(
-	calm({
-		alignSelf: "flex-start",
-		fontSize: R.path(["theme", "size", "font", 3]),
-
-		"@media print": {
-			display: "none",
-		},
-	}),
-);
-
-const Bio = () => (
-	<BioStyled>
-		Hi, I'm Freddie Ridell. I'm a Frontend JavaScript Contractor working
-		mainly with React. On this site you can find my{" "}
-		<Link to="/blog">Blog Posts</Link>, details of my{" "}
-		<Link to="/open-source">Open Source Work</Link>, and{" "}
-		<Link to="/crafts">Knitting & Crochet Projects</Link>.
-	</BioStyled>
-);
-
-export default Bio;
-import React from "react";
-import * as R from "ramda";
-import styled from "@emotion/styled";
-import mix from "polished/lib/color/mix";
-import { calm } from "@freddieridell/little-bonsai-styles";
-
-import { formatDate } from "../../util";
-
-const ExperienceWrapper = styled.div(
-	calm({
-		padding: R.path(["theme", "size", "space", 0]),
-	}),
-);
-
-const ExperienceStyled = styled.div(
-	calm({
-		borderRadius: "4px 4px 0 0 ",
-		overflow: "hidden",
-
-		paddingTop: R.path(["theme", "size", "space", 2]),
-		paddingBottom: R.path(["theme", "size", "space", 7]),
-
-		"@media print": {
-			paddingTop: R.path(["theme", "size", "space", 1]),
-			paddingBottom: R.path(["theme", "size", "space", 4]),
-		},
-	}),
-);
-
-const Position = styled.h3(
-	calm({
-		flex: "1 0 100%",
-		padding: 0,
-	}),
-);
-
-const Business = styled.h4(
-	calm({
-		padding: R.path(["theme", "size", "space", 1]),
-		paddingLeft: 0,
-	}),
-);
-
-const DateRange = styled.aside(
-	calm({
-		alignSelf: "flex-end",
-		padding: R.path(["theme", "size", "space", 1]),
-
-		fontSize: R.path(["theme", "size", "font", 2]),
-		lineHeight: R.path(["theme", "size", "space", 5]),
-
-		color: R.pipe(
-			R.applySpec({
-				x: R.path(["theme", "color", "symantic", "background"]),
-				y: R.path(["theme", "color", "symantic", "text"]),
-			}),
-			({ x, y }) => mix(1 / 3, x, y),
-		),
-
-		"@media print": {
-			padding: 0,
-		},
-	}),
-);
-
-const Description = styled.div(
-	calm({
-		padding: R.path(["theme", "size", "space", 0]),
-	}),
-);
-
-const Summary = styled.div(
-	calm({
-		display: "flex",
-		flexFlow: "row wrap",
-		listStyle: "none",
-	}),
-);
-
-const Experience = ({ biz, children, end, position, start }) => (
-	<ExperienceWrapper>
-		<ExperienceStyled>
-			<Summary>
-				<Position>{position}</Position>
-				<Business>{biz}</Business>
-				<DateRange>
-					{formatDate(start)} - {end ? formatDate(end) : "Current"}
-				</DateRange>
-			</Summary>
-			<Description>{children}</Description>
-		</ExperienceStyled>
-	</ExperienceWrapper>
-);
-
-function getYearsAsAContractor() {
-	return Math.round(
-		(new Date() - new Date("2018-02-18")) / (60 * 60 * 24 * 265 * 1000),
-	);
-}
-export default () => (
-	<section>
-		<h2>Experience</h2>
-
-		<Experience
-			position="Senior React Contractor"
-			biz="Workshare, Sharp Gaming, Imagine Cruising"
-			start={new Date("2018-02-18")}
-		>
-			<p>
-				I have provided my development services for several clients,
-				working as part of agile teams to deliver high quality web apps
-				using modern react.
-			</p>
-			<p>
-				In addition to development I have also trained junior team
-				members, onboarded incoming mid/senior level developers, and
-				driven foundational technical changes across codebases. I was
-				trusted to investigate and implement the core state-management
-				solution for a large scale green-field app, and drove an
-				initiative to adopt state-of-the-art unit testing of an
-				otherwise untested 200k LOC codebase.
-			</p>
-		</Experience>
-
-		<Experience
-			position="Co-founder/Lead Developer"
-			biz="Codogo"
-			end={new Date("2018-02-18")}
-			start={new Date(1451606400000)}
-		>
-			<p>
-				The core focus of my work has been producing Codogo Write, a
-				modern writing web app with a focus on ease-of-use and polished
-				user experience. We were invited to pitch with Y Combinator in
-				California on the strength of the MVP I developed
-			</p>
-			<p>
-				To support development of this product, I produced complex web
-				and native apps and websites for over 20 clients, across a
-				breadth of fields (including chat apps, social networks, and
-				data-vis) both from scratch and on legacy systems in React and
-				React Native
-			</p>
-		</Experience>
-
-		<Experience
-			position="Development Intern"
-			biz="Amazon Instant Video"
-			start={new Date(1433116800000)}
-			end={new Date(1441065600000)}
-		>
-			<p>
-				I worked on Amazon’s native instant video player: a large scale
-				real-time c++ codebase. I was responsible for porting it to OS X
-				and fixing performance-critical memory bugs. Taking
-				responsibility for mission-critical software and working to
-				provide tooling for other developers allowed me to gain valuable
-				experience in communicating with other developers across many
-				other teams across Amazon
-			</p>
-		</Experience>
-
-		<Experience
-			position="Computer Science Degree (2:1)"
-			biz="Durham University"
-			start={new Date("2013-09-01")}
-			end={new Date(1451606400000)}
-		>
-			<p>
-				Dissertation: Designing, evaluating, and optimizing a system for
-				population simulation
-			</p>
-			<p>
-				During my degree I studied a wide range of subjects: from
-				runtime/space analysis and higher order logic to database
-				systems and software development best practices. My exposure to
-				the full range of modern software at a world renowned university
-				provided me with the rock solid foundation I needed to hit the
-				ground running providing elegant and powerful solutions to every
-				problem I've encountered since
-			</p>
-		</Experience>
-	</section>
-);
-import React from "react";
-import * as R from "ramda";
-import styled from "@emotion/styled";
-
-import Spacer from "../Toolbox/Spacer";
-
-const thingsIAm = [
-	"a Frontend Developer",
-	"a Voice Actor",
-	"an Open Source Contributor",
-	"a Podcaster",
-	"a Seamster",
-	"a Juggler",
-	"a Standup Comic",
-];
-
-const HeadShotContainer = styled.section(
-	{
-		flexGrow: 1,
-		flexShrink: 1,
-	},
-	R.applySpec({
-		backgroundColor: R.path(["theme", "color", "chromatic", "black"]),
-		color: R.path(["theme", "color", "chromatic", "white"]),
-		maxHeight: R.path(["theme", "size", "space", 9]),
-		maxWidth: R.path(["theme", "size", "space", 10]),
-		padding: R.path(["theme", "size", "space", 1]),
-	}),
-);
-
-const H1 = styled.h1(
-	R.applySpec({
-		fontSize: R.path(["theme", "size", "font", 5]),
-	}),
-);
-
-const H2 = styled.h2(
-	R.applySpec({
-		fontSize: R.path(["theme", "size", "font", 3]),
-	}),
-);
-
-export default () => {
-	const [state, dispatch] = React.useReducer(state => {
-		return state + 1;
-	}, 0);
-
-	React.useEffect(() => {
-		const x = setInterval(dispatch, 1000);
-		return () => clearInterval(x);
-	}, [dispatch]);
-
-	return (
-		<HeadShotContainer>
-			<H1>Hi, I'm Freddie</H1>
-			<Spacer height={0} />
-			<H2>I'm {thingsIAm[state % thingsIAm.length]}</H2>
-		</HeadShotContainer>
-	);
-};
-import React from "react";
-import styled from "@emotion/styled";
-import { calm } from "@freddieridell/little-bonsai-styles";
-
-const SkillsList = styled.ul(calm({}));
-
-const Skill = styled.li(calm({}));
-
-const Skills = () => (
-	<section>
-		<h2>Skills</h2>
-		<SkillsList>
-			<Skill>Javascript/Typescript/Flow, ES6+</Skill>
-			<Skill>React, React Native, Expo.io</Skill>
-			<Skill>Next.js, Gatsby, Remix</Skill>
-			<Skill>Express, REST, GraphQL</Skill>
-			<Skill>Babel, Webpack, Parcel</Skill>
-			<Skill>Linux, Shell, Git</Skill>
-			<Skill>Rust, C, C++</Skill>
-			<Skill>
-				Test Driven Development, Continuous Integration/Deployment
-			</Skill>
-			<Skill>Podcasting, Voice Acting</Skill>
-			<Skill>Juggling, Knitting, Crochet</Skill>
-			<Skill>Standup & Sketch Comedy</Skill>
-		</SkillsList>
-	</section>
-);
-
-export default Skills;
-import React from "react";
-import * as R from "ramda";
-import styled from "@emotion/styled";
-import { calm } from "@freddieridell/little-bonsai-styles";
-
-import DividedList from "../Toolbox/DividedList";
-import PageTitle from "../Toolbox/PageTitle";
-import Spacer from "../Toolbox/Spacer";
-
-import Bio from "./Bio";
-import Skills from "./Skills";
-import Experiences from "./Experiences";
-
-const PostHr = styled.hr(
-	calm({
-		display: "block",
-		color: R.path(["theme", "color", "symantic", "text"]),
-	}),
-);
-
-const PostDivider = () => (
-	<React.Fragment>
-		<Spacer height={4} />
-		<PostHr />
-		<Spacer height={3} />
-	</React.Fragment>
-);
-
-const PostContaner = styled.nav(
-	calm({
-		alignSelf: "center",
-
-		"@media screen": {
-			maxWidth: R.path(["theme", "size", "paragraphWidth"]),
-		},
-	}),
-);
-
-const Home = () => (
-	<React.Fragment>
-		<PageTitle hideOnPrint>Home</PageTitle>
-		<PageTitle showOnPrint>Freddie Ridell</PageTitle>
-		<PostContaner>
-			<Bio />
-			<Skills />
-			<Experiences />
-		</PostContaner>
-		<Spacer height={3} />
-	</React.Fragment>
-);
-
-export default Home;
-
--->

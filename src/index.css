@@ -1,1 +1,75 @@
 @import "tailwindcss";
+
+html {
+  @apply min-h-full;
+}
+body {
+  @apply font-sans;
+  @apply text-slate-900;
+  @apply min-h-full h-full;
+  @apply relative;
+}
+
+main {
+  @apply mx-auto;
+  @apply flex flex-col;
+  @apply max-w-6xl;
+  @apply px-4;
+  @apply py-6;
+}
+
+footer {
+  @apply absolute;
+  @apply bottom-0 left-0 right-0;
+  @apply bg-slate-800 text-slate-100;
+  @apply py-2 px-4;
+}
+
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+section {
+  @apply block;
+}
+
+.role {
+  @apply flex;
+  @apply justify-between;
+  @apply w-full;
+}
+.date-range {
+  @apply text-slate-600;
+  @apply text-lg;
+}
+
+.client {
+  @apply text-xl;
+}
+
+section {
+  @apply py-3;
+}
+
+section section {
+  @apply py-2;
+}
+
+hr {
+  @apply border-slate-500 border-t-2;
+  @apply w-40;
+}
+
+section hr {
+  @apply border-slate-400 border-t-1;
+  @apply mx-8;
+  @apply w-auto;
+}
