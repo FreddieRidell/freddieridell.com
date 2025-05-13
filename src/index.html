@@ -1,10 +1,39 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <style />
+    <svg
+      id="feather-external-link"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="hidden"
+    >
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+      <polyline points="15 3 21 3 21 9"></polyline>
+      <line x1="10" y1="14" x2="21" y2="3"></line>
+    </svg>
+
+    <style>
+      STYLE_REPLACE_MARKER
+    </style>
   </head>
   <body>
     <main>
-      <h1 class="text-2xl">Freddie Ridell</h1>
+      <h1 class="text-2xl">
+        Freddie Ridell
+        <a
+          class="print:hidden text-right text-lg"
+          href="javascript:void(0);"
+          onclick="window.print(); return false;"
+          >CV</a
+        >
+      </h1>
 
       <hr />
 
@@ -12,15 +41,14 @@
         <h2>Skills</h2>
         <ul class="list-disc">
           <li>Javascript/Typescript</li>
-          <li>React, React Native, Expo.io</li>
-          <li>Next.js, Gatsby, Remix, vite, D3.js</li>
+          <li>React, React Native, D3.js</li>
+          <li>Next.js, Gatsby, Remix, Vite, Expo.io</li>
           <li>Express, REST, GraphQL</li>
           <li>Linux, Shell, Git</li>
           <li>Rust, C, C++</li>
           <li>Test Driven Development, Continuous Integration/Deployment</li>
-          <li>Podcasting, Voice Acting</li>
-          <li>Juggling, Knitting, Crochet</li>
-          <li>Standup & Sketch Comedy</li>
+          <li>Juggling, Crochet, Sewing</li>
+          <li>Audio Production, Standup & Sketch Comedy</li>
         </ul>
       </section>
 
@@ -33,7 +61,10 @@
           <h3>Senior React Contractor</h3>
           <div class="role">
             <div class="client">
-              Hilton, Workshare, Sharp Gaming, Imagine Cruising
+              <a href="https://www.hilton.com">Hilton</a>,
+              <a href="https://www.litera.com">Workshare</a>,
+              <a href="https://betfredcareers.com/technology/">Sharp Gaming</a>,
+              <a href="https://www.imaginecruising.co.uk/">Imagine Cruising</a>
             </div>
             <div class="date-range">
               From <time datetime="2018-02-18">18/02/2018</time> to Present
@@ -58,8 +89,8 @@
         <hr />
 
         <section>
-          <h3>Co-founder/Lead Developer</h3>
           <div class="role">
+            <h3>Co-founder/Lead Developer</h3>
             <div class="client">Codogo</div>
             <div class="date-range">
               From <time datetime="2016-01-01">2016</time> to
@@ -83,15 +114,15 @@
         <hr />
 
         <section>
-          <h3>Development Intern</h3>
           <div class="role">
+            <h3>Development Intern</h3>
             <div class="client">Amazon Instant Video</div>
             <div class="date-range">
               From <time datetime="2015-06-01"> June 2015 </time> to
               <time datetime="2015-09-01">September 2015</time>
             </div>
           </div>
-          <p>
+          <p class="print:hidden">
             I worked on Amazon’s native instant video player: a large scale
             real-time c++ codebase. I was responsible for porting it to OS X and
             fixing performance-critical memory bugs. Taking responsibility for
@@ -104,8 +135,8 @@
         <hr />
 
         <section>
-          <h3>Computer Science Degree (2:1)</h3>
           <div class="role">
+            <h3>Computer Science Degree (2:1)</h3>
             <div class="client">Durham University</div>
             <div class="date-range">
               From <time datetime="2013-09-01">2013</time> to
@@ -116,7 +147,7 @@
             Dissertation: Designing, evaluating, and optimizing a system for
             population simulation
           </aside>
-          <p>
+          <p class="print:hidden!">
             During my degree I studied a wide range of subjects: from
             runtime/space analysis and higher order logic to database systems
             and software development best practices. My exposure to the full
@@ -129,13 +160,29 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="relative">
       <ul>
-        <li>email: contact@freddieridell.com</li>
-        <li>phone: +443331 122420</li>
-        <li>github: ~FreddieRidell</li>
+        <li>
+          email:
+          <a href="mailto:contact@freddieridell.com"
+            >contact@freddieridell.com</a
+          >
+        </li>
+        <li>phone: <a href="tel:+443331 122420">+443331 122420</a></li>
+        <li>
+          github:
+          <a href="https://github.com/freddieridell">~FreddieRidell</a>
+        </li>
       </ul>
-      <aside>© Ya' boi Freddie Ridell 2025</aside>
+      <aside class="print:hidden">
+        This webpage, including styles, is BYTES_INFO_MARKER | © Ya' boi
+        Freddie Ridell <span id="copyright-date"></span>
+      </aside>
     </footer>
+
+    <script>
+      document.querySelector("#copyright-date").textContent =
+        new Date().getFullYear();
+    </script>
   </body>
 </html>
