@@ -8,10 +8,13 @@ body {
   @apply text-slate-900;
   @apply min-h-full h-full;
   @apply relative;
+  @apply flex flex-col;
+  @apply print:my-8;
 }
 
 main {
-  @apply px-6;
+  @apply flex-1;
+  @apply px-12;
   @apply mx-auto;
   @apply flex flex-col;
   @apply max-w-4xl;
@@ -19,7 +22,8 @@ main {
 }
 
 @media not print {
-  footer {
+  footer,
+  button {
     @apply text-slate-100 bg-slate-800;
     @apply py-2 px-4;
   }
@@ -29,7 +33,7 @@ main {
   footer {
     @apply absolute;
     @apply top-0 right-0;
-    @apply py-6 px-4;
+    @apply py-6 px-8;
     @apply text-right;
   }
 }
@@ -114,4 +118,32 @@ section hr {
   @apply transition-all;
   @apply duration-1000;
   @apply ease-in-out;
+}
+
+.my-bounce {
+  animation: 1s 3 my-bounce both;
+}
+
+@keyframes my-bounce {
+  50% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    box-shadow:
+      0px 1px 1px rgba(3, 7, 18, 0.02),
+      0px 5px 4px rgba(3, 7, 18, 0.03),
+      0px 12px 9px rgba(3, 7, 18, 0.05),
+      0px 20px 15px rgba(3, 7, 18, 0.06),
+      0px 32px 24px rgba(3, 7, 18, 0.08);
+  }
+  0%,
+  100% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    box-shadow:
+      0px 1px 1px rgba(3, 7, 18, 0.08),
+      0px 3px 4px rgba(3, 7, 18, 0.08),
+      0px 6px 9px rgba(3, 7, 18, 0.08),
+      0px 10px 15px rgba(3, 7, 18, 0.08),
+      0px 16px 24px rgba(3, 7, 18, 0.08);
+  }
 }

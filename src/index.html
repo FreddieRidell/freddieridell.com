@@ -25,30 +25,40 @@
   </head>
   <body>
     <main>
-      <h1 class="text-2xl">
-        Freddie Ridell
-        <a
-          class="print:hidden text-right text-lg"
-          href="javascript:void(0);"
-          onclick="window.print(); return false;"
-          >CV</a
-        >
-      </h1>
+      <h1 class="text-2xl">Freddie Ridell</h1>
+      <div class="fixed inset-0 flex flex-col items-center print:hidden">
+        <div class="max-w-4xl w-full relative">
+          <button
+            class="absolute top-8 right-8 my-bounce cursor-pointer hover:scale-110 active:scale-110 transition-all duration-300 ease-out"
+            onclick="window.print(); return false;"
+          >
+            Print
+          </button>
+        </div>
+      </div>
 
       <hr />
 
       <section class="float-right">
         <h2>Skills</h2>
         <ul class="list-disc">
-          <li>Javascript/Typescript</li>
-          <li>React, React Native, D3.js</li>
-          <li>Next.js, Gatsby, Remix, Vite, Expo.io</li>
-          <li>Express, REST, GraphQL</li>
-          <li>Linux, Shell, Git</li>
-          <li>Rust, C, C++</li>
-          <li>Test Driven Development, Continuous Integration/Deployment</li>
-          <li>Juggling, Crochet, Sewing</li>
-          <li>Audio Production, Standup & Sketch Comedy</li>
+          <li>
+            <b>Languages:</b> Javascript, Typescript, Rescript, Rust, Bash/Zsh,
+            OCaml, C, C++
+          </li>
+          <li>
+            <b>Frameworks:</b> React, React Native, D3.js, Next.js, Gatsby,
+            Remix, Vite, Expo.io, Express
+          </li>
+          <li><b>Protocols:</b> REST, GraphQL, SQL, NoSql</li>
+          <li>
+            <b>Methodologies: </b>Git, Test Driven Development, Continuous
+            Integration/Deployment
+          </li>
+          <li>
+            <b>Other:</b> Juggling, Crochet, Sewing, Audio Production, Bonsai,
+            Standup & Sketch Comedy
+          </li>
         </ul>
       </section>
 
@@ -61,10 +71,19 @@
           <h3>Senior React Contractor</h3>
           <div class="role">
             <div class="client">
-              <a href="https://www.hilton.com">Hilton</a>,
-              <a href="https://www.litera.com">Workshare</a>,
-              <a href="https://betfredcareers.com/technology/">Sharp Gaming</a>,
-              <a href="https://www.imaginecruising.co.uk/">Imagine Cruising</a>
+              <a href="https://www.hilton.com">
+                Hilton<span class="print:inline hidden">, </span>
+              </a>
+              <span> </span>
+              <a href="https://www.imaginecruising.co.uk/">
+                Imagine Cruising<span class="print:inline hidden">, </span>
+              </a>
+              <span> </span>
+              <a href="https://betfredcareers.com/technology/">
+                Sharp Gaming<span class="print:inline hidden">, </span>
+              </a>
+              <span> </span>
+              <a href="https://www.litera.com">Workshare</a>
             </div>
             <div class="date-range">
               From <time datetime="2018-02-18">18/02/2018</time> to Present
@@ -163,12 +182,15 @@
     <footer class="relative">
       <ul>
         <li>
-          email:
+          <span class="print:hidden">email:</span>
           <a href="mailto:contact@freddieridell.com"
             >contact@freddieridell.com</a
           >
         </li>
-        <li>phone: <a href="tel:+443331 122420">+443331 122420</a></li>
+        <li>
+          <span class="print:hidden">phone: </span
+          ><a href="tel:+44 3331 122420">+44 3331 122420</a>
+        </li>
         <li>
           github:
           <a href="https://github.com/freddieridell">~FreddieRidell</a>

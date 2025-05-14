@@ -22,7 +22,7 @@ async function main(htmlSrcPath, cssSrcPath, outputPath) {
     "BYTES_INFO_MARKER",
     `${formatBytes(getStringBytes(htmlOut), {
       decimalPlaces: 1,
-    })}, (${formatBytes(getStringBytes(await gzip(htmlOut)), {
+    })} (${formatBytes(getStringBytes(await gzip(htmlOut)), {
       decimalPlaces: 1,
     })} gziped)`,
   );
