@@ -3,28 +3,34 @@
 :root {
   /* https://smoothshadows.com/#djEsMSw1LDAuMSw0LDQsMCwjMDMwNzEyLCNmM2Y0ZjYsI2ZmZmZmZiwy */
   --shad-sm:
-    0px 0px 0px rgba(3, 7, 18, 0.02), 0px 1px 1px rgba(3, 7, 18, 0.04),
-    0px 1px 1px rgba(3, 7, 18, 0.06), 0px 3px 3px rgba(3, 7, 18, 0.08),
-    0px 4px 4px rgba(3, 7, 18, 0.1);
+    0px 0px 0px oklch(from var(--color-slate-900), l c h 0.02),
+    0px 1px 1px oklch(from var(--color-slate-900), l c h 0.04),
+    0px 1px 1px oklch(from var(--color-slate-900), l c h 0.06),
+    0px 3px 3px oklch(from var(--color-slate-900), l c h 0.08),
+    0px 4px 4px oklch(from var(--color-slate-900), l c h 0.1);
 
   /* https://smoothshadows.com/#djEsMSw1LDAuMSw4LDgsMCwjMDMwNzEyLCNmM2Y0ZjYsI2ZmZmZmZiwy */
   /* --shad-md: */
 
-  /* 0px 0px 0px rgba(3, 7, 18, 0.02), 0px 1px 1px rgba(3, 7, 18, 0.04), */
-  /* 0px 3px 3px rgba(3, 7, 18, 0.06), 0px 5px 5px rgba(3, 7, 18, 0.08), */
-  /* 0px 8px 8px rgba(3, 7, 18, 0.1); */
+  /* 0px 0px 0px oklch(from var(--color-slate-900), l c h 0.02), 0px 1px 1px oklch(from var(--color-slate-900), l c h 0.04), */
+  /* 0px 3px 3px oklch(from var(--color-slate-900), l c h 0.06), 0px 5px 5px oklch(from var(--color-slate-900), l c h 0.08), */
+  /* 0px 8px 8px oklch(from var(--color-slate-900), l c h 0.1); */
 
   /* https://smoothshadows.com/#djEsMSw1LDAuMSwxNiwxNiwwLCMwMzA3MTIsI2YzZjRmNiwjZmZmZmZmLDI%3D */
   --shad-lg:
-    0px 1px 1px rgba(3, 7, 18, 0.02), 0px 3px 3px rgba(3, 7, 18, 0.04),
-    0px 6px 6px rgba(3, 7, 18, 0.06), 0px 10px 10px rgba(3, 7, 18, 0.08),
-    0px 16px 16px rgba(3, 7, 18, 0.1);
+    0px 1px 1px oklch(from var(--color-slate-900), l c h 0.02),
+    0px 3px 3px oklch(from var(--color-slate-900), l c h 0.04),
+    0px 6px 6px oklch(from var(--color-slate-900), l c h 0.06),
+    0px 10px 10px oklch(from var(--color-slate-900), l c h 0.08),
+    0px 16px 16px oklch(from var(--color-slate-900), l c h 0.1);
 
   /* https://smoothshadows.com/#djEsMSw1LDAuMSwzMiwzMiwwLCMwMzA3MTIsI2YzZjRmNiwjZmZmZmZmLDI%3D */
   --shad-xl:
-    0px 1px 1px rgba(3, 7, 18, 0.02), 0px 5px 5px rgba(3, 7, 18, 0.04),
-    0px 12px 12px rgba(3, 7, 18, 0.06), 0px 20px 20px rgba(3, 7, 18, 0.08),
-    0px 32px 32px rgba(3, 7, 18, 0.1);
+    0px 1px 1px oklch(from var(--color-slate-900), l c h 0.02),
+    0px 5px 5px oklch(from var(--color-slate-900), l c h 0.04),
+    0px 12px 12px oklch(from var(--color-slate-900), l c h 0.06),
+    0px 20px 20px oklch(from var(--color-slate-900), l c h 0.08),
+    0px 32px 32px oklch(from var(--color-slate-900), l c h 0.1);
 }
 
 html {
@@ -99,6 +105,11 @@ section hr {
 
 p + p {
   @apply pt-2;
+}
+
+a {
+  @apply break-inside-avoid;
+  white-space: nowrap;
 }
 
 @media not print {
