@@ -9,7 +9,7 @@ body {
   @apply min-h-full h-full;
   @apply relative;
   @apply flex flex-col;
-  @apply print:my-8;
+  @apply print:pt-8 print:block;
 }
 
 main {
@@ -33,7 +33,7 @@ main {
   footer {
     @apply absolute;
     @apply top-0 right-0;
-    @apply py-6 px-8;
+    @apply pt-14 px-8;
     @apply text-right;
   }
 }
