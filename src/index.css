@@ -47,11 +47,11 @@ body {
 
 main {
   @apply flex-1;
-  @apply px-12;
   @apply mx-auto;
   @apply flex flex-col;
   @apply max-w-4xl;
-  @apply pt-6;
+  @apply md:px-16 md:pt-6;
+  @apply px-6 pt-3;
 }
 
 h1 {
@@ -112,7 +112,7 @@ a {
   white-space: nowrap;
 }
 
-@media not print {
+@media screen {
   a {
     @apply underline;
   }
@@ -153,7 +153,12 @@ a {
     @apply pr-2 text-slate-500;
     top: 0;
     bottom: 0;
+    @apply hidden;
+    @apply block;
   }
+}
+
+@media screen and (min-width: 48rem) {
   h1::before {
     content: "#";
   }
@@ -169,6 +174,9 @@ a {
 }
 
 @media print {
+  main {
+    @apply px-10;
+  }
   footer {
     @apply absolute;
     @apply top-0 right-0;
