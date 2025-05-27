@@ -1,38 +1,5 @@
 @import "tailwindcss";
 
-:root {
-  /* https://smoothshadows.com/#djEsMSw1LDAuMSw0LDQsMCwjMDMwNzEyLCNmM2Y0ZjYsI2ZmZmZmZiwy */
-  --shad-sm:
-    0px 0px 0px oklch(from var(--color-slate-900), l c h 0.02),
-    0px 1px 1px oklch(from var(--color-slate-900), l c h 0.04),
-    0px 1px 1px oklch(from var(--color-slate-900), l c h 0.06),
-    0px 3px 3px oklch(from var(--color-slate-900), l c h 0.08),
-    0px 4px 4px oklch(from var(--color-slate-900), l c h 0.1);
-
-  /* https://smoothshadows.com/#djEsMSw1LDAuMSw4LDgsMCwjMDMwNzEyLCNmM2Y0ZjYsI2ZmZmZmZiwy */
-  /* --shad-md: */
-
-  /* 0px 0px 0px oklch(from var(--color-slate-900), l c h 0.02), 0px 1px 1px oklch(from var(--color-slate-900), l c h 0.04), */
-  /* 0px 3px 3px oklch(from var(--color-slate-900), l c h 0.06), 0px 5px 5px oklch(from var(--color-slate-900), l c h 0.08), */
-  /* 0px 8px 8px oklch(from var(--color-slate-900), l c h 0.1); */
-
-  /* https://smoothshadows.com/#djEsMSw1LDAuMSwxNiwxNiwwLCMwMzA3MTIsI2YzZjRmNiwjZmZmZmZmLDI%3D */
-  --shad-lg:
-    0px 1px 1px oklch(from var(--color-slate-900), l c h 0.02),
-    0px 3px 3px oklch(from var(--color-slate-900), l c h 0.04),
-    0px 6px 6px oklch(from var(--color-slate-900), l c h 0.06),
-    0px 10px 10px oklch(from var(--color-slate-900), l c h 0.08),
-    0px 16px 16px oklch(from var(--color-slate-900), l c h 0.1);
-
-  /* https://smoothshadows.com/#djEsMSw1LDAuMSwzMiwzMiwwLCMwMzA3MTIsI2YzZjRmNiwjZmZmZmZmLDI%3D */
-  --shad-xl:
-    0px 1px 1px oklch(from var(--color-slate-900), l c h 0.02),
-    0px 5px 5px oklch(from var(--color-slate-900), l c h 0.04),
-    0px 12px 12px oklch(from var(--color-slate-900), l c h 0.06),
-    0px 20px 20px oklch(from var(--color-slate-900), l c h 0.08),
-    0px 32px 32px oklch(from var(--color-slate-900), l c h 0.1);
-}
-
 html {
   @apply min-h-full h-full;
 }
@@ -94,7 +61,6 @@ section section {
 hr {
   @apply border-slate-500 border-t-2;
   @apply w-40;
-  box-shadow: var(--shad-sm);
 }
 
 section hr {
@@ -194,7 +160,9 @@ a {
   50% {
     transform: translateY(-25%);
     animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    box-shadow: var(--shad-lg);
+    box-shadow:
+      0 20px 25px -5px rgb(0 0 0 / 0.3),
+      0 8px 10px -6px rgb(0 0 0 / 0.3);
   }
 
   /* down */
@@ -202,6 +170,8 @@ a {
   100% {
     transform: none;
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    box-shadow: var(--shad-sm);
+    box-shadow:
+      0 4px 6px -1px rgb(0 0 0 / 0.2),
+      0 2px 4px -2px rgb(0 0 0 / 0.2);
   }
 }
