@@ -22,11 +22,10 @@
     <main>
       <h1 class="text-2xl relative">
         Freddie Ridell
-        <span class="text-xl print:inline block"
-          >Full-Stack Web Dev<span class="inline print:hidden"
-            >eloper</span
-          ></span
-        >
+        <span class="text-xl print:hidden block">
+          Full-Stack Web Developer
+        </span>
+        <span class="text-xl print:inline hidden"> Full-Stack Web Dev </span>
         <button
           class="print:hidden my-bounce cursor-pointer hover:scale-110 active:scale-110 transition-all duration-300 ease-out z-10 text-lg absolute right-0 bottom-0"
           onclick="window.print(); return false;"
@@ -67,49 +66,101 @@
 
         <section>
           <h3>Senior Full-Stack Contractor</h3>
-          <div class="role">
-            <div class="client">
-              <a href="https://www.hilton.com">
-                Hilton<span class="print:inline hidden">, </span>
-              </a>
-              <span> </span>
-              <a href="https://www.imaginecruising.co.uk/">
-                Imagine Cruising<span class="print:inline hidden">, </span>
-              </a>
-              <span> </span>
-              <a href="https://betfredcareers.com/technology/">
-                Sharp Gaming<span class="print:inline hidden">, </span>
-              </a>
-              <span> </span>
-              <a href="https://www.litera.com">Workshare</a>
-            </div>
-            <div class="date-range">
-              From <time datetime="2018-02-18">2018</time> to Present
-            </div>
-          </div>
           <p>
-            I have provided my development services for several clients, working
-            as part of agile teams to deliver high quality web apps using modern
-            react. My specialty is leveraging my broad knowledge of programming
+            My specialty is leveraging my broad knowledge of programming
             techniques and libraries to design systems and tooling that multiply
             the productivity of all team members.
           </p>
           <p>
-            I spearheaded a project to optimize ballooning data payloads on the
-            <a href="https://www.hilton.com" class="underline">hilton.com</a>
-            homepage, by writing a de novo content data mapping layer for their
-            CMS. I also led Imagine Cruising's frontend team in their initiative
-            to move all their franchised sites to a single white-labeled next.js
-            codebase.
+            In addition to my development skills I have also trained junior team
+            members, onboarded incoming mid/senior level developers, and driven
+            foundational technical changes across codebases.
           </p>
+
+          <hr />
+
+          <div class="role">
+            <div class="client pl-12">
+              <a href="https://www.hilton.com"> Hilton </a>
+            </div>
+            <div class="date-range">
+              <span>From</span>
+              <time datetime="2022-06-01">Jul 2022</time>
+              <span> to </span>
+              <time datetime="2025-06-31">July 2025</time>
+            </div>
+          </div>
           <p>
-            In addition to development I have also trained junior team members,
-            onboarded incoming mid/senior level developers, and driven
-            foundational technical changes across codebases. I was trusted to
-            investigate and implement the core state-management solution for a
-            large scale green-field app, and drove an initiative to adopt
-            state-of-the-art unit testing of an otherwise untested 200k LOC
-            codebase.
+            I helped hilton manage content complexity by building a de novo data
+            mapping layer for their CMS, to reduce balooning data sizes and
+            eliminate developer friction. This system shrunk first-load data
+            sizes by <b>~20 times</b> on the
+            <a href="https://www.hilton.com">www.hilton.com</a> homepage, and
+            improved user-testing velocity by a <b>factor of 10</b>.
+          </p>
+
+          <hr />
+
+          <div class="role">
+            <div class="client pl-12">
+              <a href="https://www.imaginecruising.co.uk/">
+                Imagine Cruising
+              </a>
+            </div>
+            <div class="date-range">
+              <span>From</span>
+              <time datetime="2020-09-01">Sept 2020</time>
+              <span> to </span>
+              <time datetime="2021-02-31">Feb 2021</time>
+            </div>
+          </div>
+          <p>
+            I joined Imagine Cruising to provide expertise in moving their
+            dispirate catalogue sites to a single white-labled next.js codebase.
+            I oversaw their frontend work, advised on their AWS ECS backend
+            fleet, and eventually brought the project to its first internal
+            milestone as project lead.
+          </p>
+
+          <hr />
+
+          <div class="role">
+            <div class="client pl-12">
+              <a href="https://www.mkodo.com/"> Mkodo </a>
+            </div>
+            <div class="date-range">
+              <span>Multiple engagements between</span>
+              <time datetime="2020-03-01">March 2020</time>
+              <span> and </span>
+              <time datetime="2022-05-01">May 2022</time>
+            </div>
+          </div>
+          <p>
+            I have worked with Mkodo multiple times on various 3rd party
+            projects: intergrating complex iframe based systems, user-spoofing
+            detection tooling, writing a legacy product adapter, and building
+            complex high-quality greenfield applications; all with a strong
+            focus on legal and technical compliance.
+          </p>
+
+          <hr />
+
+          <div class="role">
+            <div class="client pl-12">
+              <a href="https://betfredcareers.com/technology/">Sharp Gaming</a>
+            </div>
+            <div class="date-range">
+              <span>From</span>
+              <time datetime="2018-08-01">Aug 2018</time>
+              <span> to </span>
+              <time datetime="2020-03-01">March 2020</time>
+            </div>
+          </div>
+          <p>
+            I was trusted to investigate and implement the core state-management
+            solution for a large scale green-field app, and drove an initiative
+            to adopt state-of-the-art unit testing of their otherwise untested
+            200k LOC codebase.
           </p>
         </section>
 
@@ -140,7 +191,7 @@
 
         <hr />
 
-        <section>
+        <section class="print:hidden">
           <div class="role">
             <h3>Development Intern</h3>
             <div class="client">Amazon Instant Video</div>
@@ -149,7 +200,7 @@
               <time datetime="2015-09-01">September 2015</time>
             </div>
           </div>
-          <p class="print:hidden">
+          <p>
             I worked on Amazon’s native instant video player: a large scale
             real-time c++ codebase. I was responsible for porting it to MacOS
             and fixing memory bugs. Taking responsibility for mission-critical
@@ -159,7 +210,7 @@
           </p>
         </section>
 
-        <hr />
+        <hr class="print:hidden" />
 
         <section>
           <div class="role">

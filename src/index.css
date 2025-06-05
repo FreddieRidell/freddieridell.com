@@ -37,8 +37,12 @@ h3 {
 }
 
 .role {
-  @apply flex flex-wrap justify-between items-end;
+  @apply flex flex-wrap justify-start items-end;
   @apply w-full;
+}
+
+.role > * {
+  @apply pr-4;
 }
 
 .date-range {
@@ -48,6 +52,7 @@ h3 {
 
 .client {
   @apply text-xl;
+  @apply pr-4;
 }
 
 section {
@@ -68,9 +73,18 @@ section hr {
   @apply mx-8;
   @apply w-auto;
 }
+section section hr {
+  @apply border-slate-300 border-t-2;
+  @apply mx-16 my-2;
+  @apply w-auto;
+}
 
 p + p {
   @apply pt-2;
+}
+
+ul {
+  @apply list-disc;
 }
 
 a {
@@ -107,7 +121,7 @@ a {
   }
 
   .role h3 {
-    @apply w-full;
+    /* @apply w-full; */
   }
 
   h1::before,
@@ -143,6 +157,7 @@ a {
   main {
     @apply px-10;
   }
+
   footer {
     @apply absolute;
     @apply top-0 right-0;
