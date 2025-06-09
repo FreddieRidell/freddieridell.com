@@ -9,7 +9,7 @@ body {
   @apply min-h-full h-full;
   @apply relative;
   @apply flex flex-col;
-  @apply print:pt-8 print:block;
+  @apply print:pt-6 print:block;
 }
 
 main {
@@ -47,16 +47,17 @@ h3 {
 
 .date-range {
   @apply text-slate-600;
+}
+div.date-range {
   @apply text-lg;
+}
+span.date-range {
+  @apply text-slate-500;
 }
 
 .client {
   @apply text-xl;
   @apply pr-4;
-}
-
-section {
-  @apply py-3;
 }
 
 section section {
@@ -73,6 +74,7 @@ section hr {
   @apply mx-8;
   @apply w-auto;
 }
+
 section section hr {
   @apply border-slate-300 border-t-2;
   @apply mx-16 my-2;
@@ -83,16 +85,20 @@ p + p {
   @apply pt-2;
 }
 
-ul {
-  @apply list-disc;
-}
-
 a {
   @apply break-inside-avoid;
   white-space: nowrap;
 }
 
+section a {
+  @apply underline;
+}
+
 @media screen {
+  section {
+    @apply py-3;
+  }
+
   a {
     @apply underline;
   }
@@ -118,10 +124,6 @@ a {
   button {
     @apply text-slate-100 bg-slate-800;
     @apply py-2 px-4;
-  }
-
-  .role h3 {
-    /* @apply w-full; */
   }
 
   h1::before,
