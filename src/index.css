@@ -62,6 +62,7 @@ span.date-range {
 
 section section {
   @apply py-2;
+  @apply break-inside-avoid;
 }
 
 hr {

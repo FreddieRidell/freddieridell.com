@@ -27,7 +27,7 @@
         </span>
         <span class="text-xl print:inline hidden"> Full-Stack Web Dev </span>
         <button
-          class="print:hidden my-bounce cursor-pointer hover:scale-110 active:scale-110 transition-all duration-300 ease-out z-10 text-lg absolute right-0 bottom-0"
+          class="print:hidden hidden lg:block my-bounce cursor-pointer hover:scale-110 active:scale-110 transition-all duration-300 ease-out z-10 text-lg absolute right-0 bottom-0"
           onclick="window.print(); return false;"
         >
           Print This Page
@@ -44,11 +44,12 @@
             OCaml, C, C++
           </li>
           <li>
-            <b>Frameworks:</b> React, React Native, node.js, D3.js, Next.js,
-            Remix, Vite, Expo.io, Express, Jest, Cypress
+            <b>Frameworks:</b> React, React Native, D3.js, Next.js, Remix,
+            Expo.io, Express,
           </li>
           <li>
-            <b>Protocols:</b> REST, GraphQL, WebSockets, TCP, UDP, SQL, NoSQL
+            <b>Tools:</b> node.js, Jest, Vite, Cypress, REST, GraphQL,
+            WebSockets, SQL, NoSQL
           </li>
           <li>
             <b>Methodologies:</b> Git, Test Driven Development, Continuous
@@ -77,7 +78,15 @@
       <hr class="print:hidden" />
 
       <section>
-        <h2>Experience</h2>
+        <h2>
+          Experience
+
+          <aside
+            class="pl-2 hidden print:inline text-base text-slate-700 one-page"
+          >
+            (Highlights, full history available at <u>freddieridell.com</u>)
+          </aside>
+        </h2>
 
         <section>
           <div class="role">
@@ -134,7 +143,7 @@
             <b>legal and technical compliance.</b>
           </p>
 
-          <p class="print:hidden">
+          <p class="print:hidden one-page">
             At
             <a href="https://betfredcareers.com/technology/">Sharp Gaming</a>
             <span class="date-range">
@@ -142,10 +151,25 @@
               <span> to </span>
               <time datetime="2020-03-01">Mar 2020</time>)
             </span>
-            I was trusted to investigate and implement the
-            <b>core state-management solution</b> for a large scale green-field
-            app, and drove an initiative to adopt state-of-the-art unit testing
-            of their otherwise untested 200k LOC codebase.
+            I was brought on as part of their core frontend team, and drove an
+            initiative to adopt <b>state-of-the-art unit testing</b> of their
+            otherwise untested 200k LOC codebase. I also introduced age
+            verification to their registration flow to comply with changing
+            <b>KYC legislation.</b>
+          </p>
+
+          <p class="print:hidden one-page">
+            <a href="https://www.litera.com/litera-and-workshare">Workshare</a>
+            <span class="date-range">
+              (<time datetime="2018-06-01">Jun 2018</time>
+              <span> to </span>
+              <time datetime="2018-08-01">Aug 2018</time>)
+            </span>
+            brought me on as part of their project to rebuild one of their core
+            products as a greenfield codebase. I was trusted to investigate and
+            implement the
+            <b>core state-management solution</b> for this app, in addition to
+            training new hires, and upskilling existing team members.
           </p>
         </section>
 
@@ -176,7 +200,7 @@
 
         <hr />
 
-        <section class="print:hidden">
+        <section class="print:hidden one-page">
           <div class="role">
             <h3>Development Intern</h3>
             <div class="client">Amazon Instant Video</div>
@@ -210,7 +234,7 @@
             Dissertation: Designing, evaluating, and optimizing a system for
             population simulation.
           </aside>
-          <p class="print:hidden!">
+          <p class="print:hidden one-page">
             During my degree I studied a wide range of subjects: from
             runtime/space analysis and higher order logic to database systems
             and software development best practices. My exposure to the full
@@ -249,6 +273,13 @@
     <script>
       document.querySelector("#copyright-date").textContent =
         new Date().getFullYear();
+
+      if (new URLSearchParams(window.location.search).has("twopage")) {
+        document.querySelectorAll(".one-page").forEach((el) => {
+          el.classList.remove("print:hidden");
+          el.classList.remove("print:inline");
+        });
+      }
     </script>
   </body>
 </html>
